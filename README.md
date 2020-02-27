@@ -12,7 +12,7 @@ Therefore, why don't I just learn them all and find my own conclusions?
 
 ## How I do this?
 
-In each article, I will only pick one small topic, then make compare and contrast to each framework. It should be short and easy to understand because I have no patience to read and write long documentation. Plus, it should be written in a hilarious tone life should be full of humor. Finally, I will give scores for them to evaluate who does well. Hopefully, the one that gets the highest score is my ideal framework.
+In each article, I will only pick one small topic, then make compare and contrast to each framework. It should be short and easy to understand because I have no patience to read and write long paragraphs. Plus, it should be written in a hilarious tone because life should be full of humor. Finally, I will give scores for them to evaluate who does well. Hopefully, the one that gets the highest score is my ideal framework.
 
 ## <del>Why I actually do this?</del>
 
