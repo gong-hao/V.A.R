@@ -1,4 +1,4 @@
-# V.A.R is my personal learning notes of Vue, Angular, and React
+# V.A.R is my learning notes of Vue, Angular, and React
 
 > ⚠️Warning: this is not a tutorial and may have many inappropriate personal biases and jokes. 🙈
 

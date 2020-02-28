@@ -25,7 +25,7 @@ var app = new Vue({
 Sorry, but I don't think there is an official hello world demo for Angular.
 They just dive into the CLI and show you how to play some template syntaxes.
 There might be some ways to play Angular without CLI, but I don't think they are practical.
-Playing Angular without CLI is a kind of dead end. 🙈
+Playing Angular without CLI is a kind of dead end. 😢
 
 > If you overcome the CLI and folder structure parts and you're able to run the project, this is probably the hello world parts.
 
@@ -75,4 +75,4 @@ ReactDOM.render(
 ## Conclusions
 - Vue does a good job for the hello world program because this is one of its design goals - make a framework that is easy to use right away.
 - Sorry, Angular is tough for a beginner.
-- React does not bad but it's a little bit weird to see JSX for the first moment.
+- React does not bad but it's a little bit weird to see JSX for the first time.

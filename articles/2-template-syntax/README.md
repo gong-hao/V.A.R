@@ -1,6 +1,6 @@
 # How to deal with templates in V.A.R?
 
-Modern front-end frameworks display data like marionettes. The templates content placeholders to show the correlated data so that you get rid of data changes and DOM selections and manipulations.
+Modern front-end frameworks display data like marionettes. The templates contain placeholders to show the correlated data so that you get rid of data changes and DOM selections and manipulations.
 
 ![marionette](../images/../../images/2-template-syntax/marionette.jpg "marionette")
 
