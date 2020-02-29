@@ -6,7 +6,7 @@ Hello world program is the simplest program that the language or framework or li
 ## Vue
 ```html
 <div id="app">
-  {{ message }}
+  {{message}}
 </div>
 ```
 
@@ -34,7 +34,7 @@ Playing Angular without CLI is a kind of dead end. 😢
   This is at "src/app/app.component.html".
   I removed the other welcome content.
 -->
-<span>{{ title }} is running!</span>
+<span>{{title}} is running!</span>
 ```
 
 ```ts

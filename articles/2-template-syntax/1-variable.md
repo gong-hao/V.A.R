@@ -10,51 +10,51 @@
 >
 > Vue does the tricks for you to access Props and Data(State).
 >
-> Therefore, you can use `{{ foo }}` instead of `{{ this.props.foo }}` and `{{ this.state.bar }}`.
+> Therefore, you can use `{{foo}}` instead of `{{this.props.foo}}` and `{{this.state.bar}}`.
 
 ### Example code
 - [src/components/HelloWorld.vue](../../examples/var-vue/src/components/HelloWorld.vue)
 
 ### Showing text
 ```html
-<p>{{ message }}</p>
+<p>{{message}}</p>
 ```
 
 ### String concatenation
 ```html
-<p>{{ name + ' is such ' + something + '!' }}</p>
+<p>{{name + ' is such ' + something + '!'}}</p>
 ```
 
 ### Ternary Operator
 ```html
-<p>{{ isGood ? 'Yep' : 'Nope' }}</p>
+<p>{{isGood ? 'Yep' : 'Nope'}}</p>
 ```
 
 ### Arithmetic
 ```html
 <div>
-  <p>No: {{ index + 1 }}</p>
-  <p>Area of a circle: {{ (Math.PI * radius * radius).toFixed(2) }}</p>
-  <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
+  <p>No: {{index + 1}}</p>
+  <p>Area of a circle: {{(Math.PI * radius * radius).toFixed(2)}}</p>
+  <p>Number {{num}} is {{num % 2 === 0 ? 'even' : 'odd'}}</p>
 </div>
 ```
 
 ### Accessing `object` or `array`
 ```html
 <div>
-  <p>{{ person.name }}</p>
-  <p>{{ person.phones[0].phoneNumber }}</p>
+  <p>{{person.name}}</p>
+  <p>{{person.phones[0].phoneNumber}}</p>
 </div>
 ```
 
 ### Calling methods
 ```html
-<p>{{ showEnumName(enumVal) }}</p>
+<p>{{showEnumName(enumVal)}}</p>
 ```
 
 ### Format - Filter
 ```html
-<p>Today is {{ new Date() | formatDate('MM/DD/YYYY') }}.</p>
+<p>Today is {{new Date() | formatDate('MM/DD/YYYY')}}.</p>
 
 ```
 ```js
@@ -85,45 +85,45 @@ Vue.filter('formatDate', (value, pattern) => {
 
 ### Showing text
 ```html
-<p>{{ message }}</p>
+<p>{{message}}</p>
 ```
 
 ### String concatenation
 ```html
-<p>{{ name + ' is such ' + something + '!' }}</p>
+<p>{{name + ' is such ' + something + '!'}}</p>
 ```
 
 ### Ternary Operator
 ```html
-<p>{{ isGood ? 'Yep' : 'Nope' }}</p>
+<p>{{isGood ? 'Yep' : 'Nope'}}</p>
 ```
 
 ### Arithmetic
 ```html
 <div>
-  <p>No: {{ index + 1 }}</p>
-  <p>Area of a circle: {{ (pi * radius * radius).toFixed(2) }}</p>
-  <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
+  <p>No: {{index + 1}}</p>
+  <p>Area of a circle: {{(pi * radius * radius).toFixed(2)}}</p>
+  <p>Number {{num}} is {{num % 2 === 0 ? 'even' : 'odd'}}</p>
 </div>
 ```
 
 ### Accessing `object` or `array`
 ```html
 <div>
-  <p>{{ person.name }}</p>
-  <p>{{ person.phones[0].phoneNumber }}</p>
-  <p>{{ person.foo?.bar || 'n/a' }}</p>
+  <p>{{person.name}}</p>
+  <p>{{person.phones[0].phoneNumber}}</p>
+  <p>{{person.foo?.bar || 'n/a'}}</p>
 </div>
 ```
 
 ### Calling methods
 ```html
-<p>{{ showEnumName(enumVal) }}</p>
+<p>{{showEnumName(enumVal)}}</p>
 ```
 
 ### Format - Pipe
 ```html
-<p>Today is {{ today | date : 'MM/dd/yyyy' }}.</p>
+<p>Today is {{today | date : 'MM/dd/yyyy'}}.</p>
 ```
 
 ## React
@@ -132,7 +132,7 @@ Vue.filter('formatDate', (value, pattern) => {
 >
 > Sorry, but React doesn't do any tricks for you to access Props and Data(State).
 >
-> Therefore, you need `{{ this.props.foo }}` and `{{ this.state.bar }}`.
+> Therefore, you need `{{this.props.foo}}` and `{{this.state.bar}}`.
 >
 > ⚠️The React examples use local variables inside the `render` method.
 >
@@ -145,45 +145,45 @@ Vue.filter('formatDate', (value, pattern) => {
 
 ### Showing text
 ```jsx
-<p>{ message }</p>
+<p>{message}</p>
 ```
 
 ### String concatenation
 ```jsx
-<p>{ name + ' is such ' + something + '!' }</p>
+<p>{name + ' is such ' + something + '!'}</p>
 ```
 
 ### Ternary Operator
 ```jsx
-<p>{ isGood ? 'Yep' : 'Nope' }</p>
+<p>{isGood ? 'Yep' : 'Nope'}</p>
 ```
 
 ### Arithmetic
 ```jsx
 <div>
-  <p>No: { index + 1 }</p>
-  <p>Area of a circle: { (Math.PI * radius * radius).toFixed(2) }</p>
-  <p>Number { num } is { num % 2 === 0 ? 'even' : 'odd' }</p>
+  <p>No: {index + 1}</p>
+  <p>Area of a circle: {(Math.PI * radius * radius).toFixed(2)}</p>
+  <p>Number {num} is {num % 2 === 0 ? 'even' : 'odd'}</p>
 </div>
 ```
 
 ### Accessing `object` or `array`
 ```jsx
 <div>
-  <p>{ person.name }</p>
-  <p>{ person.phones[0].phoneNumber }</p>
-  <p>{ person.foo?.bar || 'n/a' }</p>
+  <p>{person.name}</p>
+  <p>{person.phones[0].phoneNumber}</p>
+  <p>{person.foo?.bar || 'n/a'}</p>
 </div>
 ```
 
 ### Calling methods
 ```jsx
-<p>{ this.showEnumName(enumVal) }</p>
+<p>{this.showEnumName(enumVal)}</p>
 ```
 
 ### Format - Calling methods
 ```jsx
-<p>Today is { this.formatDate(new Date(), 'MM/DD/YYYY') }.</p>
+<p>Today is {this.formatDate(new Date(), 'MM/DD/YYYY')}.</p>
 ```
 ```jsx
 import moment from 'moment'
@@ -202,11 +202,11 @@ formatDate(value, pattern) {
 
 ## Differences
 |                                       |                                               Vue                                               |               Angular                |                        React                         |
-| :-----------------------------------: | :---------------------------------------------------------------------------------------------: | :----------------------------------: | :--------------------------------------------------: |
-|               language                |                                              HTML                                               |                 HTML                 | [JSX](https://reactjs.org/docs/introducing-jsx.html) |
-|                syntax                 |                                           `{{ woo }}`                                           |             `{{ woo }}`              |                      `{ yoo }`                       |
-|            format reusing             |                                             filter                                              |                 pipe                 |                        method                        |
-|    access globals (`Date`, `Math`)    | [whitelist of globals](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) | No, but you can assign to properties |                         Yes                          |
+| :------------------------------------ | :---------------------------------------------------------------------------------------------: | :----------------------------------: | :--------------------------------------------------: |
+| language                              |                                              HTML                                               |                 HTML                 | [JSX](https://reactjs.org/docs/introducing-jsx.html) |
+| syntax                                |                                            `{{woo}}`                                            |              `{{woo}}`               |                       `{yoo}`                        |
+| format reusing                        |                                             filter                                              |                 pipe                 |                        method                        |
+| access globals (`Date`, `Math`)       | [whitelist of globals](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) | No, but you can assign to properties |                         Yes                          |
 | safe navigation operator (`foo?.bar`) |                                               No                                                |                 Yes                  |                         Yes                          |
 
 ## Conclusions

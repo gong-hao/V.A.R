@@ -6,34 +6,34 @@
     <article>
       <div class="block">
         <h3>Showing text</h3>
-        <p>{{ message }}</p>
+        <p>{{message}}</p>
       </div>
       <div class="block">
         <h3>String concatenation</h3>
-        <p>{{ name + ' is such ' + something + '!' }}</p>
+        <p>{{name + ' is such ' + something + '!'}}</p>
       </div>
       <div class="block">
         <h3>Ternary Operator</h3>
-        <p>{{ isGood ? 'Yep' : 'Nope' }}</p>
+        <p>{{isGood ? 'Yep' : 'Nope'}}</p>
       </div>
       <div class="block">
         <h3>Arithmetic</h3>
-        <p>No: {{ index + 1 }}</p>
-        <p>Area of a circle: {{ (Math.PI * radius * radius).toFixed(2) }}</p>
-        <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
+        <p>No: {{index + 1}}</p>
+        <p>Area of a circle: {{(Math.PI * radius * radius).toFixed(2)}}</p>
+        <p>Number {{num}} is {{num % 2 === 0 ? 'even' : 'odd'}}</p>
       </div>
       <div class="block">
         <h3>Accessing object or array</h3>
-        <p>{{ person.name }}</p>
-        <p>{{ person.phones[0].phoneNumber }}</p>
+        <p>{{person.name}}</p>
+        <p>{{person.phones[0].phoneNumber}}</p>
       </div>
       <div class="block">
         <h3>Calling methods</h3>
-        <p>{{ showEnumName(enumVal) }}</p>
+        <p>{{showEnumName(enumVal)}}</p>
       </div>
       <div class="block">
         <h3>Format - Pipe</h3>
-        <p>Today is {{ new Date() | formatDate('MM/DD/YYYY') }}.</p>
+        <p>Today is {{new Date() | formatDate('MM/DD/YYYY')}}.</p>
       </div>
     </article>
   </div>
