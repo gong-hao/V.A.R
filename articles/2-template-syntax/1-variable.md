@@ -125,7 +125,7 @@ Vue.filter('formatDate', (value, pattern) => {
 ```jsx
 <div>
   <p>No: { index + 1 }</p>
-  <p>Area of a circle: { (pi * radius * radius).toFixed(2) }</p>
+  <p>Area of a circle: { (Math.PI * radius * radius).toFixed(2) }</p>
   <p>Number { num } is { num % 2 === 0 ? 'even' : 'odd' }</p>
 </div>
 ```
@@ -135,19 +135,22 @@ Vue.filter('formatDate', (value, pattern) => {
 <div>
   <p>{ person.name }</p>
   <p>{ person.phones[0].phoneNumber }</p>
+  <p>{ person.foo?.bar || 'n/a' }</p>
 </div>
 ```
 
 ### Calling methods
 ```jsx
-<p>{ showEnumName(enumVal) }</p>
+<p>{ this.showEnumName(enumVal) }</p>
 ```
 
 ### Format - Calling methods
 ```jsx
-<p>Today is { formatDate(today, 'MM/DD/YYYY') }.</p>
+<p>Today is { this.formatDate(new Date(), 'MM/DD/YYYY') }.</p>
 ```
 ```jsx
+import moment from 'moment'
+
 formatDate(value, pattern) {
   if (value) {
     return moment(value).format(pattern)
