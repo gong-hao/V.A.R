@@ -22,7 +22,7 @@
 ```html
 <div>
   <p>No: {{ index + 1 }}</p>
-  <p>Area of a circle: {{ (pi * radius * radius).toFixed(2) }}</p>
+  <p>Area of a circle: {{ (Math.PI * radius * radius).toFixed(2) }}</p>
   <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
 </div>
 ```
@@ -42,17 +42,17 @@
 
 ### Format - Filter
 ```html
-<p>Today is {{ today | formatDate('MM/DD/YYYY') }}.</p>
+<p>Today is {{ new Date() | formatDate('MM/DD/YYYY') }}.</p>
 
 ```
 ```js
 import moment from 'moment'
 
-Vue.filter('formatDate', function(value, pattern) {
+Vue.filter('formatDate', (value, pattern) => {
   if (value) {
     return moment(value).format(pattern)
   }
-}
+})
 ```
 
 ## Angular

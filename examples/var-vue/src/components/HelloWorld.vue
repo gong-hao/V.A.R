@@ -1,58 +1,79 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="container">
+    <header>
+      <h1>Hello World</h1>
+    </header>
+    <article>
+      <div class="block">
+        <h3>Showing text</h3>
+        <p>{{ message }}</p>
+      </div>
+      <div class="block">
+        <h3>String concatenation</h3>
+        <p>{{ name + ' is such ' + something + '!' }}</p>
+      </div>
+      <div class="block">
+        <h3>Ternary Operator</h3>
+        <p>{{ isGood ? 'Yep' : 'Nope' }}</p>
+      </div>
+      <div class="block">
+        <h3>Arithmetic</h3>
+        <p>No: {{ index + 1 }}</p>
+        <p>Area of a circle: {{ (Math.PI * radius * radius).toFixed(2) }}</p>
+        <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
+      </div>
+      <div class="block">
+        <h3>Accessing object or array</h3>
+        <p>{{ person.name }}</p>
+        <p>{{ person.phones[0].phoneNumber }}</p>
+      </div>
+      <div class="block">
+        <h3>Calling methods</h3>
+        <p>{{ showEnumName(enumVal) }}</p>
+      </div>
+      <div class="block">
+        <h3>Format - Pipe</h3>
+        <p>Today is {{ new Date() | formatDate('MM/DD/YYYY') }}.</p>
+      </div>
+    </article>
   </div>
 </template>
 
 <script>
+const AccountStatus = {
+  Activated: 0,
+  Locked: 1,
+  0: 'Activated',
+  1: 'Locked'
+}
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      message: 'Hello World',
+      name: 'Gordon',
+      something: 'a genius',
+      isGood: false,
+      index: 0,
+      radius: 5,
+      num: 13,
+      person: {
+        name: 'Gordon',
+        phones: [
+          { countryCode: '+1', phoneNumber: '(206) 123-4567', ext: null },
+          { countryCode: '+886', phoneNumber: '(02) 2345-2266', ext: null }
+        ],
+        foo: null
+      },
+      enumVal: AccountStatus.Locked
+    }
+  },
+  methods: {
+    showEnumName(enumVal) {
+      const enumName = AccountStatus[enumVal]
+      return enumName
+    }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
