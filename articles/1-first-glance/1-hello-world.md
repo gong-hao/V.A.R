@@ -27,7 +27,7 @@ They just dive into the CLI and show you how to play some template syntaxes.
 There might be some ways to play Angular without CLI, but I don't think they are practical.
 Playing Angular without CLI is a kind of dead end. 😢
 
-> If you overcome the CLI and folder structure parts and you're able to run the project, this is probably the hello world parts.
+> If you overcome the TypeScript, CLI, and folder structure parts and you're able to run the project, this is probably the hello world parts.
 
 ```html
 <!--

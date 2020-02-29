@@ -1,7 +1,13 @@
 # How to display a variable in V.A.R
 
+> This session only focuses on the template. The other parts such as component, method, state, and prop will introduce in other sessions.
+
 ## Vue
+
 > Using HTML in .vue file by default
+
+### Example code
+- [src/components/HelloWorld.vue](../../examples/var-vue/src/components/HelloWorld.vue)
 
 ### Showing text
 ```html
@@ -59,6 +65,10 @@ Vue.filter('formatDate', (value, pattern) => {
 
 > Using HTML in .component.html file by default
 
+### Example code
+- [src/app/hello-world/hello-world.component.html](../../examples/var-angular/src/app/hello-world/hello-world.component.html)
+- [src/app/hello-world/hello-world.component.ts](../../examples/var-angular/src/app/hello-world/hello-world.component.ts)
+
 ### Showing text
 ```html
 <p>{{ message }}</p>
@@ -105,6 +115,9 @@ Vue.filter('formatDate', (value, pattern) => {
 ## React
 
 > Using JSX in .js file by default
+
+### Example code
+- [src/components/HelloWorld.js](../../examples/var-react/src/components/HelloWorld.js)
 
 ### Showing text
 ```jsx
