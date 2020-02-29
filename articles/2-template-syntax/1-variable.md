@@ -196,15 +196,18 @@ formatDate(value, pattern) {
 ```
 
 ## Scores
-|    Vue     |  Angular   |  React   |
-| :--------: | :--------: | :------: |
-| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ |
+|    Vue     |  Angular   |   React    |
+| :--------: | :--------: | :--------: |
+| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+
+## Differences
+|                                       |                                               Vue                                               |               Angular                |                        React                         |
+| :-----------------------------------: | :---------------------------------------------------------------------------------------------: | :----------------------------------: | :--------------------------------------------------: |
+|               language                |                                              HTML                                               |                 HTML                 | [JSX](https://reactjs.org/docs/introducing-jsx.html) |
+|                syntax                 |                                           `{{ woo }}`                                           |             `{{ woo }}`              |                      `{ yoo }`                       |
+|            format reusing             |                                             filter                                              |                 pipe                 |                        method                        |
+|    access globals (`Date`, `Math`)    | [whitelist of globals](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) | No, but you can assign to properties |                         Yes                          |
+| safe navigation operator (`foo?.bar`) |                                               No                                                |                 Yes                  |                         Yes                          |
 
 ## Conclusions
 - Everyone does a good job here.
-- The only thing needs to be pull out is React uses JSX ([Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)).
-  - JSX is a syntactic sugar of JavaScript.
-  - It uses only one pair of curly brackets.
-  - You can use `if`, `for`, or `while` statements because it's just JavaScript.
-  - It increases the flexibility of view logic but reduces the readability of the html structure if the logic is complex and you're so good at messing up codes.
-  - JSX is optional, but you won't want to play React without JSX.
