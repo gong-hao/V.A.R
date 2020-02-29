@@ -5,44 +5,44 @@
 
 ### Showing text
 ```html
-<span>{{ message }}</span>
+<p>{{ message }}</p>
 ```
 
 ### String concatenation
 ```html
-<span>{{ name + ' is such ' + something + '!' }}</span>
+<p>{{ name + ' is such ' + something + '!' }}</p>
 ```
 
 ### Ternary Operator
 ```html
-<span>{{ isGood ? 'Yep' : 'Nope' }}</span>
+<p>{{ isGood ? 'Yep' : 'Nope' }}</p>
 ```
 
 ### Arithmetic
 ```html
 <div>
-  <span>No: {{ index + 1 }}</span>
-  <span>Area of a circle: {{ 2 * Math.PI * (radius * radius) }}</span>
-  <span>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</span>
+  <p>No: {{ index + 1 }}</p>
+  <p>Area of a circle: {{ (pi * radius * radius).toFixed(2) }}</p>
+  <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
 </div>
 ```
 
 ### Accessing `object` or `array`
 ```html
 <div>
-  <span>{{ person.name }}</span>
-  <span>{{ person.phones[0].phoneNumber }}</span>
+  <p>{{ person.name }}</p>
+  <p>{{ person.phones[0].phoneNumber }}</p>
 </div>
 ```
 
 ### Calling methods
 ```html
-<span>{{ showEnumName(enumVal) }}</span>
+<p>{{ showEnumName(enumVal) }}</p>
 ```
 
 ### Format - Filter
 ```html
-<span>Today is {{ today | formatDate('MM/DD/YYYY') }}.</span>
+<p>Today is {{ today | formatDate('MM/DD/YYYY') }}.</p>
 
 ```
 ```js
@@ -61,44 +61,45 @@ Vue.filter('formatDate', function(value, pattern) {
 
 ### Showing text
 ```html
-<span>{{ message }}</span>
+<p>{{ message }}</p>
 ```
 
 ### String concatenation
 ```html
-<span>{{ name + ' is such ' + something + '!' }}</span>
+<p>{{ name + ' is such ' + something + '!' }}</p>
 ```
 
 ### Ternary Operator
 ```html
-<span>{{ isGood ? 'Yep' : 'Nope' }}</span>
+<p>{{ isGood ? 'Yep' : 'Nope' }}</p>
 ```
 
 ### Arithmetic
 ```html
 <div>
-  <span>No: {{ index + 1 }}</span>
-  <span>Area of a circle: {{ 2 * pi * (radius * radius) }}</span>
-  <span>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</span>
+  <p>No: {{ index + 1 }}</p>
+  <p>Area of a circle: {{ (pi * radius * radius).toFixed(2) }}</p>
+  <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
 </div>
 ```
 
 ### Accessing `object` or `array`
 ```html
 <div>
-  <span>{{ person.name }}</span>
-  <span>{{ person.phones[0].phoneNumber }}</span>
+  <p>{{ person.name }}</p>
+  <p>{{ person.phones[0].phoneNumber }}</p>
+  <p>{{ person.foo?.bar || 'n/a' }}</p>
 </div>
 ```
 
 ### Calling methods
 ```html
-<span>{{ showEnumName(enumVal) }}</span>
+<p>{{ showEnumName(enumVal) }}</p>
 ```
 
 ### Format - Pipe
 ```html
-<span>Today is {{ today | date : 'MM/dd/yyyy' }}.</span>
+<p>Today is {{ today | date : 'MM/dd/yyyy' }}.</p>
 ```
 
 ## React
@@ -107,44 +108,44 @@ Vue.filter('formatDate', function(value, pattern) {
 
 ### Showing text
 ```jsx
-<span>{ message }</span>
+<p>{ message }</p>
 ```
 
 ### String concatenation
 ```jsx
-<span>{ name + ' is such ' + something + '!' }</span>
+<p>{ name + ' is such ' + something + '!' }</p>
 ```
 
 ### Ternary Operator
 ```jsx
-<span>{ isGood ? 'Yep' : 'Nope' }</span>
+<p>{ isGood ? 'Yep' : 'Nope' }</p>
 ```
 
 ### Arithmetic
 ```jsx
 <div>
-  <span>No: { index + 1 }</span>
-  <span>Area of a circle: { 2 * Math.PI * (radius * radius) }</span>
-  <span>Number { num } is { num % 2 === 0 ? 'even' : 'odd' }</span>
+  <p>No: { index + 1 }</p>
+  <p>Area of a circle: { (pi * radius * radius).toFixed(2) }</p>
+  <p>Number { num } is { num % 2 === 0 ? 'even' : 'odd' }</p>
 </div>
 ```
 
 ### Accessing `object` or `array`
 ```jsx
 <div>
-  <span>{ person.name }</span>
-  <span>{ person.phones[0].phoneNumber }</span>
+  <p>{ person.name }</p>
+  <p>{ person.phones[0].phoneNumber }</p>
 </div>
 ```
 
 ### Calling methods
 ```jsx
-<span>{ showEnumName(enumVal) }</span>
+<p>{ showEnumName(enumVal) }</p>
 ```
 
 ### Format - Calling methods
 ```jsx
-<span>Today is { formatDate(today, 'MM/DD/YYYY') }.</span>
+<p>Today is { formatDate(today, 'MM/DD/YYYY') }.</p>
 ```
 ```jsx
 formatDate(value, pattern) {

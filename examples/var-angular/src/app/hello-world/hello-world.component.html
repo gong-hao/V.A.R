@@ -1,0 +1,39 @@
+<div class="container">
+  <header>
+    <h1>Hello World</h1>
+  </header>
+  <article>
+    <div class="block">
+      <h3>Showing text</h3>
+      <p>{{ message }}</p>
+    </div>
+    <div class="block">
+      <h3>String concatenation</h3>
+      <p>{{ name + ' is such ' + something + '!' }}</p>
+    </div>
+    <div class="block">
+      <h3>Ternary Operator</h3>
+      <p>{{ isGood ? 'Yep' : 'Nope' }}</p>
+    </div>
+    <div class="block">
+      <h3>Arithmetic</h3>
+      <p>No: {{ index + 1 }}</p>
+      <p>Area of a circle: {{ (pi * radius * radius).toFixed(2) }}</p>
+      <p>Number {{ num }} is {{ num % 2 === 0 ? 'even' : 'odd' }}</p>
+    </div>
+    <div class="block">
+      <h3>Accessing object or array</h3>
+      <p>{{ person.name }}</p>
+      <p>{{ person.phones[0].phoneNumber }}</p>
+      <p>{{ person.foo?.bar || 'n/a' }}</p>
+    </div>
+    <div class="block">
+      <h3>Calling methods</h3>
+      <p>{{ showEnumName(enumVal) }}</p>
+    </div>
+    <div class="block">
+      <h3>Format - Pipe</h3>
+      <p>Today is {{ today | date : 'MM/dd/yyyy' }}.</p>
+    </div>
+  </article>
+</div>
