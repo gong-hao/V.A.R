@@ -71,13 +71,13 @@ Vue.filter('formatDate', (value, pattern) => {
 
 > Angular uses HTML in .component.html file by default.
 >
-> Angular uses class properties to represent variables on the template.
+> Angular uses class fields to represent variables on the template.
 >
-> Therefore, the normal properties are State, and the properties with `@Input()` decorator are Props.
+> Therefore, the normal fields are State, and the fields with `@Input()` decorator are Props.
 >
-> ⚠️You can set Access Modifiers (`public`, `private`, and `protected`) for properties(default is public).
+> ⚠️You can set Access Modifiers (`public`, `private`, and `protected`) for fields(default is public).
 >
-> Only `public` and `protected` properties can be used for the template.
+> Only `public` and `protected` fields can be used for the template.
 
 ### Example code
 - [src/app/hello-world/hello-world.component.html](../../examples/var-angular/src/app/hello-world/hello-world.component.html)
@@ -201,13 +201,13 @@ formatDate(value, pattern) {
 | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | 😢I still have some template engines |
 
 ## Differences
-|                                       |                                               Vue                                               |               Angular                |                        React                         |
-| :------------------------------------ | :---------------------------------------------------------------------------------------------: | :----------------------------------: | :--------------------------------------------------: |
-| language                              |                                              HTML                                               |                 HTML                 | [JSX](https://reactjs.org/docs/introducing-jsx.html) |
-| syntax                                |                                            `{{woo}}`                                            |              `{{woo}}`               |                       `{yoo}`                        |
-| format reusing                        |                                             filter                                              |                 pipe                 |                        method                        |
-| access globals (`Date`, `Math`)       | [whitelist of globals](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) | No, but you can assign to properties |                         Yes                          |
-| safe navigation operator (`foo?.bar`) |                                               No                                                |                 Yes                  |                         Yes                          |
+|                                       |                                               Vue                                               |             Angular              |                        React                         |
+| :------------------------------------ | :---------------------------------------------------------------------------------------------: | :------------------------------: | :--------------------------------------------------: |
+| language                              |                                              HTML                                               |               HTML               | [JSX](https://reactjs.org/docs/introducing-jsx.html) |
+| syntax                                |                                            `{{woo}}`                                            |            `{{woo}}`             |                       `{yoo}`                        |
+| format reusing                        |                                             filter                                              |               pipe               |                        method                        |
+| access globals (`Date`, `Math`)       | [whitelist of globals](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) | No, but you can assign to fields |                         Yes                          |
+| safe navigation operator (`foo?.bar`) |                                               No                                                |               Yes                |                         Yes                          |
 
 ## Conclusions
 - Everyone does a good job here.
