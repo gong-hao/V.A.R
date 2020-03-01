@@ -126,7 +126,7 @@ Vue.filter('formatDate', (value, pattern) => {
 
 > Sorry, but React doesn't do any tricks for you to access `Props` and `State`. Therefore, you need `{{props.foo}}` and `{{state.bar}}`.
 
-> ⚠️This React examples use local variables. It will only be applied when the `render` cycle occurs. So, it won't update the template even if you do some magic such as `setInterval()` to mutate the local variables.
+> ⚠️This React examples use local variables. It will only be applied when the `render` cycle occurs. So, it won't update the template even if you do some magic such as `setInterval()` to mutate the local variables later. To be honest, there is no `"auto" two-way binding` in React officially.
 
 ### Example code
 - [src/components/HelloWorld.js](../../examples/var-react/src/components/HelloWorld.js)
