@@ -1,16 +1,14 @@
 # How to display a variable in V.A.R
 
 > This session only focuses on the template. The other parts such as component, method, state, and prop will introduce in other sessions.
->
+
 > ⚠️This session tries to make the examples look similar, but the real code usages could look different, especially React parts.
 
 ## Vue
 
 > Vue uses HTML in .vue file by default.
->
-> Vue does the tricks for you to access Props and Data(State).
->
-> Therefore, you can use `{{foo}}` instead of `{{this.props.foo}}` and `{{this.state.bar}}`.
+
+> Vue does the tricks for you to access `Props` and `Data`(`State`). Therefore, you can use `{{foo}}` instead of `{{props.foo}}` and `{{state.bar}}`.
 
 ### Example code
 - [src/components/HelloWorld.vue](../../examples/var-vue/src/components/HelloWorld.vue)
@@ -70,14 +68,10 @@ Vue.filter('formatDate', (value, pattern) => {
 ## Angular
 
 > Angular uses HTML in .component.html file by default.
->
-> Angular uses class fields to represent variables on the template.
->
-> Therefore, the normal fields are State, and the fields with `@Input()` decorator are Props.
->
-> ⚠️You can set Access Modifiers (`public`, `private`, and `protected`) for fields(default is public).
->
-> Only `public` and `protected` fields can be used for the template.
+
+> Angular uses class fields to represent variables on the template. Although Angular doesn't use terms of `State` and `Props`, the normal fields are `State`, and the fields with `@Input()` decorator are `Props`.
+
+> ⚠️You can set Access Modifiers (`public`, `private`, and `protected`) for fields(default is public), but only `public` and `protected` fields can be used for the template.
 
 ### Example code
 - [src/app/hello-world/hello-world.component.html](../../examples/var-angular/src/app/hello-world/hello-world.component.html)
@@ -129,16 +123,10 @@ Vue.filter('formatDate', (value, pattern) => {
 ## React
 
 > React uses JSX in .js file by default.
->
-> Sorry, but React doesn't do any tricks for you to access Props and Data(State).
->
-> Therefore, you need `{{this.props.foo}}` and `{{this.state.bar}}`.
->
-> ⚠️The React examples use local variables inside the `render` method.
->
-> It will only apply when the `render` cycle occurs.
->
-> So, it won't update the template even if you do some magic such as `setInterval()` to mutate the local variables.
+
+> Sorry, but React doesn't do any tricks for you to access `Props` and `State`. Therefore, you need `{{props.foo}}` and `{{state.bar}}`.
+
+> ⚠️This React examples use local variables. It will only be applied when the `render` cycle occurs. So, it won't update the template even if you do some magic such as `setInterval()` to mutate the local variables.
 
 ### Example code
 - [src/components/HelloWorld.js](../../examples/var-react/src/components/HelloWorld.js)
