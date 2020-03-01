@@ -1,4 +1,4 @@
-# How to display a variable in V.A.R
+# How to Display a Variable in V.A.R
 
 > This session only focuses on the template. The other parts such as component, method, state, and prop will introduce in other sessions.
 
@@ -10,15 +10,15 @@
 
 > Vue does the tricks for you to access `Props` and `Data`(`State`). Therefore, you can use `{{foo}}` instead of `{{props.foo}}` and `{{state.bar}}`.
 
-### Example code
+### Example Code
 - [src/components/HelloWorld.vue](../../examples/var-vue/src/components/HelloWorld.vue)
 
-### Showing text
+### Showing Text
 ```html
 <p>{{message}}</p>
 ```
 
-### String concatenation
+### String Concatenation
 ```html
 <p>{{name + ' is such ' + something + '!'}}</p>
 ```
@@ -37,7 +37,7 @@
 </div>
 ```
 
-### Accessing `object` or `array`
+### Accessing `Object` or `Array`
 ```html
 <div>
   <p>{{person.name}}</p>
@@ -45,7 +45,7 @@
 </div>
 ```
 
-### Calling methods
+### Calling Methods
 ```html
 <p>{{showEnumName(enumVal)}}</p>
 ```
@@ -73,16 +73,16 @@ Vue.filter('formatDate', (value, pattern) => {
 
 > ⚠️You can set Access Modifiers (`public`, `private`, and `protected`) for fields(default is public), but only `public` and `protected` fields can be used for the template.
 
-### Example code
+### Example Code
 - [src/app/hello-world/hello-world.component.html](../../examples/var-angular/src/app/hello-world/hello-world.component.html)
 - [src/app/hello-world/hello-world.component.ts](../../examples/var-angular/src/app/hello-world/hello-world.component.ts)
 
-### Showing text
+### Showing Text
 ```html
 <p>{{message}}</p>
 ```
 
-### String concatenation
+### String Concatenation
 ```html
 <p>{{name + ' is such ' + something + '!'}}</p>
 ```
@@ -101,7 +101,7 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Accessing `object` or `array`
+### Accessing `Object` or `Array`
 ```html
 <div>
   <p>{{person.name}}</p>
@@ -110,7 +110,7 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Calling methods
+### Calling Methods
 ```html
 <p>{{showEnumName(enumVal)}}</p>
 ```
@@ -128,15 +128,15 @@ Vue.filter('formatDate', (value, pattern) => {
 
 > ⚠️This React examples use local variables. It will only be applied when the `render` cycle occurs. So, it won't update the template even if you do some magic such as `setInterval()` to mutate the local variables later. To be honest, there is no `"auto" two-way binding` in React officially.
 
-### Example code
+### Example Code
 - [src/components/HelloWorld.js](../../examples/var-react/src/components/HelloWorld.js)
 
-### Showing text
+### Showing Text
 ```jsx
 <p>{message}</p>
 ```
 
-### String concatenation
+### String Concatenation
 ```jsx
 <p>{name + ' is such ' + something + '!'}</p>
 ```
@@ -155,7 +155,7 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Accessing `object` or `array`
+### Accessing `Object` or `Array`
 ```jsx
 <div>
   <p>{person.name}</p>
@@ -164,7 +164,7 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Calling methods
+### Calling Methods
 ```jsx
 <p>{showEnumName(enumVal)}</p>
 ```

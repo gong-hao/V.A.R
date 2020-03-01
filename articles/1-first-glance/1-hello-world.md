@@ -1,6 +1,6 @@
 # How to write hello world programs in V.A.R
 
-## What is a hello world program?
+## What Is a Hello World Program?
 Hello world program is the simplest program that the language or framework or library wants to show the first impression to the developers. It should be simple and stupid enough that even newbie can understand what the heck you're doing. <del>However, in most cases, it is only used to make memes to laugh at other competitors.</del>
 
 ## Vue

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <Loop />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Loop from './components/Loop.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Loop
   }
 }
 </script>
