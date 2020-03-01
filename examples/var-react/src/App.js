@@ -1,10 +1,8 @@
-import React from 'react'
 import HelloWorld from './components/HelloWorld'
+import React from 'react'
 
 function App() {
-  return (
-    <HelloWorld />
-  )
+  return <HelloWorld />
 }
 
 export default App

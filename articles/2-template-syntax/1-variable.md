@@ -178,12 +178,12 @@ Vue.filter('formatDate', (value, pattern) => {
 
 ### Calling methods
 ```jsx
-<p>{this.showEnumName(enumVal)}</p>
+<p>{showEnumName(enumVal)}</p>
 ```
 
 ### Format - Calling methods
 ```jsx
-<p>Today is {this.formatDate(new Date(), 'MM/DD/YYYY')}.</p>
+<p>Today is {formatDate(new Date(), 'MM/DD/YYYY')}.</p>
 ```
 ```jsx
 import moment from 'moment'
