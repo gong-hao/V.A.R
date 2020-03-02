@@ -1,0 +1,62 @@
+<ul>
+  <li *ngFor="let item of items; index as i; trackBy: trackById;">
+    index: {{i}} | text: {{item.text}}
+  </li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let item of person | keyvalue; index as i; trackBy: trackByKey;">
+    index: {{i}} | name: {{item.key}} | value: {{item.value}}
+  </li>
+</ul>
+<hr>
+<ul>
+  <ng-container *ngFor="let item of items; index as i; trackBy: trackById;">
+    <li>index: {{i}}</li>
+    <li>text: {{item.text}}</li>
+  </ng-container>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let item of items;
+              index as i;
+              count as c;
+              first as isFirst;
+              last as isLast;
+              even as isEven;
+              odd as isOdd;">
+    index: {{i}} |
+    count: {{c}} |
+    first: {{isFirst}} |
+    last: {{isLast}} |
+    even: {{isEven}} |
+    odd: {{isOdd}}
+  </li>
+</ul>
+<hr>
+<ul>
+  <app-loop-item *ngFor="let item of items; index as i; trackBy: trackById;"
+                 [item]="item"
+                 [index]="i"></app-loop-item>
+</ul>
+<hr>
+<ul>
+  <li appLoopItemAttr
+      *ngFor="let item of items; index as i; trackBy: trackById;"
+      [item]="item"
+      [index]="i"></li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let x of arrayRef.from(arrayRef(3).keys())">{{x + 1}}</li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let c of 'Good'.split('')">{{c}}</li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let item of items; index as i; trackBy: 'id' | trackByProperty">
+    index: {{i}} | text: {{item.text}}
+  </li>
+</ul>

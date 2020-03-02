@@ -135,10 +135,176 @@ export default {
 [https://angular.io/api/common/NgForOf](https://angular.io/api/common/NgForOf)
 
 ### Example Code
-- [src/app/loop/loop.component.html](../../examples/var-angular/src/app/loop/loop.component.html)
-- [src/app/loop/loop.component.ts](../../examples/var-angular/src/app/loop/loop.component.ts)
+- [src/app/components/loop/loop.component.html](../../examples/var-angular/src/app/components/loop/loop.component.html)
+- [src/app/components/loop/loop.component.ts](../../examples/var-angular/src/app/components/loop/loop.component.ts)
 
-### List Rendering
+> `trackBy` is optional in `*ngFor`, but it will increase the performance.
+
+### Script Part
+```ts
+import { KeyValue } from '@angular/common'
+import { Component, OnInit } from '@angular/core'
+
+import { LoopItem } from '../../models/loop-item'
+
+@Component({
+  selector: 'app-loop',
+  templateUrl: './loop.component.html',
+  styleUrls: ['./loop.component.scss']
+})
+export class LoopComponent implements OnInit {
+  arrayRef = Array
+  items = [
+    { id: 1, text: 'foo' },
+    { id: 2, text: 'bar' },
+    { id: 3, text: 'woo' }
+  ]
+  person = {
+    name: 'Gordon',
+    age: 18,
+    power: 999,
+    isSuper: true
+  }
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  trackById(index: number, item: LoopItem) {
+    return item.id
+  }
+
+  trackByKey(index: number, item: KeyValue<string, any>) {
+    return item.key
+  }
+}
+```
+
+### Array Rendering
+```html
+<ul>
+  <li *ngFor="let item of items; index as i; trackBy: trackById;">
+    index: {{i}} | text: {{item.text}}
+  </li>
+</ul>
+```
+
+### Object Rendering
+```html
+<ul>
+  <li *ngFor="let item of person | keyvalue; index as i; trackBy: trackByKey;">
+    index: {{i}} | name: {{item.key}} | value: {{item.value}}
+  </li>
+</ul>
+```
+
+> [KeyValuePipe](https://angular.io/api/common/KeyValuePipe)
+
+### Times Rendering
+```ts
+...
+export class LoopComponent {
+  arrayRef = Array
+  ...
+}
+```
+
+```html
+<ul>
+  <li *ngFor="let x of arrayRef.from(arrayRef(3).keys())">{{x + 1}}</li>
+</ul>
+```
+
+### Characters Rendering
+```html
+<ul>
+  <li *ngFor="let c of 'Good'.split('')">{{c}}</li>
+</ul>
+```
+
+### Alias
+```html
+<ul>
+  <li *ngFor="let item of items;
+              index as i;
+              count as c;
+              first as isFirst;
+              last as isLast;
+              even as isEven;
+              odd as isOdd;">
+    index: {{i}} |
+    count: {{c}} |
+    first: {{isFirst}} |
+    last: {{isLast}} |
+    even: {{isEven}} |
+    odd: {{isOdd}}
+  </li>
+</ul>
+```
+
+> `index as i` and `let i = index` are interchangeable.
+>
+> [https://angular.io/api/common/NgForOfContext#properties](https://angular.io/api/common/NgForOfContext#properties).
+
+### Without Showing a Root Element
+```html
+<ul>
+  <ng-container *ngFor="let item of items; index as i; trackBy: trackById;">
+    <li>index: {{i}}</li>
+    <li>text: {{item.text}}</li>
+  </ng-container>
+</ul>
+```
+
+### With a Component
+```html
+<ul>
+  <app-loop-item *ngFor="let item of items; index as i; trackBy: trackById;"
+                 [item]="item"
+                 [index]="i"></app-loop-item>
+</ul>
+```
+
+### With a Component & Without Showing a Root Element
+```ts
+@Component({
+  selector: '[appLoopItemAttr]', // <--
+  templateUrl: './loop-item-attr.component.html',
+  styleUrls: ['./loop-item-attr.component.scss']
+})
+export class LoopItemAttrComponent {
+  ...
+}
+```
+
+> [Attribute directives](https://angular.io/guide/attribute-directives)
+
+```html
+<ul>
+  <li appLoopItemAttr
+      *ngFor="let item of items; index as i; trackBy: trackById;"
+      [item]="item"
+      [index]="i"></li>
+</ul>
+```
+
+### Use Pipe to Get Rid of `trackByFn`
+
+> In most cases, `id` or `uuid` is the key that needs to be tracked. However, `trackBy: item?.id` is deprecated. 😢 Ben Nadel has a good idea: [Using Pure Pipes To Generate NgFor TrackBy Identity Functions In Angular 7.2.7](https://www.bennadel.com/blog/3579-using-pure-pipes-to-generate-ngfor-trackby-identity-functions-in-angular-7-2-7.htm)
+
+```html
+<ul>
+  <li *ngFor="let item of items; index as i; trackBy: 'id' | trackByProperty">
+    index: {{i}} | text: {{item.text}}
+  </li>
+</ul>
+```
+
+### Caveats
+
+- It's not allowed to use `*ngIf` and `*ngFor*` together.
+- If you have to use `*ngIf` and `*ngFor*` together, use `<ng-container>`.
 
 ## React
 
@@ -149,4 +315,12 @@ export default {
 ### Example Code
 - [src/components/Loop.js](../../examples/var-react/src/components/Loop.js)
 
-### List Rendering
+## Scores
+|    Vue     |  Angular   |   React    |
+| :--------: | :--------: | :--------: |
+| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+
+## Mutable Vs. Immutable
+
+## Conclusions
+- Everyone does a good job here.

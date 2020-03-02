@@ -74,8 +74,8 @@ Vue.filter('formatDate', (value, pattern) => {
 > ⚠️You can set Access Modifiers (`public`, `private`, and `protected`) for fields(default is public), but only `public` and `protected` fields can be used for the template.
 
 ### Example Code
-- [src/app/hello-world/hello-world.component.html](../../examples/var-angular/src/app/hello-world/hello-world.component.html)
-- [src/app/hello-world/hello-world.component.ts](../../examples/var-angular/src/app/hello-world/hello-world.component.ts)
+- [src/app/components/hello-world/hello-world.component.html](../../examples/var-angular/src/app/components/hello-world/hello-world.component.html)
+- [src/app/components/hello-world/hello-world.component.ts](../../examples/var-angular/src/app/components/hello-world/hello-world.component.ts)
 
 ### Showing Text
 ```html
