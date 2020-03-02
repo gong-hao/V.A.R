@@ -2,6 +2,8 @@
 
 > ⚠️Warning: this is not a tutorial and may have many inappropriate personal biases and jokes. 🙈
 
+[OK, let's go!](./articles/README.md) [🎵](https://www.youtube.com/watch?v=PL65X12ViYQ)
+
 ## Versions
 
 |   Vue   | Angular |  React   |
