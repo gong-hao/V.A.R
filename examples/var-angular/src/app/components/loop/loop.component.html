@@ -60,3 +60,9 @@
     index: {{i}} | text: {{item.text}}
   </li>
 </ul>
+<hr>
+<ul>
+  <li *ngFor="let item of getItems(3)">
+    {{item.id}}
+  </li>
+</ul>

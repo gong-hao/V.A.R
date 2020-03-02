@@ -34,6 +34,24 @@ export default {
       }
     }
   },
+  methods: {
+    getItems(take) {
+      return [
+        { id: 4, text: 'foo' },
+        { id: 5, text: 'bar' },
+        { id: 6, text: 'woo' }
+      ].slice(0, take)
+    }
+  },
+  computed: {
+    getComputedItems() {
+      return [
+        { id: 4, text: 'foo' },
+        { id: 5, text: 'bar' },
+        { id: 6, text: 'woo' }
+      ]
+    }
+  },
   components: {
     LoopItem
   }
@@ -123,6 +141,30 @@ export default {
 </template>
 ```
 
+### With a Method
+```vue
+<template>
+  <ul>
+    <li v-for="item in getItems(3)" :key="item.id">
+      {{item.id}}
+    </li>
+  </ul>
+</template>
+```
+
+### With a Computed Property
+```vue
+<template>
+  <ul>
+    <li v-for="item in getComputedItems" :key="item.id">
+      {{item.id}}
+    </li>
+  </ul>
+</template>
+```
+
+> [The difference between COMPUTED and METHODS in Vue.js](https://medium.com/notonlycss/the-difference-between-computed-and-methods-in-vue-js-9cb05c59ed98#eb66)
+
 ### Caveats
 
 - It's not recommended to use `v-if` and `v-for` together ([v-for with v-if](https://vuejs.org/v2/guide/list.html#v-for-with-v-if)).
@@ -177,6 +219,14 @@ export class LoopComponent implements OnInit {
 
   trackByKey(index: number, item: KeyValue<string, any>) {
     return item.key
+  }
+
+  getItems(take: number) {
+    return [
+      { id: 4, text: 'foo' },
+      { id: 5, text: 'bar' },
+      { id: 6, text: 'woo' }
+    ].slice(0, take)
   }
 }
 ```
@@ -301,6 +351,15 @@ export class LoopItemAttrComponent {
 </ul>
 ```
 
+### With a Method
+```html
+<ul>
+  <li *ngFor="let item of getItems(3)">
+    {{item.id}}
+  </li>
+</ul>
+```
+
 ### Caveats
 
 - It's not allowed to use `*ngIf` and `*ngFor*` together.
@@ -321,6 +380,8 @@ export class LoopItemAttrComponent {
 | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
 
 ## Mutable Vs. Immutable
+
+[Angular 2 — Improve Performance with trackBy](https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5)
 
 ## Conclusions
 - Everyone does a good job here.

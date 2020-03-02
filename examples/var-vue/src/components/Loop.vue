@@ -29,6 +29,14 @@
     <ul>
       <li v-for="(c, index) in 'Good'" :key="index">{{c}}</li>
     </ul>
+    <hr />
+    <ul>
+      <li v-for="item in getItems(10)" :key="item.id">{{item.id}}</li>
+    </ul>
+    <hr />
+    <ul>
+      <li v-for="item in getComputedItems" :key="item.id">{{item.id}}</li>
+    </ul>
   </div>
 </template>
 
@@ -49,6 +57,24 @@ export default {
         power: 999,
         isSuper: true
       }
+    }
+  },
+  methods: {
+    getItems(take) {
+      return [
+        { id: 4, text: 'foo' },
+        { id: 5, text: 'bar' },
+        { id: 6, text: 'woo' }
+      ].slice(0, take)
+    }
+  },
+  computed: {
+    getComputedItems() {
+      return [
+        { id: 4, text: 'foo' },
+        { id: 5, text: 'bar' },
+        { id: 6, text: 'woo' }
+      ]
     }
   },
   components: {

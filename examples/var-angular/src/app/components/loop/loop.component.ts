@@ -34,4 +34,12 @@ export class LoopComponent implements OnInit {
   trackByKey(index: number, item: KeyValue<string, any>) {
     return item.key
   }
+
+  getItems(take: number) {
+    return [
+      { id: 4, text: 'foo' },
+      { id: 5, text: 'bar' },
+      { id: 6, text: 'woo' }
+    ].slice(0, take)
+  }
 }
