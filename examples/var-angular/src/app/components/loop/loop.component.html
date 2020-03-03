@@ -5,19 +5,19 @@
   </li>
 </ul>
 <hr>
-<h3>Object Rendering `not directly built-in`</h3>
+<h3>Object Rendering</h3>
 <ul>
   <li *ngFor="let item of person | keyvalue; index as i; trackBy: trackByKey;">
     index: {{i}} | name: {{item.key}} | value: {{item.value}}
   </li>
 </ul>
 <hr>
-<h3>Times Rendering `not built-in`</h3>
+<h3>Times Rendering</h3>
 <ul>
   <li *ngFor="let x of arrayRef.from(arrayRef(3).keys())">{{x + 1}}</li>
 </ul>
 <hr>
-<h3>Characters Rendering `not built-in`</h3>
+<h3>Characters Rendering</h3>
 <ul>
   <li *ngFor="let c of 'Good'.split('')">{{c}}</li>
 </ul>
