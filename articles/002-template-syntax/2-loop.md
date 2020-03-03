@@ -72,7 +72,9 @@ export default {
 ```vue
 <template>
   <ul>
-    <li v-for="(item, key) in person" :key="key">{{person[key]}}</li>
+    <li v-for="(item, name, index) in person" :key="name">
+      index: {{index}} | name: {{name}} | value: {{item}}
+    </li>
   </ul>
 </template>
 ```
@@ -145,9 +147,7 @@ export default {
 ```vue
 <template>
   <ul>
-    <li v-for="item in getItems(3)" :key="item.id">
-      {{item.id}}
-    </li>
+    <li v-for="item in getItems(3)" :key="item.id">{{item.id}}</li>
   </ul>
 </template>
 ```
@@ -354,9 +354,7 @@ export class LoopItemAttrComponent {
 ### With a Method
 ```html
 <ul>
-  <li *ngFor="let item of getItems(3)">
-    {{item.id}}
-  </li>
+  <li *ngFor="let item of getItems(3)">{{item.id}}</li>
 </ul>
 ```
 
@@ -374,14 +372,142 @@ export class LoopItemAttrComponent {
 ### Example Code
 - [src/components/Loop.js](../../examples/var-react/src/components/Loop.js)
 
+### Script Part
+```js
+function Loop() {
+  const items = [
+    { id: 1, text: 'foo' },
+    { id: 2, text: 'bar' },
+    { id: 3, text: 'woo' }
+  ]
+  const person = {
+    name: 'Gordon',
+    age: 18,
+    power: 999,
+    isSuper: true
+  }
+  const getItems = take => {
+    return [
+      { id: 4, text: 'foo' },
+      { id: 5, text: 'bar' },
+      { id: 6, text: 'woo' }
+    ].slice(0, take)
+  }
+  ...
+}
+```
+
+### Array Rendering
+```jsx
+<ul>
+  {items.map((item, index) => {
+    return (
+      <li key={item.id}>
+        index: {index} | text: {item.text}
+      </li>
+    )
+  })}
+</ul>
+```
+
+### Object Rendering
+```jsx
+<ul>
+  {Object.keys(person).map((key, index) => {
+    return (
+      <li key={key}>
+        index: {index} | name: {key} | value: {person[key]}
+      </li>
+    )
+  })}
+</ul>
+```
+
+### Times Rendering
+```jsx
+<ul>
+  {Array.from(Array(3).keys()).map(x => {
+    return <li key={x}>{x + 1}</li>
+  })}
+</ul>
+```
+
+### Characters Rendering
+```jsx
+<ul>
+  {'Good'.split('').map((c, index) => {
+    return <li key={index}>{c}</li>
+  })}
+</ul>
+```
+
+### Alias ???
+```jsx
+<ul>
+  {items.map((item, index) => {
+    const isFirst = index === 0
+    const isLast = index === items.length - 1
+    const isEven = index % 2 === 0
+    const isOdd = index % 2 === 1
+    return (
+      <li key={item.id}>
+        index: {index} |
+        count: {items.length} |
+        first: {isFirst.toString()} |
+        last: {isLast.toString()} |
+        even: {isEven.toString()} |
+        odd: {isOdd.toString()}
+      </li>
+    )
+  })}
+</ul>
+```
+
+### Without Showing a Root Element
+```jsx
+<ul>
+  {items.map((item, index) => {
+    return (
+      <React.Fragment key={item.id}>
+        <li>index: {index}</li>
+        <li>text: {item.text}</li>
+      </React.Fragment>
+    )
+  })}
+</ul>
+```
+
+### With a Component
+```jsx
+<ul>
+  {items.map((item, index) => {
+    return <LoopItem index={index} item={item} key={item.id} />
+  })}
+</ul>
+```
+
+### With a Method
+```jsx
+<ul>
+  {getItems(3).map((item, index) => {
+    return <li key={item.id}>{item.id}</li>
+  })}
+</ul>
+```
+
 ## Scores
 |    Vue     |  Angular   |   React    |
 | :--------: | :--------: | :--------: |
 | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
 
-## Mutable Vs. Immutable
-
-[Angular 2 — Improve Performance with trackBy](https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5)
+## Differences
+|             |           Vue           |                     Angular                      |           React            |
+| :---------- | :---------------------: | :----------------------------------------------: | :------------------------: |
+| power by    |        directive        |                    directive                     |            JSX             |
+| loop syntax | `v-for="item in items"` |           `*ngFor="let item of items"`           | `{items.map(item => ...)}` |
+| key syntax  |    `:key="item.id"`     |              `trackBy: trackByFn"`               |      `key={item.id}`       |
+| key         |        required         |            optional, but good to have            |          required          |
+| alias       |     `index`, `name`     | `index`, `count`, `first`, `last`, `even`, `odd` |            N/A             |
 
 ## Conclusions
 - Everyone does a good job here.

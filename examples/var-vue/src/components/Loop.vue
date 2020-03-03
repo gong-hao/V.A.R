@@ -10,7 +10,7 @@
       <li
         v-for="(item, name, index) in person"
         :key="name"
-      >index: {{index}} | name: {{name}} | value: {{person[name]}}</li>
+      >index: {{index}} | name: {{name}} | value: {{item}}</li>
     </ul>
     <hr />
     <h3>Times Rendering</h3>

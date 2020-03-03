@@ -1,8 +1,8 @@
-import HelloWorld from './components/HelloWorld'
+import Loop from './components/Loop'
 import React from 'react'
 
 function App() {
-  return <HelloWorld />
+  return <Loop />
 }
 
 export default App
