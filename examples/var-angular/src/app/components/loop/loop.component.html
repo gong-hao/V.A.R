@@ -1,22 +1,28 @@
+<h3>Array Rendering</h3>
 <ul>
   <li *ngFor="let item of items; index as i; trackBy: trackById;">
     index: {{i}} | text: {{item.text}}
   </li>
 </ul>
 <hr>
+<h3>Object Rendering `not directly built-in`</h3>
 <ul>
   <li *ngFor="let item of person | keyvalue; index as i; trackBy: trackByKey;">
     index: {{i}} | name: {{item.key}} | value: {{item.value}}
   </li>
 </ul>
 <hr>
+<h3>Times Rendering `not built-in`</h3>
 <ul>
-  <ng-container *ngFor="let item of items; index as i; trackBy: trackById;">
-    <li>index: {{i}}</li>
-    <li>text: {{item.text}}</li>
-  </ng-container>
+  <li *ngFor="let x of arrayRef.from(arrayRef(3).keys())">{{x + 1}}</li>
 </ul>
 <hr>
+<h3>Characters Rendering `not built-in`</h3>
+<ul>
+  <li *ngFor="let c of 'Good'.split('')">{{c}}</li>
+</ul>
+<hr>
+<h3>Alias</h3>
 <ul>
   <li *ngFor="let item of items;
               index as i;
@@ -34,12 +40,22 @@
   </li>
 </ul>
 <hr>
+<h3>Without Showing a Root Element</h3>
+<ul>
+  <ng-container *ngFor="let item of items; index as i; trackBy: trackById;">
+    <li>index: {{i}}</li>
+    <li>text: {{item.text}}</li>
+  </ng-container>
+</ul>
+<hr>
+<h3>With a Component</h3>
 <ul>
   <app-loop-item *ngFor="let item of items; index as i; trackBy: trackById;"
                  [item]="item"
                  [index]="i"></app-loop-item>
 </ul>
 <hr>
+<h3>With a Component & Without Showing a Root Element</h3>
 <ul>
   <li appLoopItemAttr
       *ngFor="let item of items; index as i; trackBy: trackById;"
@@ -47,20 +63,14 @@
       [index]="i"></li>
 </ul>
 <hr>
-<ul>
-  <li *ngFor="let x of arrayRef.from(arrayRef(3).keys())">{{x + 1}}</li>
-</ul>
-<hr>
-<ul>
-  <li *ngFor="let c of 'Good'.split('')">{{c}}</li>
-</ul>
-<hr>
+<h3>Use Pipe to Get Rid of trackByFn</h3>
 <ul>
   <li *ngFor="let item of items; index as i; trackBy: 'id' | trackByProperty">
     index: {{i}} | text: {{item.text}}
   </li>
 </ul>
 <hr>
+<h3>With a Method</h3>
 <ul>
   <li *ngFor="let item of getItems(3)">
     {{item.id}}

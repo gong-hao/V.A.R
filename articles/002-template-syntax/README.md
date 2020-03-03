@@ -7,4 +7,6 @@ Modern front-end frameworks display data like marionettes. The templates contain
 ## What's Wrong with Jquery?
 There is nothing wrong with jQuery. It's still a great DOM manipulating library. The problem is the modern websites require more and more complicated features, interactions, and animations. jQuery manually uses the event-based listener to detect changes and the CSS selectors to access elements that cause the code to become hard to read and maintain, especially increasing the chance of callback hell and race condition. <del>However, if you only know jQuery now, you're hard to survive in the front-end world anyway.</del>
 
-> In this session, I only judge V.A.R based on the template parts not component parts.
+> This session only focuses on the template. The [component parts](../003-component/README.md) are in the next session.
+
+> ⚠️This session tries to make the examples look similar, but the real code usages could look different.

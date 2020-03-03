@@ -1,8 +1,6 @@
 # How to Display a Variable in V.A.R
 
-> This session only focuses on the template. The other parts such as component, method, state, and prop will introduce in other sessions.
-
-> ⚠️This session tries to make the examples look similar, but the real code usages could look different, especially React parts.
+> The best way to ruin a project is to name all variables short, abbreviated, misleading, unprincipled, and unpredictable.
 
 ## Vue
 

@@ -1,4 +1,4 @@
-# How to loop an array in V.A.R
+# How to Loop an Array in V.A.R
 
 > Loop saves everyone's life. A genuine hero.
 
