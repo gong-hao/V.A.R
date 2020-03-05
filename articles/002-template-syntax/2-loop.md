@@ -505,7 +505,7 @@ function Loop() {
 | :---------- | :---------------------: | :----------------------------------------------: | :------------------------: |
 | power by    |        directive        |                    directive                     |            JSX             |
 | loop syntax | `v-for="item in items"` |           `*ngFor="let item of items"`           | `{items.map(item => ...)}` |
-| key syntax  |    `:key="item.id"`     |              `trackBy: trackByFn"`               |      `key={item.id}`       |
+| key syntax  |    `:key="item.id"`     |               `trackBy: trackByFn`               |      `key={item.id}`       |
 | key         |        required         |            optional, but good to have            |          required          |
 | alias       |     `index`, `name`     | `index`, `count`, `first`, `last`, `even`, `odd` |            N/A             |
 
