@@ -1,0 +1,38 @@
+<button (click)="toggle()">Toggle!</button>
+
+<h3>If</h3>
+<div *ngIf="isShow">You can see me</div>
+<div *ngIf="!isShow">You can't see me</div>
+<h3>Else</h3>
+<div *ngIf="isShow; else elseBlock">if isShow, you can see me</div>
+<ng-template #elseBlock>
+  <div>otherwise, you can't see me</div>
+</ng-template>
+<h3>Then Else</h3>
+<ng-container *ngIf="isShow; then thenBlock; else elseBlock"></ng-container>
+<ng-template #thenBlock>
+  <div>if isShow, you can see me</div>
+</ng-template>
+<ng-template #elseBlock>
+  <div>otherwise, you can't see me</div>
+</ng-template>
+<h3>With an Expression</h3>
+<div *ngIf="val >= 10">You can see me</div>
+<h3>Without Showing a Root Element</h3>
+<p>woo</p>
+<ng-container *ngIf="isShow">
+  <p>foo</p>
+  <p>bar</p>
+</ng-container>
+<h3>With a Method</h3>
+<div *ngIf="showIfEven(2)">You can see 2</div>
+<div *ngIf="showIfEven(1)">You can't see 1</div>
+<h3>CSS display</h3>
+<div [style.display]="isShow ? 'block' : 'none'">You can see me</div>
+<h3>Switch Case</h3>
+<ng-container [ngSwitch]="option">
+  <div *ngSwitchCase="'A'">A</div>
+  <div *ngSwitchCase="'B'">B</div>
+  <div *ngSwitchCase="'C'">C</div>
+  <div *ngSwitchDefault>Other</div>
+</ng-container>

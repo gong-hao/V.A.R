@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Loop />
+    <Condition />
   </div>
 </template>
 
 <script>
-import Loop from './components/Loop.vue'
+import Condition from './components/Condition.vue'
 
 export default {
   name: 'App',
   components: {
-    Loop
+    Condition
   }
 }
 </script>

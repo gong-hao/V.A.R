@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { ConditionComponent } from './components/condition/condition.component'
 import { HelloWorldComponent } from './components/hello-world/hello-world.component'
 import { LoopItemAttrComponent } from './components/loop-item-attr/loop-item-attr.component'
 import { LoopItemComponent } from './components/loop-item/loop-item.component'
@@ -16,7 +17,8 @@ import { TrackByPropertyPipe } from './pipes/track-by-property.pipe'
     LoopComponent,
     LoopItemComponent,
     LoopItemAttrComponent,
-    TrackByPropertyPipe
+    TrackByPropertyPipe,
+    ConditionComponent
   ],
   imports: [
     BrowserModule,
