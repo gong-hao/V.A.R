@@ -6,4 +6,3 @@
    1. [Variable](./002-template-syntax/1-variable.md)
    2. [Loop](./002-template-syntax/2-loop.md)
    3. [Condition](./002-template-syntax/3-condition.md)
-3. [Data Flow](./002-data-flow/README.md)
