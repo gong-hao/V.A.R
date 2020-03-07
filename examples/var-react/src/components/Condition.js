@@ -13,6 +13,11 @@ function Condition() {
     setOption(isShow ? 'A' : 'B')
   }
 
+  let ifBlock = null
+  if (isShow) {
+    ifBlock = <div>You can see me</div>
+  }
+
   let ifElseBlock = null
   if (isShow) {
     ifElseBlock = <div>You can see me</div>
@@ -59,9 +64,22 @@ function Condition() {
   return (
     <>
       <button onClick={toggle}>Toggle!</button>
-
+      <h3>If</h3>
+      {ifBlock}
+      {isShow &&
+        <div>
+          You can see me
+      </div>
+      }
       <h3>If Else</h3>
       {ifElseBlock}
+      {isShow ?
+        (
+          <div>You can see me</div>
+        ) :
+        (
+          <div>You can't see me</div>
+        )}
       <h3>Else If</h3>
       {elseIfBlock}
       <h3>With a Method</h3>

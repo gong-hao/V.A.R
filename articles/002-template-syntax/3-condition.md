@@ -1,4 +1,4 @@
-# How to Make a Condition in V.A.R
+# How to Make Conditions in V.A.R
 
 > Today you may understand the conditions, but tomorrow may not.
 
@@ -247,6 +247,33 @@ function Condition() {
 }
 ```
 
+### If
+```jsx
+let ifBlock = null
+if (isShow) {
+  ifBlock = <div>You can see me</div>
+}
+
+return (
+  <div>
+    {ifBlock}
+  <div/>
+)
+```
+
+Using `&&` operator
+```jsx
+return (
+  <div>
+    {isShow &&
+      <div>
+        You can see me
+      </div>
+    }
+  <div/>
+)
+```
+
 ### If Else
 ```jsx
 let ifElseBlock = null
@@ -261,6 +288,28 @@ return (
     {ifElseBlock}
   <div/>
 )
+```
+
+Using Ternary Operator
+```jsx
+return (
+  <div>
+    {isShow ? (
+      <div>You can see me</div>
+    ) : (
+      <div>You can't see me</div>
+    )}
+  <div/>
+)
+```
+
+Using early return
+```jsx
+if (!isShow) {
+  return <div>You can see me</div>
+}
+
+return <div>You can't see me</div>
 ```
 
 ### Else If
@@ -313,6 +362,19 @@ return (
 
 ### Switch Case
 ```jsx
+switch (option) {
+  case 'A':
+    return <div>A</div>
+  case 'B':
+    return <div>B</div>
+  case 'C':
+    return <div>C</div>
+  default:
+    return <div>Other</div >
+}
+```
+
+```jsx
 let switchCaseBlock = null
 switch (option) {
   case 'A':
@@ -331,7 +393,9 @@ switch (option) {
 
 return (
   <div>
+    <header />
     {switchCaseBlock}
+    <footer />
   <div/>
 )
 ```

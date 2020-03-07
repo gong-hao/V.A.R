@@ -36,13 +36,18 @@ function Loop() {
       <hr />
       <h3>Object Rendering</h3>
       <ul>
-        {Object.keys(person).map((key, index) => {
-          return (
-            <li key={key}>
-              index: {index} | name: {key} | value: {person[key]}
-            </li>
-          )
-        })}
+        {Object.keys(person).map((key, index) => (
+          <li key={key}>
+            index: {index} | name: {key} | value: {person[key]}
+          </li>
+        ))}
+      </ul>
+      <ul>
+        {Object.entries(person).map(([key, value]) => (
+          <li key={key}>
+            name: {key} | value: {value}
+          </li>
+        ))}
       </ul>
       <hr />
       <h3>Times Rendering</h3>

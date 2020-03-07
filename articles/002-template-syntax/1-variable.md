@@ -1,4 +1,4 @@
-# How to Display a Variable in V.A.R
+# How to Display Variables in V.A.R
 
 > The best way to ruin a project is to name all variables short, abbreviated, misleading, unprincipled, and unpredictable.
 

@@ -1,4 +1,4 @@
-# How to Loop an Array in V.A.R
+# How to Loop Arrays in V.A.R
 
 > Loop saves everyone's life. A genuine hero.
 
@@ -413,13 +413,21 @@ function Loop() {
 ### Object Rendering
 ```jsx
 <ul>
-  {Object.keys(person).map((key, index) => {
-    return (
-      <li key={key}>
-        index: {index} | name: {key} | value: {person[key]}
-      </li>
-    )
-  })}
+  {Object.keys(person).map((key, index) => (
+    <li key={key}>
+      index: {index} | name: {key} | value: {person[key]}
+    </li>
+  ))}
+</ul>
+```
+
+```jsx
+<ul>
+  {Object.entries(person).map(([key, value]) => (
+    <li key={key}>
+      name: {key} | value: {value}
+    </li>
+  ))}
 </ul>
 ```
 
