@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 import { LoopItem } from '../../models/loop-item'
 
@@ -7,13 +7,7 @@ import { LoopItem } from '../../models/loop-item'
   templateUrl: './loop-item-attr.component.html',
   styleUrls: ['./loop-item-attr.component.scss']
 })
-export class LoopItemAttrComponent implements OnInit {
+export class LoopItemAttrComponent {
   @Input() index: number
   @Input() item: LoopItem
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

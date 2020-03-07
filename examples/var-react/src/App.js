@@ -1,11 +1,11 @@
 import './App.css'
 
-import Condition from './components/Condition'
+import Event from './components/Event'
 import React from 'react'
 
 function App() {
   return (
-    <Condition />
+    <Event />
   )
 }
 

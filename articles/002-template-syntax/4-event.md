@@ -6,12 +6,36 @@
 
 [https://vuejs.org/v2/guide/events.html](https://vuejs.org/v2/guide/events.html)
 
+> `@click="onClick()"` is the shorthand of `v-on:click="onClick()"`
+
 ### Example Code
 - [src/components/Condition.vue](../../examples/var-vue/src/components/Event.vue)
 
 ### Script Part
 ```vue
 <script>
+export default {
+  name: 'Event',
+  data() {
+    return {
+      val: 10
+    }
+  },
+  methods: {
+    addVal() {
+      this.val += Number(this.$refs.userInput.value) || 0
+    },
+    addWithVal(val) {
+      this.val += Number(val) || 0
+    },
+    hi(event) {
+      alert(`${event.type} event`)
+    },
+    foo(event, memo) {
+      console.log(event.currentTarget, memo)
+    }
+  }
+}
 </script>
 ```
 
@@ -19,7 +43,16 @@
 ```vue
 <template>
   <div>
-    <button @click="onClick">Click</button>
+    <button @click="addVal">Add Value</button>
+  </div>
+</template>
+```
+
+### With Invoking Handler
+```vue
+<template>
+  <div>
+    <button @click="addVal()">Add Value</button>
   </div>
 </template>
 ```
@@ -28,7 +61,7 @@
 ```vue
 <template>
   <div>
-    <button @click="num += 10; doSomething();">Click</button>
+    <button @click="val += Number($refs.userInput.value) || 0">Add Value</button>
   </div>
 </template>
 ```
@@ -37,7 +70,7 @@
 ```vue
 <template>
   <div>
-    <button @click="onClick('foo', true)">Click</button>
+    <button @click="addWithVal($refs.userInput.value)">Add Value</button>
   </div>
 </template>
 ```
@@ -46,7 +79,8 @@
 ```vue
 <template>
   <div>
-    <button @click="onClick($event)">Click</button>
+    <button @click="hi">Click</button>
+    <button @click="hi($event)">Click</button>
   </div>
 </template>
 ```
@@ -68,60 +102,71 @@
 ```vue
 <template>
   <div>
-    <div>
-      <p>Stop propagation to parents and children</p>
-      <div @click="foo">
-        first
-        <div @click.stop="foo">
-          second
-          <div @click="foo">
-            third
-          </div>
-        </div>
+    <p>Stop propagation</p>
+    <div class="first" @click="foo">
+      first
+      <div class="second" @click.stop="foo">
+        second
+        <div class="third" @click="foo">third</div>
       </div>
     </div>
-    <div>
-      <p>Prevent to open the link</p>
-      <a @click.prevent="foo"></a>
-      <p>Prevent to submit the form (reload page)</p>
-      <form @submit.prevent="foo"></form>
-    </div>
-    <div>
-      <p>Bubbling and capturing</p>
-      <ul @click="callback($event, 'bubbling')" @click.capture="callback($event, 'capturing')">
-        <li @click="callback($event, 'bubbling')" @click.capture="callback($event, 'capturing')">One</li>
-        <ul @click="callback($event, 'bubbling')" @click.capture="callback($event, 'capturing')">
-          <li @click="callback($event, 'bubbling')" @click.capture="callback($event, 'capturing')">Two</li>
-          <ul @click="callback($event, 'bubbling')" @click.capture="callback($event, 'capturing')">
-            <li @click="callback($event, 'bubbling')" @click.capture="callback($event, 'capturing')">Three</li>
-          </ul>
+
+    <p>Prevent to open the link</p>
+    <a @click.prevent="foo" href="https://www.google.com/">Google</a>
+
+    <p>Prevent to submit the form (reload page)</p>
+    <form @submit.prevent="foo">
+      <input type="text" name="bar" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <p>Bubbling and capturing</p>
+    <ul
+      class="first-ul"
+      @click="foo($event, 'default')"
+      @click.capture="foo($event, 'capture')"
+    >
+      <li
+        class="first-li"
+        @click="foo($event, 'default')"
+        @click.capture="foo($event, 'capture')"
+      >One</li>
+      <ul
+        class="second-ul"
+        @click="foo($event, 'default')"
+        @click.capture="foo($event, 'capture')"
+      >
+        <li
+          class="second-li"
+          @click="foo($event, 'default')"
+          @click.capture="foo($event, 'capture')"
+        >Two</li>
+        <ul
+          class="third-ul"
+          @click="foo($event, 'default')"
+          @click.capture="foo($event, 'capture')"
+        >
+          <li
+            class="third-li"
+            @click="foo($event, 'default')"
+            @click.capture="foo($event, 'capture')"
+          >Three</li>
         </ul>
       </ul>
-    </div>
-    <div>
-      <p>Only the target can trigger the handler</p>
-      <div @click="foo">
-        first
-        <div @click.self="foo">
-          second
-          <div @click="foo">
-            third
-          </div>
-        </div>
+    </ul>
+
+    <p>Only the target can trigger the handler</p>
+    <div class="first" @click.self="foo">
+      first
+      <div class="second" @click.self="foo">
+        second
+        <div class="third" @click.self="foo">third</div>
       </div>
     </div>
-    <div>
-      <p>Only works once</p>
-      <p>
-        <a @click.prevent.once href="https://www.google.com/">Google</a>
-      </p>
-      <p>
-        <button @click.once="onePunch">Click</button>
-      </p>
-    </div>
-    <div>
-      <a @click.stop="doThis"></a>
-    </div>
+
+    <p>Only works once</p>
+    <a @click.prevent.once href="https://www.google.com/">Google</a>
+    <button @click.once="foo">Click</button>
   </div>
 </template>
 ```
@@ -131,13 +176,13 @@
 <template>
   <div>
     <p>With key name</p>
-    <input @keyup.enter="onSubmit">
+    <input @keyup.enter="foo">
     <p>With key code</p>
-    <input @keyup.13="onSubmit">
+    <input @keyup.13="foo">
     <p>With system key</p>
-    <input @keyup.shift.enter="onNewLine">
+    <input @keyup.shift.enter="foo">
     <p>With exact system key</p>
-    <input @keyup.shift.enter.exact="onNewLine">
+    <input @keyup.shift.enter.exact="foo">
   </div>
 </template>
 ```
@@ -152,12 +197,12 @@ Aliases for the most commonly used key codes:
 - `.down`
 - `.left`
 - `.right`
--
+
 ### Mouse Button Modifiers
 ```vue
 <template>
   <div>
-    <button @click.right="onRightClick">Right Click</button>
+    <button @click.right="hi">Right Click</button>
   </div>
 </template>
 ```
@@ -174,16 +219,73 @@ Aliases for the most commonly used key codes:
 - [src/app/components/event/event.component.html](../../examples/var-angular/src/app/components/event/event.component.html)
 - [src/app/components/event/event.component.ts](../../examples/var-angular/src/app/components/event/event.component.ts)
 
+
 ### Script Part
 ```ts
+import { Component, ElementRef, ViewChild } from '@angular/core'
+
+@Component({
+  selector: 'app-event',
+  templateUrl: './event.component.html',
+  styleUrls: ['./event.component.scss']
+})
+export class EventComponent {
+  @ViewChild('userInput') userInputRef: ElementRef
+
+  val = 10
+  number = Number
+
+  addVal() {
+    this.val += Number(this.userInputRef.nativeElement.value) || 0
+  }
+
+  addWithVal(val: string) {
+    this.val += Number(val) || 0
+  }
+
+  hi(event: Event) {
+    alert(`${event.type} event`)
+  }
+
+  foo(event: Event, memo: string) {
+    console.log(event.currentTarget, memo)
+  }
+}
+```
+
+### With Handler Reference
+
+> No, you can't
+
+### With Invoking Handler
+```html
+<button (click)="addVal()">Add Value</button>
+```
+
+### With a Expression
+```html
+<button (click)="val = val + (number(userInput.value) || 0)">Add Value</button>
+```
+
+> `new`, `++`, `--`, `+=`, `-=`, `|`, `&` and pipe are not supported. [Template statements](https://angular.io/guide/template-syntax#template-statements)
+
+### With Parameters
+```html
+<button (click)="addWithVal(userInput.value)">Add Value</button>
+```
+
+### With the Event Parameter
+```html
+<button (click)="hi($event)">Hi</button>
 ```
 
 ### Key Event Filtering
-```html
-<input #userInput (keyup.enter)="onEnter(userInput.value)">
-```
 
 [https://angular.io/guide/user-input#key-event-filtering-with-keyenter](https://angular.io/guide/user-input#key-event-filtering-with-keyenter)
+
+```html
+<input (keyup.enter)="hi($event)">
+```
 
 ### Modifiers
 
@@ -202,8 +304,79 @@ You can implement them yourself:
 
 ### Script Part
 ```jsx
+import React, { useRef, useState } from 'react'
+
+function Event() {
+  const [val, setVal] = useState(10)
+  const userInput = useRef()
+
+  function addVal() {
+    setVal(val + (Number(userInput.current.value) || 0))
+  }
+
+  function addWithVal(_val) {
+    setVal(val + (Number(_val) || 0))
+  }
+
+  function hi(event) {
+    alert(`${event.type} event`)
+  }
+
+  function foo(event, memo) {
+    console.log(event.currentTarget, memo)
+  }
+  ...
+}
+```
+
+### With Handler Reference
+```jsx
+<button onClick={addVal}>Add Value</button>
+```
+
+### With Invoking Handler
+```jsx
+<button onClick={() => addVal()}>Add Value</button>
+```
+
+### With a Expression
+```jsx
+<button onClick={() => setVal(val + (Number(userInput.current.value) || 0))}>Add Value</button>
+```
+
+### With Parameters
+```jsx
+<button onClick={() => addWithVal(userInput.current.value)}>Add Value</button>
+```
+
+### With the Event Parameter
+```jsx
+<>
+  <button onClick={hi}>Hi</button>
+  <button onClick={event => hi(event)}>Hi</button>
+</>
 ```
 
 ### Modifiers
 
 > Of course, not. Do it yourself. 🙄
+
+## Scores
+|    Vue     |  Angular   |   React    |
+| :--------: | :--------: | :--------: |
+| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+
+## Differences
+|                   | Vue                             | Angular                          | React                                 |
+| :---------------- | :------------------------------ | :------------------------------- | :------------------------------------ |
+| power by          | directive                       | template syntax                  | JSX                                   |
+| event name        | `lowercase` : keyup             | `lowercase` : keyup              | `on` + `CamelCase` : onKeyUp          |
+| ref syntax        | `@click="clickHandler"`         | N/A                              | `onClick={clickHandler}`              |
+| invoking syntax   | `@click="clickHandler()"`       | `(click)="clickHandler()"`       | `onClick={() => clickHandler()}`      |
+| parameters syntax | `@click="clickHandler(param)"`  | `(click)="clickHandler(param)"`  | `onClick={() => clickHandler(param)}` |
+| event syntax      | `@click="clickHandler($event)"` | `(click)="clickHandler($event)"` | `onClick={e => clickHandler(e)}`      |
+| expression syntax | `@click="expression"`           | `(click)="expression"`           | `onClick={() => expression}`          |
+| modifiers         | Yes                             | N/A                              | N/A                                   |
+
+## Conclusions
+- Vue has built-in modifiers, which are convenient. Everyone does a good job here.

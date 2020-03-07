@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 enum AccountStatus {
   Activated,
@@ -10,7 +10,7 @@ enum AccountStatus {
   templateUrl: './hello-world.component.html',
   styleUrls: ['./hello-world.component.scss']
 })
-export class HelloWorldComponent implements OnInit {
+export class HelloWorldComponent {
   message = 'Hello World'
   name = 'Gordon'
   something = 'a genius'
@@ -30,14 +30,8 @@ export class HelloWorldComponent implements OnInit {
   enumVal = AccountStatus.Locked
   today = new Date()
 
-  constructor() { }
-
   showEnumName(enumVal: AccountStatus) {
     const enumName = AccountStatus[enumVal]
     return enumName
   }
-
-  ngOnInit(): void {
-  }
-
 }

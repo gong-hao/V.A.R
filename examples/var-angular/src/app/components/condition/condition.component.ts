@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-condition',
   templateUrl: './condition.component.html',
   styleUrls: ['./condition.component.scss']
 })
-export class ConditionComponent implements OnInit {
+export class ConditionComponent {
   isShow = true
   option = 'Z'
   val = 10
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   showIfEven(num: number) {
     return num % 2 === 0

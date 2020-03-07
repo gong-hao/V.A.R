@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Condition />
+    <Event />
   </div>
 </template>
 
 <script>
-import Condition from './components/Condition.vue'
+import Event from './components/Event.vue'
 
 export default {
   name: 'App',
   components: {
-    Condition
+    Event
   }
 }
 </script>

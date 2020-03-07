@@ -374,6 +374,8 @@ export class LoopItemAttrComponent {
 
 ### Script Part
 ```js
+import React from 'react'
+
 function Loop() {
   const items = [
     { id: 1, text: 'foo' },

@@ -1,5 +1,5 @@
 import { KeyValue } from '@angular/common'
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 import { LoopItem } from '../../models/loop-item'
 
@@ -8,7 +8,7 @@ import { LoopItem } from '../../models/loop-item'
   templateUrl: './loop.component.html',
   styleUrls: ['./loop.component.scss']
 })
-export class LoopComponent implements OnInit {
+export class LoopComponent {
   arrayRef = Array
   items = [
     { id: 1, text: 'foo' },
@@ -20,11 +20,6 @@ export class LoopComponent implements OnInit {
     age: 18,
     power: 999,
     isSuper: true
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
   trackById(index: number, item: LoopItem) {

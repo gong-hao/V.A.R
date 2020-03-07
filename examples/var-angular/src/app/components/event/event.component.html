@@ -1,0 +1,13 @@
+{{val}}
+<input type="text"
+       #userInput />
+<p>With Invoking Handler</p>
+<button (click)="addVal()">Add Value</button>
+<p>With a Expression</p>
+<button (click)="val = val + (number(userInput.value) || 0)">Add Value</button>
+<p>With Parameters</p>
+<button (click)="addWithVal(userInput.value)">Add Value</button>
+<p>With the Event Parameter</p>
+<button (click)="hi($event)">Hi</button>
+<p>With the Event Filtering</p>
+<input (keyup.enter)="hi($event)">
