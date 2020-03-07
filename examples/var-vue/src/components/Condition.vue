@@ -14,7 +14,7 @@
     <div v-else-if="option === 'C'">C</div>
     <div v-else>Other</div>
     <h3>With an Expression</h3>
-    <div v-if="val >= 10">You can see me</div>
+    <div v-if="val >= 10">val is greater and equal to 10</div>
     <h3>Without Showing a Root Element</h3>
     <p>woo</p>
     <template v-if="isShow">

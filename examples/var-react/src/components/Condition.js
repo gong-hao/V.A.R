@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function Condition() {
   const [isShow, setIsShow] = useState(true)
   const [option, setOption] = useState('Z')
+  const [val, setVal] = useState(10)
 
   const showIfEven = (num) => {
     return num % 2 === 0
@@ -11,6 +12,7 @@ function Condition() {
   const toggle = () => {
     setIsShow(!isShow)
     setOption(isShow ? 'A' : 'B')
+    setVal(Math.floor(Math.random() * 20) + 1)
   }
 
   let ifBlock = null
@@ -20,9 +22,9 @@ function Condition() {
 
   let ifElseBlock = null
   if (isShow) {
-    ifElseBlock = <div>You can see me</div>
+    ifElseBlock = <div>if isShow, you can see me</div>
   } else {
-    ifElseBlock = <div>You can't see me</div>
+    ifElseBlock = <div>otherwise, you can't see me</div>
   }
 
   let elseIfBlock = null
@@ -69,19 +71,25 @@ function Condition() {
       {isShow &&
         <div>
           You can see me
-      </div>
+        </div>
       }
-      <h3>If Else</h3>
+      <h3>Else</h3>
       {ifElseBlock}
       {isShow ?
         (
-          <div>You can see me</div>
+          <div>if isShow, you can see me</div>
         ) :
         (
-          <div>You can't see me</div>
+          <div>otherwise, you can't see me</div>
         )}
       <h3>Else If</h3>
       {elseIfBlock}
+      <h3>With an Expression</h3>
+      {val >= 10 &&
+        <div>
+          val is greater and equal to 10
+        </div>
+      }
       <h3>With a Method</h3>
       {methodBlockA}
       {methodBlockB}

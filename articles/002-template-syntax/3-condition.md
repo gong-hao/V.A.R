@@ -65,7 +65,7 @@ export default {
 ```vue
 <template>
   <div>
-     <div v-if="val >= 10">You can see me</div>
+     <div v-if="val >= 10">val is greater and equal to 10</div>
   </div>
 </template>
 ```
@@ -181,7 +181,7 @@ export class ConditionComponent {
 
 ### With an Expression
 ```html
-<div *ngIf="val >= 10">You can see me</div>
+<div *ngIf="val >= 10">val is greater and equal to 10</div>
 ```
 
 ### Without Showing a Root Element
@@ -234,6 +234,7 @@ import React, { useState } from 'react'
 function Condition() {
   const [isShow, setIsShow] = useState(true)
   const [option, setOption] = useState('Z')
+  const [val, setVal] = useState(10)
 
   const showIfEven = (num) => {
     return num % 2 === 0
@@ -242,6 +243,7 @@ function Condition() {
   const toggle = () => {
     setIsShow(!isShow)
     setOption(isShow ? 'A' : 'B')
+    setVal(Math.floor(Math.random() * 20) + 1)
   }
   ...
 }
@@ -278,9 +280,9 @@ return (
 ```jsx
 let ifElseBlock = null
 if (isShow) {
-  ifElseBlock = <div>You can see me</div>
+  ifElseBlock = <div>if isShow, you can see me</div>
 } else {
-  ifElseBlock = <div>You can't see me</div>
+  ifElseBlock = <div>otherwise, you can't see me</div>
 }
 
 return (
@@ -295,9 +297,9 @@ Using Ternary Operator
 return (
   <div>
     {isShow ? (
-      <div>You can see me</div>
+      <div>if isShow, you can see me</div>
     ) : (
-      <div>You can't see me</div>
+      <div>otherwise, you can't see me</div>
     )}
   <div/>
 )
@@ -329,6 +331,18 @@ return (
   <div>
     {elseIfBlock}
   <div/>
+)
+```
+
+### With an Expression ???
+```jsx
+return (
+  <h3>With an Expression</h3>
+  {val >= 10 &&
+    <div>
+      val is greater and equal to 10
+    </div>
+  }
 )
 ```
 
