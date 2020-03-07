@@ -211,9 +211,13 @@ Aliases for the most commonly used key codes:
 - `.right`
 - `.middle`
 
+### Caveats
+- keyCode is Deprecated. ([KeyboardEvent.keyCode](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)) But, I think browsers will still support it due to a lot of legacy JS code using keyCode.
+- Modifiers are chainable and the order matters.
+
 ## Angular
 
-[https://angular.io/guide/template-syntax#event-binding](https://angular.io/guide/template-syntax#event-binding)
+[https://angular.io/guide/template-syntax#event-binding-event](https://angular.io/guide/template-syntax#event-binding-event)
 
 ### Example Code
 - [src/app/components/event/event.component.html](../../examples/var-angular/src/app/components/event/event.component.html)
@@ -295,6 +299,9 @@ You can implement them yourself:
 - [Creating A Vue.js Inspired Event-Modifier DOM Plug-In In Angular 7.1.4 By Ben Nadel](https://www.bennadel.com/blog/3554-creating-a-vue-js-inspired-event-modifier-dom-plug-in-in-angular-7-1-4.htm)
 - [Implementing Event Modifiers in Angular By Netanel Basal](https://netbasal.com/implementing-event-modifiers-in-angular-87e1a07969ce)
 
+### Caveats
+- You can customize events with `EventEmitter`. ([Custom events with EventEmitter](https://angular.io/guide/template-syntax#custom-events-with-eventemitter))
+
 ## React
 
 [https://reactjs.org/docs/handling-events.html](https://reactjs.org/docs/handling-events.html)
@@ -360,6 +367,10 @@ function Event() {
 ### Modifiers
 
 > Of course, not. Do it yourself. 🙄
+
+### Caveats
+- This example uses `functional component`. If you use `class component`, you will face `this` issue. [This is why we need to bind event handlers in Class Components in React](https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/)
+- You have to use `preventDefault` explicitly. `return false` won't work.
 
 ## Scores
 |    Vue     |  Angular   |   React    |

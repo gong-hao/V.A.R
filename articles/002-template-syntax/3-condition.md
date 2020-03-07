@@ -415,8 +415,9 @@ return (
 ```
 
 ### Caveats
-- In `JSX`, you can only use [Expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions).
-- You can only do other JavaScript conditions at other places. Usually set them as variables, then use in `JSX`.
+- In `JSX`, you can only use `{expression}` to form the template.
+- You can only do other JS conditional statements at other places. Usually set them as variables, then use in `JSX`.
+- If a method or an operator is able to return `JSX`, it's fine to use in the `{expression}`.
 - You can use an array to concatenate JSX fragments, but the readability is probably not good.
 
 ## Scores
