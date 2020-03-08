@@ -39,7 +39,7 @@ export default {
 </script>
 ```
 
-### With Handler Reference
+### With Handler Reference 😁
 ```vue
 <template>
   <div>
@@ -48,7 +48,7 @@ export default {
 </template>
 ```
 
-### With Invoking Handler
+### With Invoking Handler 😁
 ```vue
 <template>
   <div>
@@ -57,7 +57,7 @@ export default {
 </template>
 ```
 
-### With a Expression
+### With an Expression 😁
 ```vue
 <template>
   <div>
@@ -66,7 +66,7 @@ export default {
 </template>
 ```
 
-### With Parameters
+### With Parameters 😁
 ```vue
 <template>
   <div>
@@ -75,7 +75,7 @@ export default {
 </template>
 ```
 
-### With the Event Parameter
+### With the Event Parameter 😁
 ```vue
 <template>
   <div>
@@ -85,7 +85,7 @@ export default {
 </template>
 ```
 
-### Event Modifiers
+### Event Modifiers 🤟
 - `.stop` - Description: Stop event propagation
   - `event.stopPropagation()`
 - `.prevent` - Description: Prevent default behavior
@@ -171,7 +171,7 @@ export default {
 </template>
 ```
 
-### Key Modifiers
+### Key Modifiers 🤟
 ```vue
 <template>
   <div>
@@ -198,7 +198,7 @@ Aliases for the most commonly used key codes:
 - `.left`
 - `.right`
 
-### Mouse Button Modifiers
+### Mouse Button Modifiers 🤟
 ```vue
 <template>
   <div>
@@ -261,29 +261,29 @@ export class EventComponent {
 
 > No, you can't
 
-### With Invoking Handler
+### With Invoking Handler 😁
 ```html
 <button (click)="addVal()">Add Value</button>
 ```
 
-### With a Expression
+### With an Expression 🙂
 ```html
 <button (click)="val = val + (number(userInput.value) || 0)">Add Value</button>
 ```
 
 > `new`, `++`, `--`, `+=`, `-=`, `|`, `&` and pipe are not supported. [Template statements](https://angular.io/guide/template-syntax#template-statements)
 
-### With Parameters
+### With Parameters 😁
 ```html
 <button (click)="addWithVal(userInput.value)">Add Value</button>
 ```
 
-### With the Event Parameter
+### With the Event Parameter 😁
 ```html
 <button (click)="hi($event)">Hi</button>
 ```
 
-### Key Event Filtering
+### Key Event Filtering 🤟
 
 [https://angular.io/guide/user-input#key-event-filtering-with-keyenter](https://angular.io/guide/user-input#key-event-filtering-with-keyenter)
 
@@ -336,27 +336,27 @@ function Event() {
 }
 ```
 
-### With Handler Reference
+### With Handler Reference 😁
 ```jsx
 <button onClick={addVal}>Add Value</button>
 ```
 
-### With Invoking Handler
+### With Invoking Handler 😁
 ```jsx
 <button onClick={() => addVal()}>Add Value</button>
 ```
 
-### With a Expression
+### With an Expression 😁
 ```jsx
 <button onClick={() => setVal(val + (Number(userInput.current.value) || 0))}>Add Value</button>
 ```
 
-### With Parameters
+### With Parameters 😁
 ```jsx
 <button onClick={() => addWithVal(userInput.current.value)}>Add Value</button>
 ```
 
-### With the Event Parameter
+### With the Event Parameter 😁
 ```jsx
 <>
   <button onClick={hi}>Hi</button>
@@ -366,16 +366,23 @@ function Event() {
 
 ### Modifiers
 
-> Of course, not. Do it yourself. 🙄
+> Of course, not. Do it yourself.
 
 ### Caveats
 - This example uses `functional component`. If you use `class component`, you will face `this` issue. [This is why we need to bind event handlers in Class Components in React](https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/)
 - You have to use `preventDefault` explicitly. `return false` won't work.
 
 ## Scores
-|    Vue     |  Angular   |   React    |
-| :--------: | :--------: | :--------: |
-| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+|                          |  Vue  | Angular | React |
+| :----------------------- | :---: | :-----: | :---: |
+| With Handler Reference   |  😁   |   N/A   |  😁   |
+| With Invoking Handler    |  😁   |   😁    |  😁   |
+| With an Expression       |  😁   |   🙂    |  😁   |
+| With Parameters          |  😁   |   😁    |  😁   |
+| With the Event Parameter |  😁   |   😁    |  😁   |
+| Event Modifiers          |  🤟   |   N/A   |  N/A  |
+| Key Modifiers            |  🤟   |   😁    |  N/A  |
+| Mouse Button Modifiers   |  🤟   |   N/A   |  N/A  |
 
 ## Differences
 |                   | Vue                             | Angular                          | React                                 |

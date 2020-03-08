@@ -40,7 +40,7 @@ export default {
 </script>
 ```
 
-### If Else
+### If Else 😁
 ```vue
 <template>
   <div>
@@ -61,7 +61,7 @@ export default {
 </template>
 ```
 
-### With an Expression
+### With an Expression 😁
 ```vue
 <template>
   <div>
@@ -70,7 +70,7 @@ export default {
 </template>
 ```
 
-### Without Showing a Root Element
+### Without Showing a Root Element 😁
 ```vue
 <template>
   <div>
@@ -83,7 +83,7 @@ export default {
 </template>
 ```
 
-### With a Method
+### With a Method 😁
 ```vue
 <template>
   <div>
@@ -93,7 +93,7 @@ export default {
 </template>
 ```
 
-### With a Computed Property
+### With a Computed Property 🤟
 ```vue
 <template>
   <div>
@@ -102,7 +102,7 @@ export default {
 </template>
 ```
 
-### CSS `display`
+### CSS `display` 😁
 ```vue
 <template>
   <div>
@@ -157,7 +157,7 @@ export class ConditionComponent {
 }
 ```
 
-### If Else
+### If Else 😁
 ```html
 <h3>If</h3>
 <div *ngIf="isShow">You can see me</div>
@@ -179,12 +179,12 @@ export class ConditionComponent {
 </ng-template>
 ```
 
-### With an Expression
+### With an Expression 😁
 ```html
 <div *ngIf="val >= 10">val is greater and equal to 10</div>
 ```
 
-### Without Showing a Root Element
+### Without Showing a Root Element 😁
 ```html
 <p>woo</p>
 <ng-container *ngIf="isShow">
@@ -193,18 +193,18 @@ export class ConditionComponent {
 </ng-container>
 ```
 
-### With a Method
+### With a Method 😁
 ```html
 <div *ngIf="showIfEven(2)">You can see 2</div>
 <div *ngIf="showIfEven(1)">You can't see 1</div>
 ```
 
-### CSS `display`
+### CSS `display` 😁
 ```html
 <div [style.display]="isShow ? 'block' : 'none'">You can see me</div>
 ```
 
-### Switch Case
+### Switch Case 😁
 ```html
 <ng-container [ngSwitch]="option">
   <div *ngSwitchCase="'A'">A</div>
@@ -249,7 +249,7 @@ function Condition() {
 }
 ```
 
-### If
+### If 😁
 ```jsx
 let ifBlock = null
 if (isShow) {
@@ -276,7 +276,7 @@ return (
 )
 ```
 
-### If Else
+### If Else 😁
 ```jsx
 let ifElseBlock = null
 if (isShow) {
@@ -314,7 +314,7 @@ if (!isShow) {
 return <div>You can't see me</div>
 ```
 
-### Else If
+### Else If 🙄
 ```jsx
 let elseIfBlock = null
 if (option === 'A') {
@@ -334,7 +334,7 @@ return (
 )
 ```
 
-### With an Expression ???
+### With an Expression ??? 🙄
 ```jsx
 return (
   <h3>With an Expression</h3>
@@ -346,7 +346,7 @@ return (
 )
 ```
 
-### With a Method
+### With a Method 😁
 ```jsx
 let methodBlockA = null
 if (showIfEven(2)) {
@@ -365,7 +365,7 @@ return (
 )
 ```
 
-### CSS `display`
+### CSS `display` 😁
 ```jsx
 return (
   <div style={{ display: isShow ? 'block' : 'none' }}>
@@ -374,7 +374,7 @@ return (
 )
 ```
 
-### Switch Case
+### Switch Case 😁
 ```jsx
 switch (option) {
   case 'A':
@@ -421,9 +421,16 @@ return (
 - You can use an array to concatenate JSX fragments, but the readability is probably not good.
 
 ## Scores
-|    Vue     |  Angular   |   React    |
-| :--------: | :--------: | :--------: |
-| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ |
+|                                |  Vue  | Angular | React |
+| :----------------------------- | :---: | :-----: | :---: |
+| If Else                        |  😁   |   😁    |  😁   |
+| Else If                        |  😁   |   🙄    |  🙄   |
+| With an Expression             |  😁   |   😁    |  🙄   |
+| Without Showing a Root Element |  😁   |   😁    |  N/A  |
+| With a Method                  |  😁   |   😁    |  😁   |
+| With a Computed Property       |  🤟   |   N/A   |  N/A  |
+| CSS `display`                  |  😁   |   😁    |  😁   |
+| Switch Case                    |  N/A  |   😁    |  😁   |
 
 ## Differences
 |                       |           Vue           |               Angular                |   React   |

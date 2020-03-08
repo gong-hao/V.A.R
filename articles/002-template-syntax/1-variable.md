@@ -11,22 +11,22 @@
 ### Example Code
 - [src/components/HelloWorld.vue](../../examples/var-vue/src/components/HelloWorld.vue)
 
-### Showing Text
+### Showing Text 😁
 ```html
 <p>{{message}}</p>
 ```
 
-### String Concatenation
+### String Concatenation 😁
 ```html
 <p>{{name + ' is such ' + something + '!'}}</p>
 ```
 
-### Ternary Operator
+### Ternary Operator 😁
 ```html
 <p>{{isGood ? 'Yep' : 'Nope'}}</p>
 ```
 
-### Arithmetic
+### Arithmetic 😁
 ```html
 <div>
   <p>No: {{index + 1}}</p>
@@ -35,7 +35,7 @@
 </div>
 ```
 
-### Accessing `Object` or `Array`
+### Accessing `Object` or `Array` 😁
 ```html
 <div>
   <p>{{person.name}}</p>
@@ -43,12 +43,12 @@
 </div>
 ```
 
-### Calling Methods
+### Calling Methods 😁
 ```html
 <p>{{showEnumName(enumVal)}}</p>
 ```
 
-### Format - Filter
+### Format - Filter 😁
 ```html
 <p>Today is {{new Date() | formatDate('MM/DD/YYYY')}}.</p>
 
@@ -75,22 +75,22 @@ Vue.filter('formatDate', (value, pattern) => {
 - [src/app/components/hello-world/hello-world.component.html](../../examples/var-angular/src/app/components/hello-world/hello-world.component.html)
 - [src/app/components/hello-world/hello-world.component.ts](../../examples/var-angular/src/app/components/hello-world/hello-world.component.ts)
 
-### Showing Text
+### Showing Text 😁
 ```html
 <p>{{message}}</p>
 ```
 
-### String Concatenation
+### String Concatenation 😁
 ```html
 <p>{{name + ' is such ' + something + '!'}}</p>
 ```
 
-### Ternary Operator
+### Ternary Operator 😁
 ```html
 <p>{{isGood ? 'Yep' : 'Nope'}}</p>
 ```
 
-### Arithmetic
+### Arithmetic 😁
 ```html
 <div>
   <p>No: {{index + 1}}</p>
@@ -99,7 +99,7 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Accessing `Object` or `Array`
+### Accessing `Object` or `Array` 😁
 ```html
 <div>
   <p>{{person.name}}</p>
@@ -108,12 +108,12 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Calling Methods
+### Calling Methods 😁
 ```html
 <p>{{showEnumName(enumVal)}}</p>
 ```
 
-### Format - Pipe
+### Format - Pipe 😁
 ```html
 <p>Today is {{today | date : 'MM/dd/yyyy'}}.</p>
 ```
@@ -129,22 +129,22 @@ Vue.filter('formatDate', (value, pattern) => {
 ### Example Code
 - [src/components/HelloWorld.js](../../examples/var-react/src/components/HelloWorld.js)
 
-### Showing Text
+### Showing Text 😁
 ```jsx
 <p>{message}</p>
 ```
 
-### String Concatenation
+### String Concatenation 😁
 ```jsx
 <p>{name + ' is such ' + something + '!'}</p>
 ```
 
-### Ternary Operator
+### Ternary Operator 😁
 ```jsx
 <p>{isGood ? 'Yep' : 'Nope'}</p>
 ```
 
-### Arithmetic
+### Arithmetic 😁
 ```jsx
 <div>
   <p>No: {index + 1}</p>
@@ -153,7 +153,7 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Accessing `Object` or `Array`
+### Accessing `Object` or `Array` 😁
 ```jsx
 <div>
   <p>{person.name}</p>
@@ -162,12 +162,12 @@ Vue.filter('formatDate', (value, pattern) => {
 </div>
 ```
 
-### Calling Methods
+### Calling Methods 😁
 ```jsx
 <p>{showEnumName(enumVal)}</p>
 ```
 
-### Format - Calling methods
+### Format - Calling methods 🙄
 ```jsx
 <p>Today is {formatDate(new Date(), 'MM/DD/YYYY')}.</p>
 ```
@@ -182,9 +182,15 @@ formatDate(value, pattern) {
 ```
 
 ## Scores
-|    Vue     |  Angular   |   React    |                jQuery                |
-| :--------: | :--------: | :--------: | :----------------------------------: |
-| ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️⭐️ | 😢I still have some template engines |
+|                               |  Vue  | Angular | React |
+| :---------------------------- | :---: | :-----: | :---: |
+| Showing Text                  |  😁   |   😁    |  😁   |
+| String Concatenation          |  😁   |   😁    |  😁   |
+| Ternary Operator              |  😁   |   😁    |  😁   |
+| Arithmetic                    |  😁   |   😁    |  😁   |
+| Accessing `Object` or `Array` |  😁   |   😁    |  😁   |
+| Calling Methods               |  😁   |   😁    |  😁   |
+| Format                        |  😁   |   😁    |  🙄   |
 
 ## Differences
 |                                       |                                               Vue                                               |             Angular              |                        React                         |
