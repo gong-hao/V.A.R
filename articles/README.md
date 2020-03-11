@@ -12,3 +12,4 @@
    2. [State](./003-component/2-state.md)
    3. [Props](./003-component/3-props.md)
    4. [Event](./003-component/4-event.md)
+4. [Http Request](./004-http-request/README.md)

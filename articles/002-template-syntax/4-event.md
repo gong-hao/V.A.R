@@ -85,7 +85,7 @@ export default {
 </template>
 ```
 
-### Event Modifiers 🤟
+### Event Modifiers 😎
 - `.stop` - Description: Stop event propagation
   - `event.stopPropagation()`
 - `.prevent` - Description: Prevent default behavior
@@ -171,7 +171,7 @@ export default {
 </template>
 ```
 
-### Key Modifiers 🤟
+### Key Modifiers 😎
 ```vue
 <template>
   <div>
@@ -198,7 +198,7 @@ Aliases for the most commonly used key codes:
 - `.left`
 - `.right`
 
-### Mouse Button Modifiers 🤟
+### Mouse Button Modifiers 😎
 ```vue
 <template>
   <div>
@@ -283,7 +283,7 @@ export class EventComponent {
 <button (click)="hi($event)">Hi</button>
 ```
 
-### Key Event Filtering 🤟
+### Key Event Filtering 😎
 
 [https://angular.io/guide/user-input#key-event-filtering-with-keyenter](https://angular.io/guide/user-input#key-event-filtering-with-keyenter)
 
@@ -380,9 +380,9 @@ function Event() {
 | With an Expression       |  😁   |   🙂    |  😁   |
 | With Parameters          |  😁   |   😁    |  😁   |
 | With the Event Parameter |  😁   |   😁    |  😁   |
-| Event Modifiers          |  🤟   |   N/A   |  N/A  |
-| Key Modifiers            |  🤟   |   😁    |  N/A  |
-| Mouse Button Modifiers   |  🤟   |   N/A   |  N/A  |
+| Event Modifiers          |  😎   |   N/A   |  N/A  |
+| Key Modifiers            |  😎   |   😁    |  N/A  |
+| Mouse Button Modifiers   |  😎   |   N/A   |  N/A  |
 
 ## Differences
 |                   | Vue                             | Angular                          | React                                 |

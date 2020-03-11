@@ -33,7 +33,7 @@ In each article, I will only pick one small topic, then make compare and contras
 | 😑 Okay              | Has some disadvantages but acceptable       |
 | 🙁 Oh No             | Hard to use                                 |
 | 😱 WTF               | Don't understand what the heck is doing     |
-| 🤟 Exclusive Feature | Special feature that only the framework has |
+| 😎 Exclusive Feature | Special feature that only the framework has |
 | 🙄 Workaround        | Alternative way                             |
 
 ## <del>Actually Why</del>

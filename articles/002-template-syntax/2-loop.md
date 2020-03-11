@@ -68,7 +68,7 @@ export default {
 </template>
 ```
 
-### Object Rendering 🤟
+### Object Rendering 😎
 ```vue
 <template>
   <ul>
@@ -81,7 +81,7 @@ export default {
 
 > The order of keys is based on the enumeration order of `Object.keys()`
 
-### Times Rendering 🤟
+### Times Rendering 😎
 ```vue
 <template>
   <ul>
@@ -90,7 +90,7 @@ export default {
 </template>
 ```
 
-### Characters Rendering 🤟
+### Characters Rendering 😎
 ```vue
 <template>
   <ul>
@@ -154,7 +154,7 @@ export default {
 </template>
 ```
 
-### With a Computed Property 🤟
+### With a Computed Property 😎
 ```vue
 <template>
   <ul>
@@ -513,14 +513,14 @@ function Loop() {
 |                                |  Vue  | Angular | React |
 | :----------------------------- | :---: | :-----: | :---: |
 | Array Rendering                |  😁   |   😁    |  😁   |
-| Object Rendering               |  🤟   |   🙄    |  🙄   |
-| Times Rendering                |  🤟   |   🙄    |  🙄   |
-| Characters Rendering           |  🤟   |   🙄    |  🙄   |
+| Object Rendering               |  😎   |   🙄    |  🙄   |
+| Times Rendering                |  😎   |   🙄    |  🙄   |
+| Characters Rendering           |  😎   |   🙄    |  🙄   |
 | Alias                          |  🙂   |   😁    |  🙄   |
 | Without Showing a Root Element |  🙁   |   🙁    |  😁   |
 | With a Component               |  😁   |   😁    |  😁   |
 | With a Method                  |  😁   |   😁    |  😁   |
-| With a Computed Property       |  🤟   |   N/A   |  N/A  |
+| With a Computed Property       |  😎   |   N/A   |  N/A  |
 
 ## Differences
 |             |           Vue           |                     Angular                      |           React            |

@@ -93,7 +93,7 @@ export default {
 </template>
 ```
 
-### With a Computed Property 🤟
+### With a Computed Property 😎
 ```vue
 <template>
   <div>
@@ -428,7 +428,7 @@ return (
 | With an Expression             |  😁   |   😁    |  🙄   |
 | Without Showing a Root Element |  😁   |   😁    |  N/A  |
 | With a Method                  |  😁   |   😁    |  😁   |
-| With a Computed Property       |  🤟   |   N/A   |  N/A  |
+| With a Computed Property       |  😎   |   N/A   |  N/A  |
 | CSS `display`                  |  😁   |   😁    |  😁   |
 | Switch Case                    |  N/A  |   😁    |  😁   |
 
