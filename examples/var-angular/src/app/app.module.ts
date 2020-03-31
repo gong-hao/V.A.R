@@ -6,6 +6,7 @@ import { AppComponent } from './app.component'
 import { ConditionComponent } from './components/condition/condition.component'
 import { EventComponent } from './components/event/event.component'
 import { HelloWorldComponent } from './components/hello-world/hello-world.component'
+import { HiComponent } from './components/hi/hi.component'
 import { LoopItemAttrComponent } from './components/loop-item-attr/loop-item-attr.component'
 import { LoopItemComponent } from './components/loop-item/loop-item.component'
 import { LoopComponent } from './components/loop/loop.component'
@@ -20,7 +21,8 @@ import { TrackByPropertyPipe } from './pipes/track-by-property.pipe'
     LoopItemAttrComponent,
     TrackByPropertyPipe,
     ConditionComponent,
-    EventComponent
+    EventComponent,
+    HiComponent
   ],
   imports: [
     BrowserModule,
