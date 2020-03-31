@@ -6,8 +6,8 @@ Just like dating, first glance is very important. Although people all say appear
 
 ## What I Feel When I First Play a New Framework
 
-![mario maker 2 hell on earth](../images/../../images/first-glance/mario-maker-2-hell-on-earth.gif "mario maker 2 hell on earth")
+![mario maker 2 hell on earth](../../images/first-glance/mario-maker-2-hell-on-earth.gif "mario maker 2 hell on earth")
 
 ## What I Actually Do When I First Play a New Framework
 
-![unfair mario](../images/../../images/first-glance/unfair-mario.gif "unfair mario")
+![unfair mario](../../images/first-glance/unfair-mario.gif "unfair mario")
