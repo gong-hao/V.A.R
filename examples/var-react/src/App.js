@@ -1,11 +1,11 @@
 import './App.css'
 
-import Event from './components/Event'
+import HeroClass from './components/HeroClass'
 import React from 'react'
 
 function App() {
   return (
-    <Event />
+    <HeroClass />
   )
 }
 

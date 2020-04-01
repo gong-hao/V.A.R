@@ -10,7 +10,8 @@ import { HiComponent } from './components/hi/hi.component'
 import { LoopItemAttrComponent } from './components/loop-item-attr/loop-item-attr.component'
 import { LoopItemComponent } from './components/loop-item/loop-item.component'
 import { LoopComponent } from './components/loop/loop.component'
-import { TrackByPropertyPipe } from './pipes/track-by-property.pipe'
+import { TrackByPropertyPipe } from './pipes/track-by-property.pipe';
+import { HeroComponent } from './components/hero/hero.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TrackByPropertyPipe } from './pipes/track-by-property.pipe'
     TrackByPropertyPipe,
     ConditionComponent,
     EventComponent,
-    HiComponent
+    HiComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
