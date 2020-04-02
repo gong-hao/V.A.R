@@ -3,7 +3,11 @@ import { removeItem, setItemQuantity } from '../redux/reducers/shoppingCart'
 import React from 'react'
 import { connect } from 'react-redux'
 
-function ShoppingCartItem({ item, removeItem, setItemQuantity }) {
+function ShoppingCartItem({
+  item,
+  removeItem,
+  setItemQuantity
+}) {
   return (
     <li>
       {item.product.name} {item.quantity}

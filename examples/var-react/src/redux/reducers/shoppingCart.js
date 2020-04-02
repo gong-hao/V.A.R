@@ -2,27 +2,32 @@ const ADD_ITEM = 'ADD_ITEM'
 const REMOVE_ITEM = 'REMOVE_ITEM'
 const SET_ITEM_QUANTITY = 'SET_ITEM_QUANTITY'
 
-export const addItem = (product, quantity) => ({
-  type: ADD_ITEM,
-  payload: {
-    id: product.id,
-    item: {
-      product,
-      quantity
+export function addItem(product, quantity) {
+  return {
+    type: ADD_ITEM,
+    payload: {
+      id: product.id,
+      item: {
+        product,
+        quantity
+      }
     }
   }
-})
+}
 
-export const removeItem = id => ({
-  type: REMOVE_ITEM,
-  payload: { id }
-})
+export function removeItem(id) {
+  return {
+    type: REMOVE_ITEM,
+    payload: { id }
+  }
+}
 
-export const setItemQuantity = (id, quantity) => ({
-  type: SET_ITEM_QUANTITY,
-  payload: { id, quantity }
-})
-
+export function setItemQuantity(id, quantity) {
+  return {
+    type: SET_ITEM_QUANTITY,
+    payload: { id, quantity }
+  }
+}
 
 const initialState = {
   itemIds: [],

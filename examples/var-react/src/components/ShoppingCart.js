@@ -9,7 +9,9 @@ function ShoppingCart({
   const items = itemIds.map(id => itemMap[id])
   return (
     <ul>
-      {items.map(item => <ShoppingCartItem key={`ShoppingCartItem-${item.product.id}`} item={item} />)}
+      {items.map(item =>
+        <ShoppingCartItem key={`ShoppingCartItem-${item.product.id}`} item={item} />
+      )}
     </ul>
   )
 }

@@ -54,7 +54,9 @@ function ProductList({
     <>
       {errorBlock}
       <ul>
-        {items.map(item => <ProductListItem key={`ProductListItem-${item.id}`} item={item} />)}
+        {items.map(item =>
+          <ProductListItem key={`ProductListItem-${item.id}`} item={item} />
+        )}
       </ul>
       <Pagination
         count={count}

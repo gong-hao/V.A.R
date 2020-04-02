@@ -2,25 +2,31 @@ const LOADING = 'LOADING'
 const LOADING_ERROR = 'LOADING_ERROR'
 const LOADING_SUCCESS = 'LOADING_SUCCESS'
 
-export const loading = () => ({
-  type: LOADING
-})
+export function loading() {
+  return {
+    type: LOADING
+  }
+}
 
-export const loadingSuccess = () => ({
-  type: LOADING_SUCCESS
-})
+export function loadingSuccess() {
+  return {
+    type: LOADING_SUCCESS
+  }
+}
 
-export const loadingError = errorMessage => ({
-  type: LOADING_ERROR,
-  payload: errorMessage
-})
+export function loadingError(errorMessage) {
+  return {
+    type: LOADING_ERROR,
+    payload: errorMessage
+  }
+}
 
 const initialState = {
   isLoading: false,
   errorMessage: ''
 }
 
-export default (state = initialState, action) => {
+export default function (state = initialState, action) {
   switch (action.type) {
     case LOADING: {
       return {
@@ -34,7 +40,6 @@ export default (state = initialState, action) => {
         errorMessage: ''
       }
     }
-
     case LOADING_ERROR: {
       return {
         isLoading: false,

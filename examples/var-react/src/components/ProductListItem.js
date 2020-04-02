@@ -2,7 +2,10 @@ import React from 'react'
 import { addItem } from '../redux/reducers/shoppingCart'
 import { connect } from 'react-redux'
 
-function ProductListItem({ item, addItem }) {
+function ProductListItem({
+  item,
+  addItem
+}) {
   return (
     <li>
       {item.name}

@@ -2,20 +2,26 @@ const LOAD_LIST = 'LOAD_LIST'
 const CHANGE_PAGE = 'CHANGE_PAGE'
 const CHANGE_LIMIT = 'CHANGE_LIMIT'
 
-export const loadList = data => ({
-  type: LOAD_LIST,
-  payload: data
-})
+export function loadList(data) {
+  return {
+    type: LOAD_LIST,
+    payload: data
+  }
+}
 
-export const changePage = page => ({
-  type: CHANGE_PAGE,
-  payload: { page }
-})
+export function changePage(page) {
+  return {
+    type: CHANGE_PAGE,
+    payload: { page }
+  }
+}
 
-export const changeLimit = limit => ({
-  type: CHANGE_LIMIT,
-  payload: { limit }
-})
+export function changeLimit(limit) {
+  return {
+    type: CHANGE_LIMIT,
+    payload: { limit }
+  }
+}
 
 const initialState = {
   items: [],
@@ -25,7 +31,7 @@ const initialState = {
   limit: 10
 }
 
-export default (state = initialState, action) => {
+export default function (state = initialState, action) {
   switch (action.type) {
     case LOAD_LIST: {
       const {
