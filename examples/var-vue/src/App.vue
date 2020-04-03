@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HeroParentComponent />
+    <hero-state />
   </div>
 </template>
 
 <script>
-import HeroParentComponent from './components/HeroParentComponent'
+import HeroState from './components/HeroState'
 
 export default {
   name: 'App',
   components: {
-    HeroParentComponent
+    HeroState
   }
 }
 </script>

@@ -14,15 +14,7 @@
 
 <script>
 export default {
-  name: 'HeroPropsComponent',
-  // props: ['name', 'title', 'health', 'attackDamage', 'skills'],
-  // props: {
-  //   name: String,
-  //   title: String,
-  //   health: Number,
-  //   attackDamage: Number,
-  //   skills: Array
-  // },
+  name: 'HeroProps',
   props: {
     name: {
       type: String,
@@ -34,7 +26,10 @@ export default {
     },
     health: {
       type: Number,
-      default: 0
+      default: 0,
+      validator(value) {
+        return value > 0 && value < 99999
+      }
     },
     attackDamage: {
       type: Number,

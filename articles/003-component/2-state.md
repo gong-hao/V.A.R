@@ -5,7 +5,7 @@
 ## Vue
 
 ### Example Code
-- [src/components/HeroStateComponent.vue](../../examples/var-vue/src/components/HeroStateComponent.vue)
+- [src/components/HeroState.vue](../../examples/var-vue/src/components/HeroState.vue)
 
 ### Using `data` 😁
 
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'HeroComponent',
+  name: 'Hero',
   data() {
     return {
       name: 'Riven',
@@ -58,7 +58,7 @@ export default {
 
 <script>
 export default {
-  name: 'HeroComponent',
+  name: 'Hero',
   data() {
     return {
       name: 'Riven',
