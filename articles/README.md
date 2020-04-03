@@ -8,7 +8,7 @@
    3. [Condition](./002-template-syntax/3-condition.md)
    4. [Event](./002-template-syntax/4-event.md)
 3. [Component](./003-component/README.md)
-   1. [Component](./003-component/1-component.md)
+   1. [Basis](./003-component/1-basis.md)
    2. [State](./003-component/2-state.md)
    3. [Props](./003-component/3-props.md)
    4. [Event](./003-component/4-event.md)
