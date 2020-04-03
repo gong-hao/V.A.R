@@ -7,7 +7,7 @@
 [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)
 
 ### Example Code
-- [src/components/HiComponent.vue](../../examples/var-vue/src/components/HiComponent.vue)
+- [src/components/Hi.vue](../../examples/var-vue/src/components/Hi.vue)
 
 ### Using Vue Instance 😁
 
@@ -16,15 +16,15 @@
 
 <script src='https://unpkg.com/vue'></script>
 <script>
-  const HiComponent = {
+  const Hi = {
     template: '<h1>hi</h1>'
   }
 
   const app = new Vue({
     el: '#app',
-    template: '<HiComponent />',
+    template: '<hi />',
     components: {
-      HiComponent
+      Hi
     }
   })
 </script>
@@ -34,7 +34,7 @@
 
 [https://vuejs.org/v2/guide/single-file-components.html](https://vuejs.org/v2/guide/single-file-components.html)
 
-`src/components/HiComponent.vue`
+`src/components/Hi.vue`
 ```vue
 <template>
   <h1>hi</h1>
@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  name: 'HiComponent'
+  name: 'Hi'
 }
 </script>
 
@@ -57,17 +57,17 @@ h1 {
 ```vue
 <template>
   <div id="app">
-    <HiComponent />
+    <hi />
   </div>
 </template>
 
 <script>
-import HiComponent from './components/HiComponent.vue'
+import Hi from './components/Hi.vue'
 
 export default {
   name: 'App',
   components: {
-    HiComponent
+    Hi
   }
 }
 </script>

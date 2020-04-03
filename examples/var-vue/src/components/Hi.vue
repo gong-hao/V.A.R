@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'HiComponent'
+  name: 'Hi'
 }
 </script>
 

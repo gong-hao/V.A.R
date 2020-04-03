@@ -45,7 +45,7 @@
     <hr />
     <h3>With a Component</h3>
     <ul>
-      <LoopItem v-for="(item, index) in items" :key="item.id" :item="item" :index="index" />
+      <loop-item v-for="(item, index) in items" :key="item.id" :item="item" :index="index" />
     </ul>
     <hr />
     <h3>With a Method</h3>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import LoopItem from './LoopItem'
+import loopitem from './LoopItem'
 
 export default {
   name: 'Loop',
