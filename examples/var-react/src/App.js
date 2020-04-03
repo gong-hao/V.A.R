@@ -1,11 +1,11 @@
 import './App.css'
 
-import HeroStateFunction from './components/HeroStateFunction'
+import HeroStateClass from './components/HeroStateClass'
 import React from 'react'
 
 function App() {
   return (
-    <HeroStateFunction />
+    <HeroStateClass />
   )
 }
 

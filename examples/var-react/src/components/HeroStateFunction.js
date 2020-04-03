@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Hero() {
+function HeroStateFunction() {
   const [name, setName] = useState('Riven')
   const [title, setTitle] = useState('The Exile')
   const [health, setHealth] = useState(560)
@@ -31,4 +31,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default HeroStateFunction

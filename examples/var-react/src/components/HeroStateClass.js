@@ -1,6 +1,6 @@
 import React from 'react'
 
-class HeroClass extends React.Component {
+class HeroStateClass extends React.Component {
   state = {
     name: 'Riven',
     title: 'The Exile',
@@ -17,13 +17,14 @@ class HeroClass extends React.Component {
   }
 
   render() {
+    const { name, health, attackDamage, skills } = this.state
     return (
       <>
-        <h1>{this.state.name}</h1>
-        <h3>Health: {this.state.health}</h3>
-        <h3>Attack Damage: {this.state.attackDamage}</h3>
+        <h1>{name}</h1>
+        <h3>Health: {health}</h3>
+        <h3>Attack Damage: {attackDamage}</h3>
         <ul>
-          {this.state.skills.map(skill => {
+          {skills.map(skill => {
             return (
               <li key={skill.id}>
                 {skill.name}
@@ -37,4 +38,4 @@ class HeroClass extends React.Component {
   }
 }
 
-export default HeroClass
+export default HeroStateClass

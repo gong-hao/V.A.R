@@ -123,13 +123,13 @@ export class HeroComponent {
 ### Example Code
 - [src/components/HeroStateFunction.js](../../examples/var-react/src/components/HeroStateFunction.js)
 - [src/components/HeroStateClass.js](../../examples/var-react/src/components/HeroStateClass.js)
--
+
 ### Using `useState` (Function Component) 😑
 
 ```js
 import React, { useState } from 'react'
 
-function Hero() {
+function HeroStateFunction() {
   const [name, setName] = useState('Riven')
   const [title, setTitle] = useState('The Exile')
   const [health, setHealth] = useState(560)
@@ -160,15 +160,17 @@ function Hero() {
   )
 }
 
-export default Hero
+export default HeroStateFunction
 ```
+
+> `this.setState()` will **merge** state, but `setSomething` from `useState()` will **replace** state. That's why you need to group state variables properly.
 
 ### Using `state property` (Class Component) 😑
 
 ```js
 import React from 'react'
 
-class HeroClass extends React.Component {
+class HeroStateClass extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -208,7 +210,7 @@ class HeroClass extends React.Component {
   }
 }
 
-export default HeroClass
+export default HeroStateClass
 ```
 
 > You can use the `class fields` to initialize the state to get rid of `constructor`, but it's not the standard yet.
@@ -218,7 +220,7 @@ export default HeroClass
 ```js
 import React from 'react'
 
-class HeroClass extends React.Component {
+class HeroStateClass extends React.Component {
   state = {
     name: 'Riven',
     title: 'The Exile',
@@ -237,8 +239,35 @@ class HeroClass extends React.Component {
   ...
 }
 
-export default HeroClass
+export default HeroStateClass
 ```
+
+> You have to use `this.state.foo` because it's the field called state in this class.
+>
+> Some may use `object destructuring` to set local variables, so that you can get rid of `this.state` in the template.
+>
+> ```js
+>   render() {
+>     const { name, health, attackDamage, skills } = this.state
+>     return (
+>       <>
+>         <h1>{name}</h1>
+>         <h3>Health: {health}</h3>
+>         <h3>Attack Damage: {attackDamage}</h3>
+>         <ul>
+>           {skills.map(skill => {
+>             return (
+>               <li key={skill.id}>
+>                 {skill.name}
+>                 {skill.key ? <span>[{skill.key}]</span> : null}
+>               </li>
+>             )
+>           })}
+>         </ul>
+>       </>
+>     )
+>   }
+> ```
 
 ## Scores
 |           |  Vue  | Angular | React |
@@ -249,6 +278,6 @@ export default HeroClass
 - Vue and Angular use `reactive` state, which means once the data changed, the template will be re-rendered automatically. It looks more intuitive and easy.
 - You will see `expression has changed after it was checked` when you play Angular with some fancy ways.
   - [Everything you need to know about the `ExpressionChangedAfterItHasBeenCheckedError` error](https://indepth.dev/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error/)
-- React strictly follow the one-way data flow, so we have to use `setState` to change the state. Directly change the state like `this.state.foo = 'bar'` will not work. It looks ugly, but React believes that's why it so fast, so it's necessary evil.
+- React has to use `setState` to change the state. Directly change the state like `this.state.foo = 'bar'` will not work. It looks ugly, but React believes that's why it so fast, so it's necessary evil.
   - `useState` is a hook for `Function Component`.
   - `state property` is the traditional way for `Class Component`.
