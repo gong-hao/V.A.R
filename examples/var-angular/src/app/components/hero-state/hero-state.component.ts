@@ -1,11 +1,11 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-hero',
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  selector: 'app-hero-state',
+  templateUrl: './hero-state.component.html',
+  styleUrls: ['./hero-state.component.scss']
 })
-export class HeroComponent {
+export class HeroStateComponent {
   name = 'Riven'
   title = 'The Exile'
   health = 560

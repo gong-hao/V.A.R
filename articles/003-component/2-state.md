@@ -5,7 +5,7 @@
 ## Vue
 
 ### Example Code
-- [src/components/HeroComponent.vue](../../examples/var-vue/src/components/HeroComponent.vue)
+- [src/components/HeroStateComponent.vue](../../examples/var-vue/src/components/HeroStateComponent.vue)
 
 ### Using `data` 😁
 
@@ -76,6 +76,10 @@ export default {
 
 ## Angular
 
+### Example Code
+- [src/app/components/hero-state/hero-state.component.ts](../../examples/var-angular/src/app/components/hero-state/hero-state.component.ts)
+- [src/app/components/hero-state/hero-state.component.html](../../examples/var-angular/src/app/components/hero-state/hero-state.component.html)
+
 ### Using `class property` 😁
 
 ```html
@@ -117,8 +121,9 @@ export class HeroComponent {
 ## React
 
 ### Example Code
-- [src/components/Hero.js](../../examples/var-react/src/components/Hero.js)
-
+- [src/components/HeroStateFunction.js](../../examples/var-react/src/components/HeroStateFunction.js)
+- [src/components/HeroStateClass.js](../../examples/var-react/src/components/HeroStateClass.js)
+-
 ### Using `useState` (Function Component) 😑
 
 ```js
@@ -207,9 +212,9 @@ export default HeroClass
 ```
 
 > You can use the `class fields` to initialize the state to get rid of `constructor`, but it's not the standard yet.
-
-> [The constructor is dead, long live the constructor!](https://hackernoon.com/the-constructor-is-dead-long-live-the-constructor-c10871bea599)
 >
+> [The constructor is dead, long live the constructor!](https://hackernoon.com/the-constructor-is-dead-long-live-the-constructor-c10871bea599)
+
 ```js
 import React from 'react'
 
@@ -236,9 +241,9 @@ export default HeroClass
 ```
 
 ## Scores
-|       |  Vue  | Angular | React |
-| :---- | :---: | :-----: | :---: |
-| State |  😁   |   😁    |  😑   |
+|           |  Vue  | Angular | React |
+| :-------- | :---: | :-----: | :---: |
+| intuitive |  😁   |   😁    |  😑   |
 
 ## Conclusions
 - Vue and Angular use `reactive` state, which means once the data changed, the template will be re-rendered automatically. It looks more intuitive and easy.
