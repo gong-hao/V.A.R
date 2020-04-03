@@ -1,0 +1,9 @@
+<h1>{{name}}</h1>
+<h3>Health: {{health}}</h3>
+<h3>Attack Damage: {{attackDamage}}</h3>
+<ul>
+  <li *ngFor="let skill of skills">
+    {{skill.name}}
+    <span *ngIf="skill.key">[{{skill.key}}]</span>
+  </li>
+</ul>

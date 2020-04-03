@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <h1>{{description}}</h1>
-    <h3>Health: {{health}}</h3>
-    <h3>Attack Damage: {{attackDamage}}</h3>
-    <ul>
-      <li v-for="skill in skills" :key="skill.id">
-        {{skill.name}}
-        <span v-if="skill.key">[{{skill.key}}]</span>
-      </li>
-    </ul>
-  </div>
+  <HeroPropsComponent
+    :name="name"
+    :title="title"
+    :health="health"
+    :attackDamage="attackDamage"
+    :skills="skills"
+  />
 </template>
 
 <script>
+import HeroPropsComponent from './HeroPropsComponent'
+
 export default {
-  name: 'HeroStateComponent',
+  name: 'HeroParentComponent',
   data() {
     return {
       name: 'Riven',
@@ -31,10 +29,8 @@ export default {
       ]
     }
   },
-  computed: {
-    description() {
-      return this.name.toUpperCase() + ' - ' + this.title.toUpperCase()
-    }
+  components: {
+    HeroPropsComponent
   }
 }
 </script>

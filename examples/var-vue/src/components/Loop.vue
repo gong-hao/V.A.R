@@ -61,7 +61,8 @@
 </template>
 
 <script>
-import LoopItem from './LoopItem.vue'
+import LoopItem from './LoopItem'
+
 export default {
   name: 'Loop',
   data() {
