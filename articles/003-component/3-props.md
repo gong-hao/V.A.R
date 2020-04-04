@@ -12,7 +12,7 @@
 - [src/components/HeroParent.vue](../../examples/var-vue/src/components/HeroParent.vue)
 - [src/components/HeroProps.vue](../../examples/var-vue/src/components/HeroProps.vue)
 
-### Casing 😁
+### Format 😁
 > `camelCase` in `JavaScript` (child component)
 > ```js
 > export default {
@@ -161,7 +161,47 @@ export default {
 
 ### Example Code
 - [src/app/components/hero-parent/hero-parent.component.ts](../../examples/var-angular/src/app/components/hero-parent/hero-parent.component.ts)
+- [src/app/components/hero-parent/hero-parent.component.html](../../examples/var-angular/src/app/components/hero-parent/hero-parent.component.html)
+- [src/app/components/hero-props/hero-props.component.ts](../../examples/var-angular/src/app/components/hero-props/hero-props.component.ts)
 - [src/app/components/hero-props/hero-props.component.html](../../examples/var-angular/src/app/components/hero-props/hero-props.component.html)
+
+### Format 😁
+> `camelCase` if using the same name
+> ```ts
+> export class HeroPropsComponent {
+>   @Input() name: string
+> }
+> ```
+>
+> ```html
+> <app-hero-props [name]="name"></app-hero-props>
+> ```
+>
+> `kebab-case` if using an alias
+> ```ts
+> export class HeroPropsComponent {
+>   @Input('attack-damage') attackDamage: number
+> }
+> ```
+>
+> ```html
+> <app-hero-props [attack-damage]="attackDamage"></app-hero-props>
+> ```
+
+`Child Component`
+```ts
+import { Component, Input } from '@angular/core'
+
+@Component({
+  selector: 'app-hero-props',
+  templateUrl: './hero-props.component.html',
+  styleUrls: ['./hero-props.component.scss']
+})
+export class HeroPropsComponent {
+  @Input() name: string
+  @Input('attack-damage') attackDamage: number
+}
+```
 
 ## Scores
 |               |  Vue  | Angular | React |
