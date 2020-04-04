@@ -14,10 +14,17 @@
 
 ### Casing 😁
 > `camelCase` in `JavaScript` (child component)
-> > `props: ['heroName']`
+> ```js
+> export default {
+>   name: 'HeroProps',
+>   props: ['heroName']
+> }
+> ```
 >
 > `kebab-case` in `HTML` (parent component)
->  > `<hero-props hero-name="Riven" />`
+> ```html
+> <hero-props hero-name="Riven" />
+> ```
 
 `Child Component`
 ```vue
@@ -148,6 +155,14 @@ export default {
 - Set `inheritAttrs: false` to disable passing non-prop attributes to the root element.
 - Use `v-bind="$attrs"` to decide which element you want to forward non-prop attributes
 
+## Angular
+
+[https://angular.io/guide/template-syntax#input-and-output-properties](https://angular.io/guide/template-syntax#input-and-output-properties)
+
+### Example Code
+- [src/app/components/hero-parent/hero-parent.component.ts](../../examples/var-angular/src/app/components/hero-parent/hero-parent.component.ts)
+- [src/app/components/hero-props/hero-props.component.html](../../examples/var-angular/src/app/components/hero-props/hero-props.component.html)
+
 ## Scores
 |               |  Vue  | Angular | React |
 | :------------ | :---: | :-----: | :---: |
@@ -157,9 +172,14 @@ export default {
 | Validation    |  😁   |   😁    |  😁   |
 
 ## Differences
-|               |              Vue              |                  Angular                  |             React              |
-| :------------ | :---------------------------: | :---------------------------------------: | :----------------------------: |
-| Static Props  | `<hero-props name="Riven" />` | `<hero-props name="Riven"></hero-props>`  | `<HeroProps name={'Riven'} />` |
-| Dynamic Props | `<hero-props :name="name" />` | `<hero-props [name]="name"></hero-props>` |  `<HeroProps name={name} />`   |
+- Vue
+  - Static Props: `<hero-props name="Riven" />`
+  - Dynamic Props: `<hero-props :name="name" />`
+- Angular
+  - Static Props: `<hero-props name="Riven"></hero-props>`
+  - Dynamic Props: `<hero-props [name]="name"></hero-props>`
+- React
+  - Static Props: `<HeroProps name="Riven" />`
+  - Dynamic Props: `<HeroProps name={name} />`
 
 ## Conclusions
