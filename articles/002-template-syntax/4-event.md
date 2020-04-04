@@ -395,6 +395,3 @@ function Event() {
 | event syntax      | `@click="clickHandler($event)"` | `(click)="clickHandler($event)"` | `onClick={e => clickHandler(e)}`      |
 | expression syntax | `@click="expression"`           | `(click)="expression"`           | `onClick={() => expression}`          |
 | modifiers         | Yes                             | N/A                              | N/A                                   |
-
-## Conclusions
-- Vue has built-in modifiers, which are convenient. Everyone does a good job here.

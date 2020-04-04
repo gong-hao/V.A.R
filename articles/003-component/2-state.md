@@ -274,7 +274,7 @@ export default HeroStateClass
 | :-------- | :---: | :-----: | :---: |
 | intuitive |  😁   |   😁    |  😑   |
 
-## Conclusions
+## Differences
 - Vue and Angular use `reactive` state, which means once the data changed, the template will be re-rendered automatically. It looks more intuitive and easy.
 - You will see `expression has changed after it was checked` when you play Angular with some fancy ways.
   - [Everything you need to know about the `ExpressionChangedAfterItHasBeenCheckedError` error](https://indepth.dev/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error/)

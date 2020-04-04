@@ -200,6 +200,3 @@ formatDate(value, pattern) {
 | format reusing                        |                                             filter                                              |               pipe               |                        method                        |
 | access globals (`Date`, `Math`)       | [whitelist of globals](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) | No, but you can assign to fields |                         Yes                          |
 | safe navigation operator (`foo?.bar`) |                                               No                                                |               Yes                |                         Yes                          |
-
-## Conclusions
-- Everyone does a good job here.

@@ -217,7 +217,6 @@ export default App
 | Components |  😁   |   😁    |  😁   |
 
 ## Differences
-
 - Vue
   - Vue Instance
     - Using `template` attribute
@@ -239,6 +238,3 @@ export default App
   - Class Component
     - Using `class` that extends `React.Component`
     - `jsx`
-
-## Conclusions
-- Everyone does a good job here.

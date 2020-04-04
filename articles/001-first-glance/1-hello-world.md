@@ -72,7 +72,7 @@ ReactDOM.render(
 | :---: | :-----: | :---: |
 |  😁   |   🙁    |  🙂   |
 
-## Conclusions
+## Differences
 - Vue does a good job for the hello world program because this is one of its design goals - make a framework that is easy to use right away.
 - Sorry, Angular is tough for a beginner.
 - React does not bad but it's a little bit weird to see JSX for the first time.

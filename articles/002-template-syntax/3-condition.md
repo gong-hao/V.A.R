@@ -442,6 +442,3 @@ return (
 | switch syntax         |           N/A           |        `[ngSwitch]="option"`         | `switch`  |
 | switch-case syntax    |           N/A           |     `*ngSwitchCase="'optionA'"`      |  `case`   |
 | switch-default syntax |           N/A           |          `*ngSwitchDefault`          | `default` |
-
-## Conclusions
-- Although everyone has slightly different functions, they can overcome most scenarios. Everyone does a good job here.

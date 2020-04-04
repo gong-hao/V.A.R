@@ -530,6 +530,3 @@ function Loop() {
 | key syntax  |    `:key="item.id"`     |               `trackBy: trackByFn`               |      `key={item.id}`       |
 | key         |        required         |            optional, but good to have            |          required          |
 | alias       |     `index`, `name`     | `index`, `count`, `first`, `last`, `even`, `odd` |            N/A             |
-
-## Conclusions
-- Everyone does a good job here.

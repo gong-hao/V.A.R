@@ -134,7 +134,7 @@ export default {
 </script>
 ```
 
-### Attribute Binding 😁
+### Root Element Attribute Binding 😁
 `Parent Component`
 ```html
 <hero-props title="Super Hero" />
@@ -239,7 +239,7 @@ There is no build-in validations for `Input()`. If you set types properly throug
 
 [How to Add Angular Component Input Validation](https://netbasal.com/how-to-add-angular-component-input-validation-b078a30af97f)
 
-### Attribute Binding 😁
+### Root Element Attribute Binding 😁
 `Parent Component`
 ```html
 <app-hero-props title="Super Hero"></app-hero-props>
@@ -261,14 +261,133 @@ There is no build-in validations for `Input()`. If you set types properly throug
 <app-hero-props style="color: red;">...</app-hero-props>
 ```
 
+## React
+
+[https://reactjs.org/docs/components-and-props.html](https://reactjs.org/docs/components-and-props.html)
+
+### Example Code
+- [src/components/HeroParent.js](../../examples/var-react/src/components/HeroParent.js)
+- [src/components/HeroPropsClass.js](../../examples/var-react/src/components/HeroPropsClass.js)
+- [src/components/HeroPropsFunction.js](../../examples/var-react/src/components/HeroPropsFunction.js)
+
+### Format 😁
+`camelCase` by default
+```js
+import React from 'react'
+
+function HeroProps({ heroName }) {
+  return <h1>{heroName}</h1>
+}
+
+export default HeroProps
+```
+
+```jsx
+<HeroProps heroName={name} />
+```
+
+set an alias if you want to use `kebab-case`
+```js
+import React from 'react'
+
+function HeroProps({ 'hero-name': heroName }) {
+  return <h1>{heroName}</h1>
+}
+
+export default HeroProps
+```
+
+```jsx
+<HeroProps hero-name={name} />
+```
+
+### Passing Static Props From Parent Component 😁
+`Parent Component`
+```js
+import React from 'react'
+
+function HeroParent() {
+  return (
+    <>
+      <HeroProps heroName="Riven" />
+
+      <HeroProps heroName={'Riven'} />
+    </>
+  )
+}
+
+export default HeroParent
+```
+
+### Passing Dynamic Props From Parent Component 😁
+`Parent Component`
+```js
+import React, { useState } from 'react'
+
+function HeroParent() {
+  const [name, setName] = useState('Riven')
+  return <HeroProps heroName={name} />
+}
+
+export default HeroParent
+```
+
+### Prop Validation
+[Typechecking With PropTypes](https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html)
+
+PropTypes can do something really complex: [Validating React component props with prop-types](https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/)
+
+```js
+import PropTypes from 'prop-types'
+import React from 'react'
+
+function HeroProps(props) {
+  ...
+}
+
+HeroProps.propTypes = {
+  heroName: PropTypes.string,
+  // Multiple possible types
+  foo: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
+  title: PropTypes.string,
+  // Required prop
+  attackDamage: PropTypes.number.isRequired,
+  // Custom validator
+  health(props, propName, componentName) {
+    const health = props[propName]
+    if (!(health > 0 && health < 99999)) {
+      return new Error('Invalid health range')
+    }
+  },
+  skills: PropTypes.array
+}
+
+HeroProps.defaultProps = {
+  // String with a default value
+  title: 'Hero Title',
+  // Number with a default value
+  health: 0,
+  // Array with a default value
+  skills: []
+}
+
+export default HeroProps
+```
+
+### Root Element Attribute Binding
+Everything you put on a component will become props. React won't attach other attributes to the root element.
+
 ## Scores
-|                   |  Vue  | Angular | React |
-| :---------------- | :---: | :-----: | :---: |
-| Format            |  😁   |   😁    |  😁   |
-| Static Props      |  😁   |   😁    |  😁   |
-| Dynamic Props     |  😁   |   😁    |  😁   |
-| Validation        |  😁   |   N/A   |  😁   |
-| Attribute Binding |  😁   |   😁    |  😁   |
+|                                |  Vue  | Angular | React |
+| :----------------------------- | :---: | :-----: | :---: |
+| Format                         |  😁   |   😁    |  😁   |
+| Static Props                   |  😁   |   😁    |  😁   |
+| Dynamic Props                  |  😁   |   😁    |  😁   |
+| Validation                     |  😁   |   N/A   |  😁   |
+| Root Element Attribute Binding |  😁   |   😁    |  N/A  |
 
 ## Differences
 - Vue
@@ -280,5 +399,3 @@ There is no build-in validations for `Input()`. If you set types properly throug
 - React
   - Static Props: `<HeroProps name="Riven" />`
   - Dynamic Props: `<HeroProps name={name} />`
-
-## Conclusions
