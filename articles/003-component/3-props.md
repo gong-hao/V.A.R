@@ -13,33 +13,19 @@
 - [src/components/HeroProps.vue](../../examples/var-vue/src/components/HeroProps.vue)
 
 ### Format 😁
-> `camelCase` in `JavaScript` (child component)
-> ```js
-> export default {
->   name: 'HeroProps',
->   props: ['heroName']
-> }
-> ```
->
-> `kebab-case` in `HTML` (parent component)
-> ```html
-> <hero-props hero-name="Riven" />
-> ```
-
-`Child Component`
-```vue
-<template>
-  <h1>{{heroName}}</h1>
-</template>
-
-<script>
+`camelCase` in `JavaScript` field
+```js
 export default {
   name: 'HeroProps',
   props: {
     heroName: String
   }
 }
-</script>
+```
+
+`kebab-case` in `HTML` element attribute
+```html
+<hero-props :hero-name="name" />
 ```
 
 ### Passing Static Props From Parent Component 😁
@@ -47,6 +33,8 @@ export default {
 ```vue
 <template>
   <hero-props hero-name="Riven" />
+
+  <hero-props :hero-name="'Riven'" />
 </template>
 
 <script>
@@ -60,8 +48,6 @@ export default {
 }
 </script>
 ```
-
-> ⚠️Static Props will turn everything into string.
 
 ### Passing Dynamic Props From Parent Component 😁
 `Parent Component`
@@ -148,7 +134,29 @@ export default {
 </script>
 ```
 
-### Caveats
+### Attribute Binding 😁
+`Parent Component`
+```html
+<hero-props title="Super Hero" />
+<hero-props :title="'Super' + ' Hero'" />
+
+<hero-props class="highlight" />
+<hero-props :class="isHighlight ? 'highlight' : null" />
+
+<hero-props style="color: red" />
+<hero-props :style="'color: red'" />
+```
+
+`Result`
+```html
+<div title="Super Hero">...</div>
+
+<div class="highlight">...</div>
+
+<div style="color: red;">...</div>
+```
+
+- [Props, data properties, methods, computed properties all share the same "namespace as they are all mapped to properties in the component instance.](https://forum.vuejs.org/t/questions-regarding-handling-immutable-props-and-mutable-data-props/967#post_2)
 - Non-prop attributes will pass to the root element.
 - Most of attributes will replace the default attributes in the child component.
 - `class` and `style` attributes will merge the passing and default attributes.
@@ -166,50 +174,101 @@ export default {
 - [src/app/components/hero-props/hero-props.component.html](../../examples/var-angular/src/app/components/hero-props/hero-props.component.html)
 
 ### Format 😁
-> `camelCase` if using the same name
-> ```ts
-> export class HeroPropsComponent {
->   @Input() name: string
-> }
-> ```
->
-> ```html
-> <app-hero-props [name]="name"></app-hero-props>
-> ```
->
-> `kebab-case` if using an alias
-> ```ts
-> export class HeroPropsComponent {
->   @Input('attack-damage') attackDamage: number
-> }
-> ```
->
-> ```html
-> <app-hero-props [attack-damage]="attackDamage"></app-hero-props>
-> ```
-
-`Child Component`
+`camelCase` by default
 ```ts
-import { Component, Input } from '@angular/core'
-
-@Component({
-  selector: 'app-hero-props',
-  templateUrl: './hero-props.component.html',
-  styleUrls: ['./hero-props.component.scss']
-})
 export class HeroPropsComponent {
-  @Input() name: string
-  @Input('attack-damage') attackDamage: number
+  @Input() heroName: string
 }
 ```
 
+```html
+<app-hero-props [heroName]="name"></app-hero-props>
+```
+
+set an alias if you want to use `kebab-case`
+```ts
+export class HeroPropsComponent {
+  @Input('hero-name') heroName: number
+}
+```
+
+```html
+<app-hero-props [hero-name]="name"></app-hero-props>
+```
+
+### Passing Static Props From Parent Component 😁
+`Parent Component`
+```html
+<app-hero-props name="Riven"></app-hero-props>
+
+<app-hero-props [name]="'Riven'"></app-hero-props>
+```
+
+```ts
+import { Component } from '@angular/core'
+
+@Component({
+  selector: 'app-hero-parent',
+  templateUrl: './hero-parent.component.html',
+  styleUrls: ['./hero-parent.component.scss']
+})
+export class HeroParentComponent { }
+```
+
+### Passing Dynamic Props From Parent Component 😁
+`Parent Component`
+```html
+<app-hero-props [name]="name"></app-hero-props>
+```
+
+```ts
+import { Component } from '@angular/core'
+
+@Component({
+  selector: 'app-hero-parent',
+  templateUrl: './hero-parent.component.html',
+  styleUrls: ['./hero-parent.component.scss']
+})
+export class HeroParentComponent {
+  name = 'Riven'
+}
+```
+
+### Prop Validation
+There is no build-in validations for `Input()`. If you set types properly through TypeScript, it will warn you if you use the wrong type.
+
+[How to Add Angular Component Input Validation](https://netbasal.com/how-to-add-angular-component-input-validation-b078a30af97f)
+
+### Attribute Binding 😁
+`Parent Component`
+```html
+<app-hero-props title="Super Hero"></app-hero-props>
+<app-hero-props [attr.title]="'Super' + ' Hero'"></app-hero-props>
+
+<app-hero-props class="highlight"></app-hero-props>
+<app-hero-props [class.highlight]="isHighlight"></app-hero-props>
+
+<app-hero-props style="color: red"></app-hero-props>
+<app-hero-props [style.color]="isHighlight ? 'red' : 'green'"></app-hero-props>
+```
+
+`Result`
+```html
+<app-hero-props title="Super Hero">...</app-hero-props>
+
+<app-hero-props class="highlight">...</app-hero-props>
+
+<app-hero-props style="color: red;">...</app-hero-props>
+```
+
 ## Scores
-|               |  Vue  | Angular | React |
-| :------------ | :---: | :-----: | :---: |
-| Format        |  😁   |   😁    |  😁   |
-| Static Props  |  😁   |   😁    |  😁   |
-| Dynamic Props |  😁   |   😁    |  😁   |
-| Validation    |  😁   |   😁    |  😁   |
+|                   |  Vue  | Angular | React |
+| :---------------- | :---: | :-----: | :---: |
+| Format            |  😁   |   😁    |  😁   |
+| Static Props      |  😁   |   😁    |  😁   |
+| Dynamic Props     |  😁   |   😁    |  😁   |
+| Validation        |  😁   |   N/A   |  😁   |
+| Attribute Binding |  😁   |   😁    |  😁   |
 
 ## Differences
 - Vue

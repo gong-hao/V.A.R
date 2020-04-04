@@ -1,10 +1,13 @@
 <template>
   <hero-props
     :name="name"
-    :title="title"
+    :heroTitle="title"
     :health="health"
     :attackDamage="attackDamage"
     :skills="skills"
+    :title="'Super' + ' Hero'"
+    :class="isHighlight ? 'highlight' : null"
+    :style="'color: red'"
   />
 </template>
 
@@ -26,7 +29,8 @@ export default {
         { id: 4, name: 'Valor', key: 'e' },
         { id: 5, name: 'Blade of the Exile', key: 'r' },
         { id: 6, name: 'Wind Slash', key: 'r' }
-      ]
+      ],
+      isHighlight: true
     }
   },
   components: {

@@ -20,7 +20,7 @@ export default {
       type: String,
       default: 'Hero Name'
     },
-    title: {
+    heroTitle: {
       type: String,
       default: 'Hero Title'
     },

@@ -18,4 +18,5 @@ export class HeroParentComponent {
     { id: 5, name: 'Blade of the Exile', key: 'r' },
     { id: 6, name: 'Wind Slash', key: 'r' }
   ]
+  isHighlight = true
 }
