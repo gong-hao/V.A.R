@@ -1,11 +1,11 @@
 import './App.css'
 
-import HeroParent from './components/HeroParent'
+import HeroPropsParent from './components/HeroPropsParent'
 import React from 'react'
 
 function App() {
   return (
-    <HeroParent />
+    <HeroPropsParent />
   )
 }
 

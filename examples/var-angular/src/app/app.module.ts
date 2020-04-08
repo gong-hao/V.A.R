@@ -6,7 +6,7 @@ import { AppComponent } from './app.component'
 import { ConditionComponent } from './components/condition/condition.component'
 import { EventComponent } from './components/event/event.component'
 import { HelloWorldComponent } from './components/hello-world/hello-world.component'
-import { HeroParentComponent } from './components/hero-parent/hero-parent.component'
+import { HeroPropsParentComponent } from './components/hero-props-parent/hero-props-parent.component'
 import { HeroPropsComponent } from './components/hero-props/hero-props.component'
 import { HeroStateComponent } from './components/hero-state/hero-state.component'
 import { HiComponent } from './components/hi/hi.component'
@@ -27,7 +27,7 @@ import { TrackByPropertyPipe } from './pipes/track-by-property.pipe'
     EventComponent,
     HiComponent,
     HeroStateComponent,
-    HeroParentComponent,
+    HeroPropsParentComponent,
     HeroPropsComponent
   ],
   imports: [

@@ -15,7 +15,7 @@
 import HeroProps from './HeroProps'
 
 export default {
-  name: 'HeroParent',
+  name: 'HeroPropsParent',
   data() {
     return {
       name: 'Riven',

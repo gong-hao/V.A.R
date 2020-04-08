@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import HeroPropsFunction from './HeroPropsFunction'
 
-function HeroParent() {
+function HeroPropsParent() {
   const [name, setName] = useState('Riven')
   const [title, setTitle] = useState('The Exile')
   const [health, setHealth] = useState(560)
@@ -26,4 +26,4 @@ function HeroParent() {
   )
 }
 
-export default HeroParent
+export default HeroPropsParent

@@ -9,7 +9,7 @@
 [https://vuejs.org/v2/guide/components-props.html](https://vuejs.org/v2/guide/components-props.html)
 
 ### Example Code
-- [src/components/HeroParent.vue](../../examples/var-vue/src/components/HeroParent.vue)
+- [src/components/HeroPropsParent.vue](../../examples/var-vue/src/components/HeroPropsParent.vue)
 - [src/components/HeroProps.vue](../../examples/var-vue/src/components/HeroProps.vue)
 
 ### Format 😁
@@ -41,7 +41,7 @@ export default {
 import HeroProps from './HeroProps'
 
 export default {
-  name: 'HeroParent',
+  name: 'HeroPropsParent',
   components: {
     HeroProps
   }
@@ -60,7 +60,7 @@ export default {
 import HeroProps from './HeroProps'
 
 export default {
-  name: 'HeroParent',
+  name: 'HeroPropsParent',
   data() {
     return {
       heroName: 'Riven'
@@ -170,8 +170,8 @@ export default {
 [https://angular.io/guide/template-syntax#input-and-output-properties](https://angular.io/guide/template-syntax#input-and-output-properties)
 
 ### Example Code
-- [src/app/components/hero-parent/hero-parent.component.ts](../../examples/var-angular/src/app/components/hero-parent/hero-parent.component.ts)
-- [src/app/components/hero-parent/hero-parent.component.html](../../examples/var-angular/src/app/components/hero-parent/hero-parent.component.html)
+- [src/app/components/hero-props-parent/hero-props-parent.component.ts](../../examples/var-angular/src/app/components/hero-props-parent/hero-props-parent.component.ts)
+- [src/app/components/hero-props-parent/hero-props-parent.component.html](../../examples/var-angular/src/app/components/hero-props-parent/hero-props-parent.component.html)
 - [src/app/components/hero-props/hero-props.component.ts](../../examples/var-angular/src/app/components/hero-props/hero-props.component.ts)
 - [src/app/components/hero-props/hero-props.component.html](../../examples/var-angular/src/app/components/hero-props/hero-props.component.html)
 
@@ -210,11 +210,11 @@ export class HeroPropsComponent {
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-hero-parent',
-  templateUrl: './hero-parent.component.html',
-  styleUrls: ['./hero-parent.component.scss']
+  selector: 'app-hero-props-parent',
+  templateUrl: './hero-props-parent.component.html',
+  styleUrls: ['./hero-props-parent.component.scss']
 })
-export class HeroParentComponent { }
+export class HeroPropsParentComponent { }
 ```
 
 ### Passing Dynamic Props From Parent Component 😁
@@ -227,11 +227,11 @@ export class HeroParentComponent { }
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-hero-parent',
-  templateUrl: './hero-parent.component.html',
-  styleUrls: ['./hero-parent.component.scss']
+  selector: 'app-hero-props-parent',
+  templateUrl: './hero-props-parent.component.html',
+  styleUrls: ['./hero-props-parent.component.scss']
 })
-export class HeroParentComponent {
+export class HeroPropsParentComponent {
   name = 'Riven'
 }
 ```
@@ -268,7 +268,7 @@ There is no build-in validations for `Input()`. If you set types properly throug
 [https://reactjs.org/docs/components-and-props.html](https://reactjs.org/docs/components-and-props.html)
 
 ### Example Code
-- [src/components/HeroParent.js](../../examples/var-react/src/components/HeroParent.js)
+- [src/components/HeroPropsParent.js](../../examples/var-react/src/components/HeroPropsParent.js)
 - [src/components/HeroPropsClass.js](../../examples/var-react/src/components/HeroPropsClass.js)
 - [src/components/HeroPropsFunction.js](../../examples/var-react/src/components/HeroPropsFunction.js)
 
@@ -308,7 +308,7 @@ export default HeroProps
 ```jsx
 import React from 'react'
 
-function HeroParent() {
+function HeroPropsParent() {
   return (
     <>
       <HeroProps heroName="Riven" />
@@ -318,7 +318,7 @@ function HeroParent() {
   )
 }
 
-export default HeroParent
+export default HeroPropsParent
 ```
 
 ### Passing Dynamic Props From Parent Component 😁
@@ -326,12 +326,12 @@ export default HeroParent
 ```jsx
 import React, { useState } from 'react'
 
-function HeroParent() {
+function HeroPropsParent() {
   const [name, setName] = useState('Riven')
   return <HeroProps heroName={name} />
 }
 
-export default HeroParent
+export default HeroPropsParent
 ```
 
 ### Prop Validation

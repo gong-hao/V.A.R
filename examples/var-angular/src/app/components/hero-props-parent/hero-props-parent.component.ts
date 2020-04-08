@@ -1,11 +1,11 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-hero-parent',
-  templateUrl: './hero-parent.component.html',
-  styleUrls: ['./hero-parent.component.scss']
+  selector: 'app-hero-props-parent',
+  templateUrl: './hero-props-parent.component.html',
+  styleUrls: ['./hero-props-parent.component.scss']
 })
-export class HeroParentComponent {
+export class HeroPropsParentComponent {
   name = 'Riven'
   title = 'The Exile'
   health = 560
