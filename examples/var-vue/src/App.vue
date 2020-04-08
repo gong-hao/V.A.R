@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <hero-props-parent />
+    <hero-check-parent />
   </div>
 </template>
 
 <script>
-import HeroPropsParent from './components/HeroPropsParent'
+import HeroCheckParent from './components/HeroCheckParent'
 
 export default {
   name: 'App',
   components: {
-    HeroPropsParent
+    HeroCheckParent
   }
 }
 </script>

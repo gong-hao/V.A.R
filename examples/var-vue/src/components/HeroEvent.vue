@@ -1,22 +1,21 @@
 <template>
   <div>
     <ul>
-      <li>
-        <span v-if="isSelectAll" :click="toggleSelectAll()">☑</span>
-        <span v-if="!isSelectAll" :click="toggleSelectAll()">☐</span>
+      <li @click="toggleSelectAll()">
+        <span v-if="isSelectedAll">☑</span>
+        <span v-if="!isSelectedAll">☐</span>
+        <strong>Select All</strong>
       </li>
-      <li v-for="skill in skills" :key="skill.id">
-        <span v-if="skill[checkedSymbol]" :click="toggleSelectItem(skill)">☑</span>
-        <span v-if="!skill[checkedSymbol]" :click="toggleSelectItem(skill)">☐</span>
-        {{skill.name}}
+      <li v-for="item in items" :key="item.id" @click="toggleSelectItem(item)">
+        <span v-if="item.isSelected">☑</span>
+        <span v-if="!item.isSelected">☐</span>
+        {{item.name}}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-const checkedSymbol = new Symbol('CheckedSymbol')
-
 export default {
   name: 'HeroEvent',
   props: {
@@ -24,25 +23,29 @@ export default {
   },
   data() {
     return {
-      checkedSymbol,
-      isSelectAll: false
+      isSelectedAll: false
+    }
+  },
+  computed: {
+    items() {
+      return this.skills.map(x => ({ ...x, isSelected: false }))
     }
   },
   methods: {
     onSelectionsChanged() {
-      const selectedItems = this.skill.filter(x => x[checkedSymbol])
-      $emit('selection-changes', selectedItems)
+      const selectedItems = this.items.filter(x => x.isSelected)
+      this.$emit('selection-changes', selectedItems)
     },
     toggleSelectAll() {
-      this.isSelectAll = !this.isSelectAll
-      for (const skill of this.skills) {
-        item[checkedSymbol] = this.isSelectAll
+      this.isSelectedAll = !this.isSelectedAll
+      for (const item of this.items) {
+        item.isSelected = this.isSelectedAll
       }
       this.onSelectionsChanged()
     },
     toggleSelectItem(item) {
-      item[checkedSymbol] = !item[checkedSymbol]
-      this.isSelectAll = this.skills.every(x => x[checkedSymbol])
+      item.isSelected = !item.isSelected
+      this.isSelectedAll = this.items.every(x => x.isSelected)
       this.onSelectionsChanged()
     }
   }
