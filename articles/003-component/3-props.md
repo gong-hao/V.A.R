@@ -167,7 +167,7 @@ export default {
 
 ## Angular
 
-[https://angular.io/guide/template-syntax#input-and-output-properties](https://angular.io/guide/template-syntax#input-and-output-properties)
+[https://angular.io/guide/template-syntax#how-to-use-input](https://angular.io/guide/template-syntax#how-to-use-input)
 
 ### Example Code
 - [src/app/components/hero-props-parent/hero-props-parent.component.ts](../../examples/var-angular/src/app/components/hero-props-parent/hero-props-parent.component.ts)

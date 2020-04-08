@@ -1,1 +1,5 @@
-<p>hero-event-parent works!</p>
+<app-hero-event [items]="skills"
+                (selectionChanges)="onSelectionChanges($event)"></app-hero-event>
+<ol>
+  <li *ngFor="let item of selectedItems">{{item.name + '\t'}}</li>
+</ol>

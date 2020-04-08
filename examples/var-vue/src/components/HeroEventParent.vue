@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hero-event :skills="skills" @selection-changes="onSelectionChanges($event)" />
+    <hero-event :items="skills" @selection-changes="onSelectionChanges($event)" />
     <ol>
       <li v-for="item in selectedItems" :key="item.id">{{item.name + '\t'}}</li>
     </ol>

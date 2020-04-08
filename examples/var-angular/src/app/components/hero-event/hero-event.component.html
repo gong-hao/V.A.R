@@ -1,1 +1,13 @@
-<p>hero-event works!</p>
+<ul>
+  <li (click)="toggleSelectAll()">
+    <span *ngIf="isSelectedAll">☑</span>
+    <span *ngIf="!isSelectedAll">☐</span>
+    <strong>Select All</strong>
+  </li>
+  <li *ngFor="let item of items"
+      (click)="toggleSelectItem(item)">
+    <span *ngIf="item.isSelected">☑</span>
+    <span *ngIf="!item.isSelected">☐</span>
+    {{item.name}}
+  </li>
+</ul>
