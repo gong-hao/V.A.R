@@ -306,6 +306,8 @@ You can implement them yourself:
 
 [https://reactjs.org/docs/handling-events.html](https://reactjs.org/docs/handling-events.html)
 
+[https://reactjs.org/docs/faq-functions.html](https://reactjs.org/docs/faq-functions.html)
+
 ### Example Code
 - [src/components/Loop.js](../../examples/var-react/src/components/Condition.js)
 

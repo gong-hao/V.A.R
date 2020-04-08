@@ -22,6 +22,8 @@
 - [src/components/HeroCheck.vue](../../examples/var-vue/src/components/HeroCheck.vue)
 - [src/components/HeroCheckParent.vue](../../examples/var-vue/src/components/HeroCheckParent.vue)
 
+### Event Communication 😁
+
 `Child Component`
 ```vue
 <template>
@@ -98,6 +100,8 @@ export default {
 - [src/app/components/hero-check-parent/hero-check-parent.component.ts](../../examples/var-angular/src/app/components/hero-check-parent/hero-check-parent.component.ts)
 - [src/app/components/hero-check-parent/hero-check-parent.component.html](../../examples/var-angular/src/app/components/hero-check-parent/hero-check-parent.component.html)
 
+### Event Communication 😁
+
 `Child Component`
 ```html
 <div (click)="toggleChecked()">
@@ -147,3 +151,84 @@ export class HeroCheckParentComponent {
   }
 }
 ```
+
+## React
+
+> React uses callback function from `props` to notify the parent component.
+>
+> The parent uses `<ComponentName eventName={methodName} />` to pass a callback function to child components.
+
+[https://reactjs.org/docs/handling-events.html](https://reactjs.org/docs/handling-events.html)
+
+[https://reactjs.org/docs/faq-functions.html](https://reactjs.org/docs/faq-functions.html)
+
+### Example Code
+- [src/components/HeroEventFunction.js](../../examples/var-react/src/components/HeroEventFunction.js)
+- [src/components/HeroEventClass.js](../../examples/var-react/src/components/HeroEventClass.js)
+- [src/components/HeroEventParent.js](../../examples/var-react/src/components/HeroEventParent.js)
+- [src/components/HeroCheckFunction.js](../../examples/var-react/src/components/HeroCheckFunction.js)
+- [src/components/HeroCheckClass.js](../../examples/var-react/src/components/HeroCheckClass.js)
+- [src/components/HeroCheckParent.js](../../examples/var-react/src/components/HeroCheckParent.js)
+
+### Event Communication 🙂
+
+`Child Component`
+```jsx
+import React, { useState } from 'react'
+
+function HeroCheckFunction({
+  onCheckChanges
+}) {
+  const [isChecked, setIsChecked] = useState(false)
+  function toggleChecked() {
+    const newIsChecked = !isChecked
+    setIsChecked(newIsChecked)
+    onCheckChanges(newIsChecked)
+  }
+  return (
+    <div onClick={toggleChecked}>
+      {isChecked ? <span>☑</span> : <span>☐</span>}
+    </div>
+  )
+}
+
+export default HeroCheckFunction
+```
+
+`Parent Component`
+```jsx
+import React, { useState } from 'react'
+
+import HeroCheckFunction from './HeroCheckFunction'
+
+function HeroCheckParent() {
+  const [isChecked, setIsChecked] = useState(false)
+  function onCheckChanges(isChecked) {
+    setIsChecked(isChecked)
+  }
+  return (
+    <>
+      {isChecked ? '☑' : '☐'}
+      <HeroCheckFunction onCheckChanges={onCheckChanges} />
+    </>
+  )
+}
+
+export default HeroCheckParent
+```
+
+## Scores
+|                     |  Vue  | Angular | React |
+| :------------------ | :---: | :-----: | :---: |
+| Event Communication |  😁   |   😁    |  🙂   |
+
+## Differences
+- Vue
+  - Child: `this.$emit('event-name', eventArgs)`
+  - Parent: `<hero-event @event-name="methodName($event)" />`
+- Angular
+  - Child: `@Output() eventName = new EventEmitter<T>()` then `this.eventName.emit(eventArgs)`
+  - Parent: `<app-hero-event (eventName)="methodName($event)"></app-hero-event>`
+- React
+  - Child: `this.props.eventName(eventArgs)`
+  - Parent: `<HeroEvent eventName={methodName} />`
