@@ -80,7 +80,7 @@ export default {
 - [src/app/components/hero-state/hero-state.component.ts](../../examples/var-angular/src/app/components/hero-state/hero-state.component.ts)
 - [src/app/components/hero-state/hero-state.component.html](../../examples/var-angular/src/app/components/hero-state/hero-state.component.html)
 
-### Using `class property` 😁
+### Using `class field` 😁
 
 ```html
 <h1>{{name}}</h1>
@@ -126,7 +126,7 @@ export class HeroComponent {
 
 ### Using `useState` (Function Component) 😑
 
-```js
+```jsx
 import React, { useState } from 'react'
 
 function HeroStateFunction() {
@@ -167,7 +167,7 @@ export default HeroStateFunction
 
 ### Using `state property` (Class Component) 😑
 
-```js
+```jsx
 import React from 'react'
 
 class HeroStateClass extends React.Component {
@@ -217,7 +217,7 @@ export default HeroStateClass
 >
 > [The constructor is dead, long live the constructor!](https://hackernoon.com/the-constructor-is-dead-long-live-the-constructor-c10871bea599)
 
-```js
+```jsx
 import React from 'react'
 
 class HeroStateClass extends React.Component {
@@ -246,7 +246,7 @@ export default HeroStateClass
 >
 > Some may use `object destructuring` to set local variables, so that you can get rid of `this.state` in the template.
 >
-> ```js
+> ```jsx
 >   render() {
 >     const { name, health, attackDamage, skills } = this.state
 >     return (

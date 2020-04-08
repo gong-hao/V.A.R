@@ -14,7 +14,7 @@
 
 ### Format 😁
 `camelCase` in `JavaScript` field
-```js
+```jsx
 export default {
   name: 'HeroProps',
   props: {
@@ -75,6 +75,8 @@ export default {
 
 > `:hero-name` is the shorthand for `v-bind:hero-name`
 
+> You can use `v-bind` to bind an object into props
+>
 > ```html
 > <hero-props v-bind="hero" />
 > ```
@@ -159,9 +161,9 @@ export default {
 - [Props, data properties, methods, computed properties all share the same "namespace as they are all mapped to properties in the component instance.](https://forum.vuejs.org/t/questions-regarding-handling-immutable-props-and-mutable-data-props/967#post_2)
 - Non-prop attributes will pass to the root element.
 - Most of attributes will replace the default attributes in the child component.
-- `class` and `style` attributes will merge the passing and default attributes.
+- `class` and `style` attributes will merge the passing values and default values.
 - Set `inheritAttrs: false` to disable passing non-prop attributes to the root element.
-- Use `v-bind="$attrs"` to decide which element you want to forward non-prop attributes
+- Use `v-bind="$attrs"` to decide which element you want to forward non-prop attributes.
 
 ## Angular
 
@@ -185,7 +187,7 @@ export class HeroPropsComponent {
 <app-hero-props [heroName]="name"></app-hero-props>
 ```
 
-set an alias if you want to use `kebab-case`
+set an alias if you want to use `kebab-case` or another name
 ```ts
 export class HeroPropsComponent {
   @Input('hero-name') heroName: number
@@ -272,7 +274,7 @@ There is no build-in validations for `Input()`. If you set types properly throug
 
 ### Format 😁
 `camelCase` by default
-```js
+```jsx
 import React from 'react'
 
 function HeroProps({ heroName }) {
@@ -287,7 +289,7 @@ export default HeroProps
 ```
 
 set an alias if you want to use `kebab-case`
-```js
+```jsx
 import React from 'react'
 
 function HeroProps({ 'hero-name': heroName }) {
@@ -303,7 +305,7 @@ export default HeroProps
 
 ### Passing Static Props From Parent Component 😁
 `Parent Component`
-```js
+```jsx
 import React from 'react'
 
 function HeroParent() {
@@ -321,7 +323,7 @@ export default HeroParent
 
 ### Passing Dynamic Props From Parent Component 😁
 `Parent Component`
-```js
+```jsx
 import React, { useState } from 'react'
 
 function HeroParent() {
@@ -337,7 +339,7 @@ export default HeroParent
 
 PropTypes can do something really complex: [Validating React component props with prop-types](https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/)
 
-```js
+```jsx
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -378,7 +380,7 @@ export default HeroProps
 ```
 
 ### Root Element Attribute Binding
-Everything you put on a component will become props. React won't attach other attributes to the root element.
+All attributes you put on a component will become props. React won't attach other HTML attributes to the root element.
 
 ## Scores
 |                                |  Vue  | Angular | React |

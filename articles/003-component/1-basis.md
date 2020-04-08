@@ -158,7 +158,7 @@ export class AppModule { }
 ### Using Function components 😁
 
 `src/components/Hi.js`
-```js
+```jsx
 import React from 'react'
 
 function Hi() {
@@ -169,7 +169,7 @@ export default Hi
 ```
 
 `src/App.js`
-```js
+```jsx
 import Hi from './components/Hi'
 import React from 'react'
 
@@ -185,7 +185,7 @@ export default App
 ### Using Class Components 😁
 
 `src/components/Hi.js`
-```js
+```jsx
 import React from 'react'
 
 class Hi extends React.Component {
@@ -198,7 +198,7 @@ export default Hi
 ```
 
 `src/App.js`
-```js
+```jsx
 import Hi from './components/Hi'
 import React from 'react'
 

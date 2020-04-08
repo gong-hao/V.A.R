@@ -377,7 +377,7 @@ export class LoopItemAttrComponent {
 - [src/components/Loop.js](../../examples/var-react/src/components/Loop.js)
 
 ### Script Part
-```js
+```jsx
 import React from 'react'
 
 function Loop() {
