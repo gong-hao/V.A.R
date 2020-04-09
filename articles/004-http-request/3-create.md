@@ -66,12 +66,51 @@ export default {
 [https://angular.io/tutorial/toh-pt6](https://angular.io/tutorial/toh-pt6)
 
 ### Example Code
-- [src/app/components/signal-request/signal-request.component.html](../../examples/var-angular/src/app/components/signal-request/signal-request.component.html)
-- [src/app/components/signal-request/signal-request.component.ts](../../examples/var-angular/src/app/components/signal-request/signal-request.component.ts)
+- [src/app/components/create-api/create-api.component.html](../../examples/var-angular/src/app/components/create-api/create-api.component.html)
+- [src/app/components/create-api/create-api.component.ts](../../examples/var-angular/src/app/components/create-api/create-api.component.ts)
 
 ### Using `HttpClient`
 > 😁
 
+```html
+<input type="text"
+       #name />
+<input type="text"
+       #key />
+<button (click)="createSkill()">Create</button>
+```
+
+```ts
+import { HttpClient } from '@angular/common/http'
+import { Component, ElementRef, ViewChild } from '@angular/core'
+
+@Component({
+  selector: 'app-create-api',
+  templateUrl: './create-api.component.html',
+  styleUrls: ['./create-api.component.scss']
+})
+export class CreateApiComponent {
+  @ViewChild('name') nameRef: ElementRef
+  @ViewChild('key') keyRef: ElementRef
+
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  createSkill() {
+    const newSkill = {
+      name: this.nameRef.nativeElement.value,
+      key: this.keyRef.nativeElement.value
+    }
+    this.http
+      .post<{ message: string }>('http://localhost:4000/skill/', newSkill)
+      .subscribe(
+        data => alert(data.message),
+        error => console.log(error)
+      )
+  }
+}
+```
 
 ## React
 
