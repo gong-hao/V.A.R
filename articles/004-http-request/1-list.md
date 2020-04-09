@@ -1,5 +1,19 @@
 # How to Call List API in V.A.R
 
+- [How to Call List API in V.A.R](#how-to-call-list-api-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Using `axios`](#using-axios)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Using `HttpClient`](#using-httpclient)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Using `axios` in Function Component](#using-axios-in-function-component)
+    - [Using `axios` in Class Component](#using-axios-in-class-component)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 > Use `axios` to call API in the `mounted` lifecycle hook.
@@ -9,7 +23,8 @@
 ### Example Code
 - [src/components/ListApi.vue](../../examples/var-vue/src/components/ListApi.vue)
 
-### Using `axios` 😁
+### Using `axios`
+> 😁
 
 ```vue
 <template>
@@ -59,7 +74,8 @@ export default {
 - [src/app/components/list-api/list-api.component.html](../../examples/var-angular/src/app/components/list-api/list-api.component.html)
 - [src/app/components/list-api/list-api.component.ts](../../examples/var-angular/src/app/components/list-api/list-api.component.ts)
 
-### Using `HttpClient` 😁
+### Using `HttpClient`
+> 😁
 
 
 ## React
@@ -73,9 +89,11 @@ export default {
 ### Example Code
 - [src/components/ListApi.js](../../examples/var-react/src/components/ListApi.js)
 
-### Using `axios` in Function Component 😁
+### Using `axios` in Function Component
+> 😁
 
-### Using `axios` in Class Component 😁
+### Using `axios` in Class Component
+> 😁
 
 ## Scores
 |                     |  Vue  | Angular | React |

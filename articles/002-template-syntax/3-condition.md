@@ -2,6 +2,42 @@
 
 > Today you may understand the conditions, but tomorrow may not.
 
+- [How to Make Conditions in V.A.R](#how-to-make-conditions-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Script Part](#script-part)
+    - [If Else](#if-else)
+    - [With an Expression](#with-an-expression)
+    - [Without Showing a Root Element](#without-showing-a-root-element)
+    - [With a Method](#with-a-method)
+    - [With a Computed Property](#with-a-computed-property)
+    - [CSS `display`](#css-display)
+    - [Switch Case](#switch-case)
+    - [Caveats](#caveats)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Script Part](#script-part-1)
+    - [If Else](#if-else-1)
+    - [With an Expression](#with-an-expression-1)
+    - [Without Showing a Root Element](#without-showing-a-root-element-1)
+    - [With a Method](#with-a-method-1)
+    - [CSS `display`](#css-display-1)
+    - [Switch Case](#switch-case-1)
+    - [Caveats](#caveats-1)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Script Part](#script-part-2)
+    - [If](#if)
+    - [If Else](#if-else-2)
+    - [Else If](#else-if)
+    - [With an Expression ???](#with-an-expression-2)
+    - [With a Method](#with-a-method-2)
+    - [CSS `display`](#css-display-2)
+    - [Switch Case](#switch-case-2)
+    - [Caveats](#caveats-2)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 [https://vuejs.org/v2/guide/conditional.html](https://vuejs.org/v2/guide/conditional.html)
@@ -40,7 +76,9 @@ export default {
 </script>
 ```
 
-### If Else 😁
+### If Else
+> 😁
+
 ```vue
 <template>
   <div>
@@ -61,7 +99,9 @@ export default {
 </template>
 ```
 
-### With an Expression 😁
+### With an Expression
+> 😁
+
 ```vue
 <template>
   <div>
@@ -70,7 +110,9 @@ export default {
 </template>
 ```
 
-### Without Showing a Root Element 😁
+### Without Showing a Root Element
+> 😁
+
 ```vue
 <template>
   <div>
@@ -83,7 +125,9 @@ export default {
 </template>
 ```
 
-### With a Method 😁
+### With a Method
+> 😁
+
 ```vue
 <template>
   <div>
@@ -93,7 +137,9 @@ export default {
 </template>
 ```
 
-### With a Computed Property 😎
+### With a Computed Property
+> 😎
+
 ```vue
 <template>
   <div>
@@ -102,7 +148,9 @@ export default {
 </template>
 ```
 
-### CSS `display` 😁
+### CSS `display`
+> 😁
+
 ```vue
 <template>
   <div>
@@ -157,7 +205,9 @@ export class ConditionComponent {
 }
 ```
 
-### If Else 😁
+### If Else
+> 😁
+
 ```html
 <h3>If</h3>
 <div *ngIf="isShow">You can see me</div>
@@ -179,12 +229,16 @@ export class ConditionComponent {
 </ng-template>
 ```
 
-### With an Expression 😁
+### With an Expression
+> 😁
+
 ```html
 <div *ngIf="val >= 10">val is greater and equal to 10</div>
 ```
 
-### Without Showing a Root Element 😁
+### Without Showing a Root Element
+> 😁
+
 ```html
 <p>woo</p>
 <ng-container *ngIf="isShow">
@@ -193,18 +247,24 @@ export class ConditionComponent {
 </ng-container>
 ```
 
-### With a Method 😁
+### With a Method
+> 😁
+
 ```html
 <div *ngIf="showIfEven(2)">You can see 2</div>
 <div *ngIf="showIfEven(1)">You can't see 1</div>
 ```
 
-### CSS `display` 😁
+### CSS `display`
+> 😁
+
 ```html
 <div [style.display]="isShow ? 'block' : 'none'">You can see me</div>
 ```
 
-### Switch Case 😁
+### Switch Case
+> 😁
+
 ```html
 <ng-container [ngSwitch]="option">
   <div *ngSwitchCase="'A'">A</div>
@@ -249,7 +309,9 @@ function Condition() {
 }
 ```
 
-### If 😁
+### If
+> 😁
+
 ```jsx
 let ifBlock = null
 if (isShow) {
@@ -276,7 +338,9 @@ return (
 )
 ```
 
-### If Else 😁
+### If Else
+> 😁
+
 ```jsx
 let ifElseBlock = null
 if (isShow) {
@@ -314,7 +378,9 @@ if (!isShow) {
 return <div>You can't see me</div>
 ```
 
-### Else If 🙄
+### Else If
+> 🙄
+
 ```jsx
 let elseIfBlock = null
 if (option === 'A') {
@@ -334,7 +400,9 @@ return (
 )
 ```
 
-### With an Expression ??? 🙄
+### With an Expression ???
+> 🙄
+
 ```jsx
 return (
   <h3>With an Expression</h3>
@@ -346,7 +414,9 @@ return (
 )
 ```
 
-### With a Method 😁
+### With a Method
+> 😁
+
 ```jsx
 let methodBlockA = null
 if (showIfEven(2)) {
@@ -365,7 +435,9 @@ return (
 )
 ```
 
-### CSS `display` 😁
+### CSS `display`
+> 😁
+
 ```jsx
 return (
   <div style={{ display: isShow ? 'block' : 'none' }}>
@@ -374,7 +446,9 @@ return (
 )
 ```
 
-### Switch Case 😁
+### Switch Case
+> 😁
+
 ```jsx
 switch (option) {
   case 'A':

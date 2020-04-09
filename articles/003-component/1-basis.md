@@ -2,6 +2,23 @@
 
 > Components are building blocks that construct your dream castle.
 
+- [How to Create Components in V.A.R](#how-to-create-components-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Using Vue Instance](#using-vue-instance)
+    - [Using Single File Components](#using-single-file-components)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Using Components With `templateUrl`](#using-components-with-templateurl)
+    - [Using Components With `template`](#using-components-with-template)
+    - [Declarations In AppModule](#declarations-in-appmodule)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Using Function components](#using-function-components)
+    - [Using Class Components](#using-class-components)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)
@@ -9,7 +26,8 @@
 ### Example Code
 - [src/components/Hi.vue](../../examples/var-vue/src/components/Hi.vue)
 
-### Using Vue Instance 😁
+### Using Vue Instance
+> 😁
 
 ```html
 <div id="app"></div>
@@ -30,7 +48,8 @@
 </script>
 ```
 
-### Using Single File Components 😁
+### Using Single File Components
+> 😁
 
 [https://vuejs.org/v2/guide/single-file-components.html](https://vuejs.org/v2/guide/single-file-components.html)
 
@@ -81,7 +100,8 @@ export default {
 - [src/app/components/hi/hi.component.html](../../examples/var-angular/src/app/components/hi/hi.component.html)
 - [src/app/components/hi/hi.component.ts](../../examples/var-angular/src/app/components/hi/hi.component.ts)
 
-### Using Components With `templateUrl` 😁
+### Using Components With `templateUrl`
+> 😁
 
 `src/app/components/hi/hi.component.html`
 ```html
@@ -112,7 +132,8 @@ export class HiComponent { }
 <app-hi></app-hi>
 ```
 
-### Using Components With `template` 😁
+### Using Components With `template`
+> 😁
 
 `src/app/components/hi/hi.component.ts`
 ```ts
@@ -126,7 +147,8 @@ import { Component } from '@angular/core'
 export class HiComponent { }
 ```
 
-### Declarations In AppModule 😁
+### Declarations In AppModule
+> 😁
 
 `src/app/app.module.ts`
 ```ts
@@ -155,7 +177,8 @@ export class AppModule { }
 ### Example Code
 - [src/components/Hi.js](../../examples/var-react/src/components/Hi.js)
 
-### Using Function components 😁
+### Using Function components
+> 😁
 
 `src/components/Hi.js`
 ```jsx
@@ -182,7 +205,8 @@ function App() {
 export default App
 ```
 
-### Using Class Components 😁
+### Using Class Components
+> 😁
 
 `src/components/Hi.js`
 ```jsx

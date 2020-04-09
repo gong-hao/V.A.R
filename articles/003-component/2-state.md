@@ -2,12 +2,28 @@
 
 > State is the core data that represents the genuine meanings of information of the application.
 
+- [How to Use State in V.A.R](#how-to-use-state-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Using `data`](#using-data)
+    - [Using `computed`](#using-computed)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Using `class field`](#using-class-field)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Using `useState` (Function Component)](#using-usestate-function-component)
+    - [Using `state property` (Class Component)](#using-state-property-class-component)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 ### Example Code
 - [src/components/HeroState.vue](../../examples/var-vue/src/components/HeroState.vue)
 
-### Using `data` 😁
+### Using `data`
+> 😁
 
 ```vue
 <template>
@@ -47,7 +63,8 @@ export default {
 </script>
 ```
 
-### Using `computed` 😁
+### Using `computed`
+> 😁
 
 ```vue
 <template>
@@ -80,7 +97,8 @@ export default {
 - [src/app/components/hero-state/hero-state.component.ts](../../examples/var-angular/src/app/components/hero-state/hero-state.component.ts)
 - [src/app/components/hero-state/hero-state.component.html](../../examples/var-angular/src/app/components/hero-state/hero-state.component.html)
 
-### Using `class field` 😁
+### Using `class field`
+> 😁
 
 ```html
 <h1>{{name}}</h1>
@@ -124,7 +142,8 @@ export class HeroComponent {
 - [src/components/HeroStateFunction.js](../../examples/var-react/src/components/HeroStateFunction.js)
 - [src/components/HeroStateClass.js](../../examples/var-react/src/components/HeroStateClass.js)
 
-### Using `useState` (Function Component) 😑
+### Using `useState` (Function Component)
+> 😑
 
 ```jsx
 import React, { useState } from 'react'
@@ -165,7 +184,8 @@ export default HeroStateFunction
 
 > `this.setState()` will **merge** state, but `setSomething` from `useState()` will **replace** state. That's why you need to group state variables properly.
 
-### Using `state property` (Class Component) 😑
+### Using `state property` (Class Component)
+> 😑
 
 ```jsx
 import React from 'react'

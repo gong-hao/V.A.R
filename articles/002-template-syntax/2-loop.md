@@ -2,6 +2,48 @@
 
 > Loop saves everyone's life. A genuine hero.
 
+- [How to Loop Arrays in V.A.R](#how-to-loop-arrays-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Script Part](#script-part)
+    - [Array Rendering](#array-rendering)
+    - [Object Rendering](#object-rendering)
+    - [Times Rendering](#times-rendering)
+    - [Characters Rendering](#characters-rendering)
+    - [Alias](#alias)
+    - [Without Showing a Root Element](#without-showing-a-root-element)
+    - [With a Component](#with-a-component)
+    - [With a Method](#with-a-method)
+    - [With a Computed Property](#with-a-computed-property)
+    - [Caveats](#caveats)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Script Part](#script-part-1)
+    - [Array Rendering](#array-rendering-1)
+    - [Object Rendering](#object-rendering-1)
+    - [Times Rendering](#times-rendering-1)
+    - [Characters Rendering](#characters-rendering-1)
+    - [Alias](#alias-1)
+    - [Without Showing a Root Element](#without-showing-a-root-element-1)
+    - [With a Component](#with-a-component-1)
+    - [With a Component & Without Showing a Root Element](#with-a-component--without-showing-a-root-element)
+    - [Use Pipe to Get Rid of `trackByFn`](#use-pipe-to-get-rid-of-trackbyfn)
+    - [With a Method](#with-a-method-1)
+    - [Caveats](#caveats-1)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Script Part](#script-part-2)
+    - [Array Rendering](#array-rendering-2)
+    - [Object Rendering](#object-rendering-2)
+    - [Times Rendering](#times-rendering-2)
+    - [Characters Rendering](#characters-rendering-2)
+    - [Alias](#alias-2)
+    - [Without Showing a Root Element](#without-showing-a-root-element-2)
+    - [With a Component](#with-a-component-2)
+    - [With a Method](#with-a-method-2)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 > Vue uses `v-for` directive.
@@ -59,7 +101,9 @@ export default {
 </script>
 ```
 
-### Array Rendering 😁
+### Array Rendering
+> 😁
+
 ```vue
 <template>
   <ul>
@@ -68,7 +112,9 @@ export default {
 </template>
 ```
 
-### Object Rendering 😎
+### Object Rendering
+> 😎
+
 ```vue
 <template>
   <ul>
@@ -81,7 +127,9 @@ export default {
 
 > The order of keys is based on the enumeration order of `Object.keys()`
 
-### Times Rendering 😎
+### Times Rendering
+> 😎
+
 ```vue
 <template>
   <ul>
@@ -90,7 +138,9 @@ export default {
 </template>
 ```
 
-### Characters Rendering 😎
+### Characters Rendering
+> 😎
+
 ```vue
 <template>
   <ul>
@@ -99,7 +149,9 @@ export default {
 </template>
 ```
 
-### Alias 🙂
+### Alias
+> 🙂
+
 ```vue
 <template>
   <div>
@@ -120,7 +172,9 @@ export default {
 
 > `v-for="(item, name, index) in obj"` and `v-for="(item, key, index) in obj"` are interchangeable.
 
-### Without Showing a Root Element 🙁
+### Without Showing a Root Element
+> 🙁
+
 ```vue
 <template>
   <ul>
@@ -136,7 +190,9 @@ export default {
 
 > It's required to set `:key` on every element inside the `<template>`, which is inconvenient.
 
-### With a Component 😁
+### With a Component
+> 😁
+
 ```vue
 <template>
   <ul>
@@ -145,7 +201,9 @@ export default {
 </template>
 ```
 
-### With a Method 😁
+### With a Method
+> 😁
+
 ```vue
 <template>
   <ul>
@@ -154,7 +212,9 @@ export default {
 </template>
 ```
 
-### With a Computed Property 😎
+### With a Computed Property
+> 😎
+
 ```vue
 <template>
   <ul>
@@ -233,7 +293,9 @@ export class LoopComponent implements OnInit {
 }
 ```
 
-### Array Rendering 😁
+### Array Rendering
+> 😁
+
 ```html
 <ul>
   <li *ngFor="let item of items; index as i; trackBy: trackById;">
@@ -242,7 +304,9 @@ export class LoopComponent implements OnInit {
 </ul>
 ```
 
-### Object Rendering 🙄
+### Object Rendering
+> 🙄
+
 ```html
 <ul>
   <li *ngFor="let item of person | keyvalue; index as i; trackBy: trackByKey;">
@@ -253,7 +317,9 @@ export class LoopComponent implements OnInit {
 
 > [KeyValuePipe](https://angular.io/api/common/KeyValuePipe)
 
-### Times Rendering 🙄
+### Times Rendering
+> 🙄
+
 ```ts
 ...
 export class LoopComponent {
@@ -268,14 +334,18 @@ export class LoopComponent {
 </ul>
 ```
 
-### Characters Rendering 🙄
+### Characters Rendering
+> 🙄
+
 ```html
 <ul>
   <li *ngFor="let c of 'Good'.split('')">{{c}}</li>
 </ul>
 ```
 
-### Alias 😁
+### Alias
+> 😁
+
 ```html
 <ul>
   <li *ngFor="let item of items;
@@ -299,7 +369,9 @@ export class LoopComponent {
 >
 > [https://angular.io/api/common/NgForOfContext#properties](https://angular.io/api/common/NgForOfContext#properties).
 
-### Without Showing a Root Element 😁
+### Without Showing a Root Element
+> 😁
+
 ```html
 <ul>
   <ng-container *ngFor="let item of items; index as i; trackBy: trackById;">
@@ -309,7 +381,9 @@ export class LoopComponent {
 </ul>
 ```
 
-### With a Component 😁
+### With a Component
+> 😁
+
 ```html
 <ul>
   <app-loop-item *ngFor="let item of items; index as i; trackBy: trackById;"
@@ -318,7 +392,8 @@ export class LoopComponent {
 </ul>
 ```
 
-### With a Component & Without Showing a Root Element 🙁
+### With a Component & Without Showing a Root Element
+> 🙁
 
 > Borrow selector from [Attribute directives](https://angular.io/guide/attribute-directives)
 
@@ -343,7 +418,8 @@ export class LoopItemAttrComponent {
 
 > Using attribute is not intuitive because it's hard to tell it's `directive` or `component`.
 
-### Use Pipe to Get Rid of `trackByFn` 🙄
+### Use Pipe to Get Rid of `trackByFn`
+> 🙄
 
 > In most cases, `id` or `uuid` is the key that needs to be tracked. However, `trackBy: item?.id` is deprecated. 😢 Ben Nadel has a good idea: [Using Pure Pipes To Generate NgFor TrackBy Identity Functions In Angular 7.2.7](https://www.bennadel.com/blog/3579-using-pure-pipes-to-generate-ngfor-trackby-identity-functions-in-angular-7-2-7.htm)
 
@@ -355,7 +431,9 @@ export class LoopItemAttrComponent {
 </ul>
 ```
 
-### With a Method 😁
+### With a Method
+> 😁
+
 ```html
 <ul>
   <li *ngFor="let item of getItems(3)">{{item.id}}</li>
@@ -403,7 +481,9 @@ function Loop() {
 }
 ```
 
-### Array Rendering 😁
+### Array Rendering
+> 😁
+
 ```jsx
 <ul>
   {items.map((item, index) => {
@@ -416,7 +496,9 @@ function Loop() {
 </ul>
 ```
 
-### Object Rendering 🙄
+### Object Rendering
+> 🙄
+
 ```jsx
 <ul>
   {Object.keys(person).map((key, index) => (
@@ -437,7 +519,9 @@ function Loop() {
 </ul>
 ```
 
-### Times Rendering 🙄
+### Times Rendering
+> 🙄
+
 ```jsx
 <ul>
   {Array.from(Array(3).keys()).map(x => {
@@ -446,7 +530,9 @@ function Loop() {
 </ul>
 ```
 
-### Characters Rendering 🙄
+### Characters Rendering
+> 🙄
+
 ```jsx
 <ul>
   {'Good'.split('').map((c, index) => {
@@ -455,7 +541,9 @@ function Loop() {
 </ul>
 ```
 
-### Alias 🙄
+### Alias
+> 🙄
+
 ```jsx
 <ul>
   {items.map((item, index) => {
@@ -477,7 +565,9 @@ function Loop() {
 </ul>
 ```
 
-### Without Showing a Root Element 😁
+### Without Showing a Root Element
+> 😁
+
 ```jsx
 <ul>
   {items.map((item, index) => {
@@ -491,7 +581,9 @@ function Loop() {
 </ul>
 ```
 
-### With a Component 😁
+### With a Component
+> 😁
+
 ```jsx
 <ul>
   {items.map((item, index) => {
@@ -500,7 +592,9 @@ function Loop() {
 </ul>
 ```
 
-### With a Method 😁
+### With a Method
+> 😁
+
 ```jsx
 <ul>
   {getItems(3).map((item, index) => {

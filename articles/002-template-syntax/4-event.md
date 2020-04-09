@@ -2,6 +2,43 @@
 
 > If your code does nothing without showing bugs, you probably forgot to call some methods.
 
+- [How to Handle Events in V.A.R](#how-to-handle-events-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Script Part](#script-part)
+    - [With Handler Reference](#with-handler-reference)
+    - [With Invoking Handler](#with-invoking-handler)
+    - [With an Expression](#with-an-expression)
+    - [With Parameters](#with-parameters)
+    - [With the Event Parameter](#with-the-event-parameter)
+    - [Event Modifiers](#event-modifiers)
+    - [Key Modifiers](#key-modifiers)
+    - [Mouse Button Modifiers](#mouse-button-modifiers)
+    - [Caveats](#caveats)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Script Part](#script-part-1)
+    - [With Handler Reference](#with-handler-reference-1)
+    - [With Invoking Handler](#with-invoking-handler-1)
+    - [With an Expression](#with-an-expression-1)
+    - [With Parameters](#with-parameters-1)
+    - [With the Event Parameter](#with-the-event-parameter-1)
+    - [Key Event Filtering](#key-event-filtering)
+    - [Modifiers](#modifiers)
+    - [Caveats](#caveats-1)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Script Part](#script-part-2)
+    - [With Handler Reference](#with-handler-reference-2)
+    - [With Invoking Handler](#with-invoking-handler-2)
+    - [With an Expression](#with-an-expression-2)
+    - [With Parameters](#with-parameters-2)
+    - [With the Event Parameter](#with-the-event-parameter-2)
+    - [Modifiers](#modifiers-1)
+    - [Caveats](#caveats-2)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 [https://vuejs.org/v2/guide/events.html](https://vuejs.org/v2/guide/events.html)
@@ -39,7 +76,9 @@ export default {
 </script>
 ```
 
-### With Handler Reference 😁
+### With Handler Reference
+> 😁
+
 ```vue
 <template>
   <div>
@@ -48,7 +87,9 @@ export default {
 </template>
 ```
 
-### With Invoking Handler 😁
+### With Invoking Handler
+> 😁
+
 ```vue
 <template>
   <div>
@@ -57,7 +98,9 @@ export default {
 </template>
 ```
 
-### With an Expression 😁
+### With an Expression
+> 😁
+
 ```vue
 <template>
   <div>
@@ -66,7 +109,9 @@ export default {
 </template>
 ```
 
-### With Parameters 😁
+### With Parameters
+> 😁
+
 ```vue
 <template>
   <div>
@@ -75,7 +120,9 @@ export default {
 </template>
 ```
 
-### With the Event Parameter 😁
+### With the Event Parameter
+> 😁
+
 ```vue
 <template>
   <div>
@@ -85,7 +132,9 @@ export default {
 </template>
 ```
 
-### Event Modifiers 😎
+### Event Modifiers
+> 😎
+
 - `.stop` - Description: Stop event propagation
   - `event.stopPropagation()`
 - `.prevent` - Description: Prevent default behavior
@@ -171,7 +220,9 @@ export default {
 </template>
 ```
 
-### Key Modifiers 😎
+### Key Modifiers
+> 😎
+
 ```vue
 <template>
   <div>
@@ -198,7 +249,9 @@ Aliases for the most commonly used key codes:
 - `.left`
 - `.right`
 
-### Mouse Button Modifiers 😎
+### Mouse Button Modifiers
+> 😎
+
 ```vue
 <template>
   <div>
@@ -261,29 +314,38 @@ export class EventComponent {
 
 > No, you can't
 
-### With Invoking Handler 😁
+### With Invoking Handler
+> 😁
+
 ```html
 <button (click)="addVal()">Add Value</button>
 ```
 
-### With an Expression 🙂
+### With an Expression
+> 🙂
+
 ```html
 <button (click)="val = val + (number(userInput.value) || 0)">Add Value</button>
 ```
 
 > `new`, `++`, `--`, `+=`, `-=`, `|`, `&` and pipe are not supported. [Template statements](https://angular.io/guide/template-syntax#template-statements)
 
-### With Parameters 😁
+### With Parameters
+> 😁
+
 ```html
 <button (click)="addWithVal(userInput.value)">Add Value</button>
 ```
 
-### With the Event Parameter 😁
+### With the Event Parameter
+> 😁
+
 ```html
 <button (click)="hi($event)">Hi</button>
 ```
 
-### Key Event Filtering 😎
+### Key Event Filtering
+> 😎
 
 [https://angular.io/guide/user-input#key-event-filtering-with-keyenter](https://angular.io/guide/user-input#key-event-filtering-with-keyenter)
 
@@ -338,27 +400,37 @@ function Event() {
 }
 ```
 
-### With Handler Reference 😁
+### With Handler Reference
+> 😁
+
 ```jsx
 <button onClick={addVal}>Add Value</button>
 ```
 
-### With Invoking Handler 😁
+### With Invoking Handler
+> 😁
+
 ```jsx
 <button onClick={() => addVal()}>Add Value</button>
 ```
 
-### With an Expression 😁
+### With an Expression
+> 😁
+
 ```jsx
 <button onClick={() => setVal(val + (Number(userInput.current.value) || 0))}>Add Value</button>
 ```
 
-### With Parameters 😁
+### With Parameters
+> 😁
+
 ```jsx
 <button onClick={() => addWithVal(userInput.current.value)}>Add Value</button>
 ```
 
-### With the Event Parameter 😁
+### With the Event Parameter
+> 😁
+
 ```jsx
 <>
   <button onClick={hi}>Hi</button>

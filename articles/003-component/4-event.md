@@ -4,6 +4,19 @@
 
 > Here is talking about the events between the parent and child components. Check [here](../002-template-syntax/4-event.md) to see how to use events on a template.
 
+- [How to Use Event Handler in V.A.R](#how-to-use-event-handler-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Event Communication](#event-communication)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Event Communication](#event-communication-1)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Event Communication](#event-communication-2)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 > Vue uses `this.$emit('event-name', eventArgs)` to notify the parent component.
@@ -22,7 +35,8 @@
 - [src/components/HeroCheck.vue](../../examples/var-vue/src/components/HeroCheck.vue)
 - [src/components/HeroCheckParent.vue](../../examples/var-vue/src/components/HeroCheckParent.vue)
 
-### Event Communication 😁
+### Event Communication
+> 😁
 
 `Child Component`
 ```vue
@@ -100,7 +114,8 @@ export default {
 - [src/app/components/hero-check-parent/hero-check-parent.component.ts](../../examples/var-angular/src/app/components/hero-check-parent/hero-check-parent.component.ts)
 - [src/app/components/hero-check-parent/hero-check-parent.component.html](../../examples/var-angular/src/app/components/hero-check-parent/hero-check-parent.component.html)
 
-### Event Communication 😁
+### Event Communication
+> 😁
 
 `Child Component`
 ```html
@@ -170,7 +185,8 @@ export class HeroCheckParentComponent {
 - [src/components/HeroCheckClass.js](../../examples/var-react/src/components/HeroCheckClass.js)
 - [src/components/HeroCheckParent.js](../../examples/var-react/src/components/HeroCheckParent.js)
 
-### Event Communication 🙂
+### Event Communication
+> 🙂
 
 `Child Component`
 ```jsx

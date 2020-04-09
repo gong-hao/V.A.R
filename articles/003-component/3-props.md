@@ -4,6 +4,31 @@
 
 > ⚠️Props are supposed to be one-way data flow. You shouldn't try to change props to affect the parent state.
 
+- [How to Use Props in V.A.R](#how-to-use-props-in-var)
+  - [Vue](#vue)
+    - [Example Code](#example-code)
+    - [Format](#format)
+    - [Passing Static Props From Parent Component](#passing-static-props-from-parent-component)
+    - [Passing Dynamic Props From Parent Component](#passing-dynamic-props-from-parent-component)
+    - [Prop Validation](#prop-validation)
+    - [Root Element Attribute Binding](#root-element-attribute-binding)
+  - [Angular](#angular)
+    - [Example Code](#example-code-1)
+    - [Format](#format-1)
+    - [Passing Static Props From Parent Component](#passing-static-props-from-parent-component-1)
+    - [Passing Dynamic Props From Parent Component](#passing-dynamic-props-from-parent-component-1)
+    - [Prop Validation](#prop-validation-1)
+    - [Root Element Attribute Binding](#root-element-attribute-binding-1)
+  - [React](#react)
+    - [Example Code](#example-code-2)
+    - [Format](#format-2)
+    - [Passing Static Props From Parent Component](#passing-static-props-from-parent-component-2)
+    - [Passing Dynamic Props From Parent Component](#passing-dynamic-props-from-parent-component-2)
+    - [Prop Validation](#prop-validation-2)
+    - [Root Element Attribute Binding](#root-element-attribute-binding-2)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
 ## Vue
 
 [https://vuejs.org/v2/guide/components-props.html](https://vuejs.org/v2/guide/components-props.html)
@@ -12,7 +37,9 @@
 - [src/components/HeroPropsParent.vue](../../examples/var-vue/src/components/HeroPropsParent.vue)
 - [src/components/HeroProps.vue](../../examples/var-vue/src/components/HeroProps.vue)
 
-### Format 😁
+### Format
+> 😁
+
 `camelCase` in `JavaScript` field
 ```jsx
 export default {
@@ -28,7 +55,9 @@ export default {
 <hero-props :hero-name="name" />
 ```
 
-### Passing Static Props From Parent Component 😁
+### Passing Static Props From Parent Component
+> 😁
+
 `Parent Component`
 ```vue
 <template>
@@ -49,7 +78,9 @@ export default {
 </script>
 ```
 
-### Passing Dynamic Props From Parent Component 😁
+### Passing Dynamic Props From Parent Component
+> 😁
+
 `Parent Component`
 ```vue
 <template>
@@ -90,7 +121,9 @@ export default {
 > />
 > ```
 
-### Prop Validation 😁
+### Prop Validation
+> 😁
+
 `Child Component`
 ```vue
 <template>
@@ -136,7 +169,9 @@ export default {
 </script>
 ```
 
-### Root Element Attribute Binding 😁
+### Root Element Attribute Binding
+> 😁
+
 `Parent Component`
 ```html
 <hero-props title="Super Hero" />
@@ -175,7 +210,9 @@ export default {
 - [src/app/components/hero-props/hero-props.component.ts](../../examples/var-angular/src/app/components/hero-props/hero-props.component.ts)
 - [src/app/components/hero-props/hero-props.component.html](../../examples/var-angular/src/app/components/hero-props/hero-props.component.html)
 
-### Format 😁
+### Format
+> 😁
+
 `camelCase` by default
 ```ts
 export class HeroPropsComponent {
@@ -198,7 +235,9 @@ export class HeroPropsComponent {
 <app-hero-props [hero-name]="name"></app-hero-props>
 ```
 
-### Passing Static Props From Parent Component 😁
+### Passing Static Props From Parent Component
+> 😁
+
 `Parent Component`
 ```html
 <app-hero-props name="Riven"></app-hero-props>
@@ -217,7 +256,9 @@ import { Component } from '@angular/core'
 export class HeroPropsParentComponent { }
 ```
 
-### Passing Dynamic Props From Parent Component 😁
+### Passing Dynamic Props From Parent Component
+> 😁
+
 `Parent Component`
 ```html
 <app-hero-props [name]="name"></app-hero-props>
@@ -241,7 +282,9 @@ There is no build-in validations for `Input()`. If you set types properly throug
 
 [How to Add Angular Component Input Validation](https://netbasal.com/how-to-add-angular-component-input-validation-b078a30af97f)
 
-### Root Element Attribute Binding 😁
+### Root Element Attribute Binding
+> 😁
+
 `Parent Component`
 ```html
 <app-hero-props title="Super Hero"></app-hero-props>
@@ -272,7 +315,9 @@ There is no build-in validations for `Input()`. If you set types properly throug
 - [src/components/HeroPropsClass.js](../../examples/var-react/src/components/HeroPropsClass.js)
 - [src/components/HeroPropsFunction.js](../../examples/var-react/src/components/HeroPropsFunction.js)
 
-### Format 😁
+### Format
+> 😁
+
 `camelCase` by default
 ```jsx
 import React from 'react'
@@ -303,7 +348,9 @@ export default HeroProps
 <HeroProps hero-name={name} />
 ```
 
-### Passing Static Props From Parent Component 😁
+### Passing Static Props From Parent Component
+> 😁
+
 `Parent Component`
 ```jsx
 import React from 'react'
@@ -321,7 +368,9 @@ function HeroPropsParent() {
 export default HeroPropsParent
 ```
 
-### Passing Dynamic Props From Parent Component 😁
+### Passing Dynamic Props From Parent Component
+> 😁
+
 `Parent Component`
 ```jsx
 import React, { useState } from 'react'

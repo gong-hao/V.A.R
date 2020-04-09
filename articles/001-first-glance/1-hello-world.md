@@ -3,7 +3,17 @@
 ## What Is a Hello World Program?
 Hello world program is the simplest program that the language or framework or library wants to show the first impression to the developers. It should be simple and stupid enough that even newbie can understand what the heck you're doing. <del>However, in most cases, it is only used to make memes to laugh at other competitors.</del>
 
-## Vue 😁
+- [How to write hello world programs in V.A.R](#how-to-write-hello-world-programs-in-var)
+  - [What Is a Hello World Program?](#what-is-a-hello-world-program)
+  - [Vue](#vue)
+  - [Angular](#angular)
+  - [React](#react)
+  - [Scores](#scores)
+  - [Differences](#differences)
+
+## Vue
+> 😁
+
 ```html
 <div id="app">
   {{message}}
@@ -21,7 +31,9 @@ var app = new Vue({
 
 [https://vuejs.org/v2/guide/](https://vuejs.org/v2/guide/)
 
-## Angular 🙁
+## Angular
+> 🙁
+
 Sorry, but I don't think there is an official hello world demo for Angular.
 They just dive into the CLI and show you how to play some template syntaxes.
 There might be some ways to play Angular without CLI, but I don't think they are practical.
@@ -53,7 +65,9 @@ export class AppComponent {
 
 [https://angular.io/start](https://angular.io/start)
 
-## React 🙂
+## React
+> 🙂
+
 ```html
 <div id="root"></div>
 ```
