@@ -29,14 +29,18 @@ function create(item) {
 
 function modify(id, item) {
   const target = data.find(x => x.id === +id)
-  const index = data.indexOf(target)
-  data[index] = { ...target, ...item }
+  if (target) {
+    const index = data.indexOf(target)
+    data[index] = { ...target, ...item }
+  }
 }
 
 function remove(id) {
   const target = data.find(x => x.id === +id)
-  const index = data.indexOf(target)
-  data.splice(index, 1)
+  if (target) {
+    const index = data.indexOf(target)
+    data.splice(index, 1)
+  }
 }
 
 module.exports = {
