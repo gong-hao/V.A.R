@@ -63,9 +63,7 @@ export default {
 
 ## Angular
 
-> Use `HttpClient` to call API in a service, then inject the service into the component.
->
-> Use the service to call API in the `ngOnInit` lifecycle hook.
+> Use `HttpClient` to call API in the `ngOnInit` lifecycle hook.
 
 [https://angular.io/guide/http](https://angular.io/guide/http)
 

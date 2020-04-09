@@ -16,7 +16,7 @@
 
 ## Vue
 
-> Use `axios` to call API in the `mounted` lifecycle hook.
+> Use `axios` to call API in the event handler.
 
 [https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)
 
@@ -57,9 +57,7 @@ export default {
 
 ## Angular
 
-> Use `HttpClient` to call API in a service, then inject the service into the component.
->
-> Use the service to call API in the `ngOnInit` lifecycle hook.
+> Use `HttpClient` to call API in the event handler.
 
 [https://angular.io/guide/http](https://angular.io/guide/http)
 
@@ -114,9 +112,7 @@ export class CreateApiComponent {
 
 ## React
 
-> Use `axios` to call API in the `componentDidMount` lifecycle hook (Class Class Component).
-
-> Use `axios` to call API in the `useEffect` hook (Function Component).
+> Use `axios` to call API in the event handler.
 
 [https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
 

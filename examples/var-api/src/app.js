@@ -41,7 +41,7 @@ function init() {
   })
 
   app.all('*', (req, res) =>
-    res.status(404).send({ statusCode: 404, message: 'api not found' })
+    res.status(404).send({ message: 'api not found' })
   )
   app.use((err, req, res, next) => {
     if (err instanceof SyntaxError) {
