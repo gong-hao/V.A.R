@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <hero-check-parent />
+    <remove-api />
   </div>
 </template>
 
 <script>
-import HeroCheckParent from './components/HeroCheckParent'
+import RemoveApi from './components/RemoveApi'
 
 export default {
   name: 'App',
   components: {
-    HeroCheckParent
+    RemoveApi
   }
 }
 </script>

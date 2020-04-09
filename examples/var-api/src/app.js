@@ -17,12 +17,12 @@ function init() {
 
   app.get('/skill', (req, res) => {
     const list = skillService.list()
-    res.status(200).send({ data: list })
+    res.status(200).send(list)
   })
 
   app.get('/skill/:id', (req, res) => {
     const item = skillService.detail(req.params.id)
-    res.status(200).send({ data: item })
+    res.status(200).send(item)
   })
 
   app.post('/skill', (req, res) => {
