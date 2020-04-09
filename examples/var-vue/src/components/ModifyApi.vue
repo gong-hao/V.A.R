@@ -19,7 +19,7 @@ export default {
       }
       axios
         .put(
-          'http://localhost:3000/skill/' + this.$refs.id.value,
+          'http://localhost:4000/skill/' + this.$refs.id.value,
           modifiedSkill
         )
         .then(response => alert(response.data.message))

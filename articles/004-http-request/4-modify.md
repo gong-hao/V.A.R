@@ -48,7 +48,7 @@ export default {
       }
       axios
         .put(
-          'http://localhost:3000/skill/' + this.$refs.id.value,
+          'http://localhost:4000/skill/' + this.$refs.id.value,
           modifiedSkill
         )
         .then(response => alert(response.data.message))
@@ -86,13 +86,90 @@ export default {
 [https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
 
 ### Example Code
-- [src/components/ModifyApi.js](../../examples/var-react/src/components/ModifyApi.js)
+- [src/components/ModifyApiFunction.js](../../examples/var-react/src/components/ModifyApiFunction.js)
+- [src/components/ModifyApiClass.js](../../examples/var-react/src/components/ModifyApiClass.js)
 
 ### Using `axios` in Function Component
 > 😁
 
+```jsx
+import React, { useRef } from 'react'
+
+import axios from 'axios'
+
+function ModifyApiFunction() {
+  const idRef = useRef()
+  const nameRef = useRef()
+  const keyRef = useRef()
+
+  function modifySkill() {
+    const modifiedSkill = {
+      name: nameRef.current.value,
+      key: keyRef.current.value
+    }
+    axios
+      .put(
+        'http://localhost:4000/skill/' + idRef.current.value,
+        modifiedSkill
+      )
+      .then(response => alert(response.data.message))
+      .catch(error => console.log(error))
+  }
+
+  return (
+    <div>
+      <input type="text" ref={idRef} />
+      <input type="text" ref={nameRef} />
+      <input type="text" ref={keyRef} />
+      <button onClick={modifySkill}>Modify</button>
+    </div>
+  )
+}
+
+export default ModifyApiFunction
+```
+
 ### Using `axios` in Class Component
 > 😁
+
+```jsx
+import React, { createRef } from 'react'
+
+import axios from 'axios'
+
+class ModifyApiClass extends React.Component {
+  idRef = createRef()
+  nameRef = createRef()
+  keyRef = createRef()
+
+  modifySkill = () => {
+    const modifiedSkill = {
+      name: this.nameRef.current.value,
+      key: this.keyRef.current.value
+    }
+    axios
+      .put(
+        'http://localhost:4000/skill/' + this.idRef.current.value,
+        modifiedSkill
+      )
+      .then(response => alert(response.data.message))
+      .catch(error => console.log(error))
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.idRef} />
+        <input type="text" ref={this.nameRef} />
+        <input type="text" ref={this.keyRef} />
+        <button onClick={this.modifySkill}>Modify</button>
+      </div>
+    )
+  }
+}
+
+export default ModifyApiClass
+```
 
 ## Scores
 |                     |  Vue  | Angular | React |

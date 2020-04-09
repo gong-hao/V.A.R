@@ -48,7 +48,7 @@ export default {
   methods: {
     listSkills() {
       axios
-        .get('http://localhost:3000/skill')
+        .get('http://localhost:4000/skill')
         .then(response => (this.skills = response.data))
         .catch(error => console.log(error))
     }
@@ -87,13 +87,85 @@ export default {
 [https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
 
 ### Example Code
-- [src/components/ListApi.js](../../examples/var-react/src/components/ListApi.js)
+- [src/components/ListApiFunction.js](../../examples/var-react/src/components/ListApiFunction.js)
+- [src/components/ListApiClass.js](../../examples/var-react/src/components/ListApiClass.js)
 
 ### Using `axios` in Function Component
 > 😁
 
+```jsx
+import React, { useEffect, useState } from 'react'
+
+import axios from 'axios'
+
+function ListApiFunction() {
+  const [skills, setSkills] = useState([])
+
+  useEffect(() => listSkills())
+
+  function listSkills() {
+    axios
+      .get('http://localhost:4000/skill')
+      .then(response => setSkills(response.data))
+      .catch(error => console.log(error))
+  }
+
+  return (
+    <ul>
+      {skills.map(skill => (
+        <li key={skill.id}>
+          {skill.name}
+          {skill.key ? <span>[{skill.key}]</span> : null}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default ListApiFunction
+```
+
 ### Using `axios` in Class Component
 > 😁
+
+```jsx
+import React from 'react'
+import axios from 'axios'
+
+class ListApiClass extends React.Component {
+  state = {
+    skills: []
+  }
+
+  componentDidMount() {
+    this.listSkills()
+  }
+
+  listSkills = () => {
+    axios
+      .get('http://localhost:4000/skill')
+      .then(response => this.setState({ skills: response.data }))
+      .catch(error => console.log(error))
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.skills.map(skill => {
+          return (
+            <li key={skill.id}>
+              {skill.name}
+              {skill.key ? <span>[{skill.key}]</span> : null}
+            </li>
+          )
+        })}
+      </ul>
+    )
+  }
+}
+
+export default ListApiClass
+```
 
 ## Scores
 |                     |  Vue  | Angular | React |

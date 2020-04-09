@@ -41,7 +41,7 @@ export default {
   methods: {
     removeSkill() {
       axios
-        .delete('http://localhost:3000/skill/' + this.$refs.id.value)
+        .delete('http://localhost:4000/skill/' + this.$refs.id.value)
         .then(response => alert(response.data.message))
         .catch(error => console.log(error))
     }
@@ -77,13 +77,68 @@ export default {
 [https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
 
 ### Example Code
-- [src/components/RemoveApi.js](../../examples/var-react/src/components/RemoveApi.js)
+- [src/components/RemoveApiFunction.js](../../examples/var-react/src/components/RemoveApiFunction.js)
+- [src/components/RemoveApiClass.js](../../examples/var-react/src/components/RemoveApiClass.js)
 
 ### Using `axios` in Function Component
 > 😁
 
+```jsx
+import React, { useRef } from 'react'
+
+import axios from 'axios'
+
+function RemoveApiFunction() {
+  const idRef = useRef()
+
+  function removeSkill() {
+    axios
+      .delete('http://localhost:4000/skill/' + idRef.current.value)
+      .then(response => alert(response.data.message))
+      .catch(error => console.log(error))
+  }
+
+  return (
+    <div>
+      <input type="text" ref={idRef} />
+      <button onClick={removeSkill}>Remove</button>
+    </div>
+  )
+}
+
+export default RemoveApiFunction
+```
+
 ### Using `axios` in Class Component
 > 😁
+
+```jsx
+import React, { createRef } from 'react'
+
+import axios from 'axios'
+
+class RemoveApiClass extends React.Component {
+  idRef = createRef()
+
+  removeSkill = () => {
+    axios
+      .delete('http://localhost:4000/skill/' + this.idRef.current.value)
+      .then(response => alert(response.data.message))
+      .catch(error => console.log(error))
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.idRef} />
+        <button onClick={this.removeSkill}>Remove</button>
+      </div>
+    )
+  }
+}
+
+export default RemoveApiClass
+```
 
 ## Scores
 |                     |  Vue  | Angular | React |

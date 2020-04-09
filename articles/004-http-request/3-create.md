@@ -46,7 +46,7 @@ export default {
         key: this.$refs.key.value
       }
       axios
-        .post('http://localhost:3000/skill/', newSkill)
+        .post('http://localhost:4000/skill/', newSkill)
         .then(response => alert(response.data.message))
         .catch(error => console.log(error))
     }
@@ -82,13 +82,80 @@ export default {
 [https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
 
 ### Example Code
-- [src/components/SignalRequest.js](../../examples/var-react/src/components/SignalRequest.js)
+- [src/components/CreateApiFunction.js](../../examples/var-react/src/components/CreateApiFunction.js)
+- [src/components/CreateApiClass.js](../../examples/var-react/src/components/CreateApiClass.js)
 
 ### Using `axios` in Function Component
 > 😁
 
+```jsx
+import React, { useRef } from 'react'
+
+import axios from 'axios'
+
+function CreateApiFunction() {
+  const nameRef = useRef()
+  const keyRef = useRef()
+
+  function createSkill() {
+    const newSkill = {
+      name: nameRef.current.value,
+      key: keyRef.current.value
+    }
+    axios
+      .post('http://localhost:4000/skill/', newSkill)
+      .then(response => alert(response.data.message))
+      .catch(error => console.log(error))
+  }
+
+  return (
+    <div>
+      <input type="text" ref={nameRef} />
+      <input type="text" ref={keyRef} />
+      <button onClick={createSkill}>Create</button>
+    </div>
+  )
+}
+
+export default CreateApiFunction
+```
+
 ### Using `axios` in Class Component
 > 😁
+
+```jsx
+import React, { createRef } from 'react'
+
+import axios from 'axios'
+
+class CreateApiClass extends React.Component {
+  nameRef = createRef()
+  keyRef = createRef()
+
+  createSkill = () => {
+    const newSkill = {
+      name: this.nameRef.current.value,
+      key: this.keyRef.current.value
+    }
+    axios
+      .post('http://localhost:4000/skill/', newSkill)
+      .then(response => alert(response.data.message))
+      .catch(error => console.log(error))
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.nameRef} />
+        <input type="text" ref={this.keyRef} />
+        <button onClick={this.createSkill}>Create</button>
+      </div>
+    )
+  }
+}
+
+export default CreateApiClass
+```
 
 ## Scores
 |                     |  Vue  | Angular | React |

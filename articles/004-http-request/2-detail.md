@@ -47,7 +47,7 @@ export default {
   methods: {
     detailSkill(id) {
       axios
-        .get('http://localhost:3000/skill/' + id)
+        .get('http://localhost:4000/skill/' + id)
         .then(response => (this.skill = response.data))
         .catch(error => console.log(error))
     }
@@ -88,13 +88,93 @@ export default {
 [https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
 
 ### Example Code
-- [src/components/DetailApi.js](../../examples/var-react/src/components/DetailApi.js)
+- [src/components/DetailApiFunction.js](../../examples/var-react/src/components/DetailApiFunction.js)
+- [src/components/DetailApiClass.js](../../examples/var-react/src/components/DetailApiClass.js)
 
 ### Using `axios` in Function Component
 > 😁
 
+```jsx
+import React, { useEffect, useState } from 'react'
+
+import axios from 'axios'
+
+function DetailApiFunction() {
+  const [skill, setSkill] = useState(null)
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get('id') || 1
+    detailSkill(id)
+  })
+
+  function detailSkill(id) {
+    axios
+      .get('http://localhost:4000/skill/' + id)
+      .then(response => setSkill(response.data))
+      .catch(error => console.log(error))
+  }
+
+  if (!skill) {
+    return null
+  }
+
+  return (
+    <div>
+      {skill.id} -
+      {skill.name}
+      {skill.key ? <span>[{skill.key}]</span> : null}
+    </div>
+  )
+}
+
+export default DetailApiFunction
+```
+
 ### Using `axios` in Class Component
 > 😁
+
+```jsx
+import React from 'react'
+import axios from 'axios'
+
+class DetailApiClass extends React.Component {
+  state = {
+    skill: null
+  }
+
+  componentDidMount() {
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get('id') || 1
+    this.detailSkill(id)
+  }
+
+  detailSkill = (id) => {
+    axios
+      .get('http://localhost:4000/skill/' + id)
+      .then(response => this.setState({ skill: response.data }))
+      .catch(error => console.log(error))
+  }
+
+  render() {
+    const { skill } = this.state
+
+    if (!skill) {
+      return null
+    }
+
+    return (
+      <div>
+        {skill.id} -
+        {skill.name}
+        {skill.key ? <span>[{skill.key}]</span> : null}
+      </div>
+    )
+  }
+}
+
+export default DetailApiClass
+```
 
 ## Scores
 |                     |  Vue  | Angular | React |

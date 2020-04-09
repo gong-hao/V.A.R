@@ -1,3 +1,3 @@
 const app = require('./app')
-app().listen(3000)
-console.log('api is running on 3000')
+app().listen(4000)
+console.log('api is running on 4000')

@@ -17,7 +17,7 @@ export default {
         key: this.$refs.key.value
       }
       axios
-        .post('http://localhost:3000/skill/', newSkill)
+        .post('http://localhost:4000/skill/', newSkill)
         .then(response => alert(response.data.message))
         .catch(error => console.log(error))
     }

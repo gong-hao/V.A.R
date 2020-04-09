@@ -12,7 +12,7 @@ export default {
   methods: {
     removeSkill() {
       axios
-        .delete('http://localhost:3000/skill/' + this.$refs.id.value)
+        .delete('http://localhost:4000/skill/' + this.$refs.id.value)
         .then(response => alert(response.data.message))
         .catch(error => console.log(error))
     }

@@ -1,11 +1,11 @@
 import './App.css'
 
-import HeroEventParent from './components/HeroEventParent'
+import ListApiClass from './components/ListApiClass'
 import React from 'react'
 
 function App() {
   return (
-    <HeroEventParent />
+    <ListApiClass />
   )
 }
 

@@ -19,7 +19,7 @@ export default {
   methods: {
     listSkills() {
       axios
-        .get('http://localhost:3000/skill')
+        .get('http://localhost:4000/skill')
         .then(response => (this.skills = response.data))
         .catch(error => console.log(error))
     }

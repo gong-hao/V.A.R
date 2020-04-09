@@ -18,7 +18,7 @@ export default {
   methods: {
     detailSkill(id) {
       axios
-        .get('http://localhost:3000/skill/' + id)
+        .get('http://localhost:4000/skill/' + id)
         .then(response => (this.skill = response.data))
         .catch(error => console.log(error))
     }
